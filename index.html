@@ -24,6 +24,7 @@
   --accent:#7c7cf5; --accent-2:#c084fc; --accent-3:#22d3ee;
   --ai:#a78bfa; --ai-soft:rgba(167,139,250,.13);
   --kdc:#2dd4bf; --kdc-soft:rgba(45,212,191,.13);
+  --web:#fbbf24; --web-soft:rgba(251,191,36,.13);
   --ok:#4ade80; --warn:#fbbf24; --danger:#fb7185;
   --shadow:0 18px 48px -22px rgba(0,0,0,.85);
   --radius:18px; --radius-sm:12px;
@@ -39,6 +40,7 @@
   --accent:#5b5bd6; --accent-2:#9333ea; --accent-3:#0891b2;
   --ai:#7c3aed; --ai-soft:rgba(124,58,237,.09);
   --kdc:#0d9488; --kdc-soft:rgba(13,148,136,.09);
+  --web:#b45309; --web-soft:rgba(180,83,9,.09);
   --shadow:0 16px 40px -24px rgba(20,26,60,.35);
 }
 @media (prefers-color-scheme:light){
@@ -49,6 +51,8 @@
     --accent:#5b5bd6; --accent-2:#9333ea; --accent-3:#0891b2;
     --ai:#7c3aed; --ai-soft:rgba(124,58,237,.09);
     --kdc:#0d9488; --kdc-soft:rgba(13,148,136,.09);
+    --web:#b45309; --web-soft:rgba(180,83,9,.09);
+  --web:#b45309; --web-soft:rgba(180,83,9,.09);
     --shadow:0 16px 40px -24px rgba(20,26,60,.35);
   }
 }
@@ -233,6 +237,7 @@ section{position:relative;padding:88px 0}
   border:3px solid var(--bg);box-shadow:0 0 0 2px currentColor;transition:.25s}
 .tl-item[data-track=kdc] .node{color:var(--kdc);background:var(--kdc)}
 .tl-item[data-track=ai] .node{color:var(--ai);background:var(--ai)}
+[data-track=web] .node{color:var(--web);background:var(--web)}
 .tl-item:hover .node{transform:scale(1.45)}
 .tl-item .d{font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:.02em}
 .tl-item .t{font-size:14px;font-weight:750;margin-top:7px;letter-spacing:-.02em}
@@ -274,7 +279,7 @@ section{position:relative;padding:88px 0}
   border:1px solid color-mix(in srgb,var(--tone) 40%,transparent);
   background:color-mix(in srgb,var(--tone) 12%,transparent);margin-bottom:16px}
 .part-head h2{font-size:clamp(1.6rem,4vw,2.4rem);letter-spacing:-.04em;margin-bottom:10px}
-.part-head p{color:var(--text-mid);max-width:62ch;font-size:15px}
+.part-head p{color:var(--text-mid);max-width:none;font-size:15px}
 .part-head .per{margin-top:14px;font-size:12.5px;color:var(--muted);font-weight:650;
   display:inline-flex;align-items:center;gap:7px}
 
@@ -561,7 +566,7 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
 <div class="progress" id="progress"></div>
 <nav class="nav" id="nav"><div class="nav-in">
   <div class="nav-brand"><span class="dot"></span>유소은 · Portfolio</div>
-  <div class="nav-links"><a href="#about">핵심 역량</a><a href="#journey">성장 과정</a><a href="#stack">기술 스택</a><a href="#part-ai">AI 심화반</a><a href="#part-kdc">기초반</a><a href="#trouble">문제 해결</a>
+  <div class="nav-links"><a href="#about">핵심 역량</a><a href="#journey">성장 과정</a><a href="#stack">기술 스택</a><a href="#part-ai">AI 심화 과정</a><a href="#part-kdc">풀스택 웹 과정</a><a href="#part-web">웹 디자인</a><a href="#trouble">문제 해결</a>
     <button class="icon-btn" id="theme" aria-label="테마 전환"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
   </div>
 </div></nav>
@@ -570,12 +575,12 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
 <header class="hero" id="top"><div class="wrap">
  <div class="hero-grid">
   <div>
-    <div class="eyebrow rv"><span class="pulse"></span>휴먼AI교육센터 · AI 심화반 (2026.06 ~ 2026.08) · K-Digital Convergence 기초반 (Java) (2025.12 ~ 2026.06)</div>
+    <div class="eyebrow rv"><span class="pulse"></span>휴먼AI교육센터 · AI 기반 서비스 개발 심화 과정 (2026.06 ~ 2026.08) · Java 기반 풀스택 웹 개발자 과정 (2025.12 ~ 2026.06) · 웹 디자이너 과정 (2025.06 ~ 2025.08)</div>
     <h1 class="rv">유소은 <span class="grad">Portfolio</span></h1>
     <div class="role rv">AI 서비스 풀스택 개발자</div>
     <div class="tagline rv">모델을 만드는 데서 끝내지 않고, 사용자가 쓰는 화면까지 연결합니다</div>
     <ul class="sum3 rv"><li><span class="n">1</span><p>React · Spring Boot · FastAPI를 한 기능 안에서 직접 잇는 AI 서비스 풀스택 개발자입니다.</p></li><li><span class="n">2</span><p>팀 프로젝트 WorkFlow AI에서 대시보드 오너를 맡아 화면 9개 · REST API 10개 · ML 모델 2종을 단독으로 구현했고, ML 서버가 죽어도 화면이 유지되도록 실패 정책을 설계했습니다.</p></li><li><span class="n">3</span><p>ML · DL · LLM 개인 프로젝트 3건에서 회화 사조 분류 정확도 94.5%, 작품 벡터 42,500건 검색 파이프라인을 만들었습니다.</p></li></ul>
-    <p class="summary rv">K-Digital Convergence 기초반에서 Java 웹 팀 프로젝트 3건(JSP → React+Express → Spring Boot)을, AI 심화반에서 ML·DL·LLM 개인 프로젝트 3건과 팀 프로젝트 1건을 진행했습니다.</p>
+    <p class="summary rv">웹 디자이너 과정에서 웹사이트 리뉴얼 2건으로 UI/UX와 퍼블리싱을 익힌 뒤, Java 기반 풀스택 웹 개발자 과정에서 Java 웹 팀 프로젝트 3건(JSP → React+Express → Spring Boot)을, AI 기반 서비스 개발 심화 과정에서 ML·DL·LLM 개인 프로젝트 3건과 팀 프로젝트 1건을 진행했습니다.</p>
     <div class="hero-cta rv">
       <a class="btn primary" href="#part-ai"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.9 5.8a2 2 0 0 1-1.287 1.288L3 12l5.8 1.9a2 2 0 0 1 1.288 1.287L12 21l1.9-5.8a2 2 0 0 1 1.287-1.288L21 12l-5.8-1.9a2 2 0 0 1-1.288-1.287Z"/></svg> 대표 프로젝트</a>
       <a class="btn" href="https://github.com/soeun-yu" target="_blank" rel="noopener"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> GitHub</a>
@@ -605,9 +610,9 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
 <section id="journey"><div class="wrap">
   <div class="sec-head rv"><div class="sec-tag">Growth Path</div>
     <h2>프로젝트 진행 순서</h2>
-    <p>2026.02부터 2026.08까지 진행한 프로젝트 7건입니다.
-       사용자 인증·데이터 조회·화면 구성이라는 같은 문제를 매번 다른 스택으로 다시 구현하며 범위를 넓혔습니다.</p></div>
-  <div class="tl"><div class="tl-rail"><div class="tl-item rv" data-track="kdc" style="transition-delay:0ms"><div class="d mono">2026.02</div><div class="node"></div><div class="t">너와 함께</div><div class="nt">JSP · Servlet · JDBC<br>세션 인증과 마이페이지 담당</div></div><div class="tl-item rv" data-track="kdc" style="transition-delay:60ms"><div class="d mono">2026.03</div><div class="node"></div><div class="t">PPAP</div><div class="nt">React · Express · MongoDB<br>JWT 인증과 회원 도메인 담당</div></div><div class="tl-item rv" data-track="kdc" style="transition-delay:120ms"><div class="d mono">2026.05</div><div class="node"></div><div class="t">3H Furniture</div><div class="nt">Spring Boot · Security · JPA<br>메인 페이지와 OAuth2 인증 담당</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:180ms"><div class="d mono">2026.06</div><div class="node"></div><div class="t">게이머 고립도 예측</div><div class="nt">회귀 모델 5종 비교<br>R² 0.801</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:240ms"><div class="d mono">2026.06</div><div class="node"></div><div class="t">artClassifier</div><div class="nt">전이학습 3종 비교 · MLflow<br>테스트 정확도 94.5%</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:300ms"><div class="d mono">2026.07</div><div class="node"></div><div class="t">Curatio</div><div class="nt">CLIP · ChromaDB · RAG<br>작품 벡터 42,500건 구축</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:360ms"><div class="d mono">2026.07</div><div class="node"></div><div class="t">WorkFlow AI</div><div class="nt">React · Spring Boot · FastAPI<br>화면 9 · API 10 · ML 2종</div></div></div></div>
+    <p>2025.06부터 2026.08까지 진행한 프로젝트 9건입니다.
+       웹 디자인·퍼블리싱에서 출발해, 사용자 인증·데이터 조회·화면 구성이라는 같은 문제를 매번 다른 스택으로 다시 구현하며 범위를 넓혔습니다.</p></div>
+  <div class="tl"><div class="tl-rail"><div class="tl-item rv" data-track="web" style="transition-delay:0ms"><div class="d mono">2025.06</div><div class="node"></div><div class="t">오늘의집 리뉴얼</div><div class="nt">SWOT · 페르소나 분석<br>메인 · 커뮤니티 IA 재설계</div></div><div class="tl-item rv" data-track="web" style="transition-delay:60ms"><div class="d mono">2025.07</div><div class="node"></div><div class="t">할리스커피 리뉴얼</div><div class="nt">브랜드 아이덴티티 개편<br>jQuery 동적 인터랙션</div></div><div class="tl-item rv" data-track="kdc" style="transition-delay:120ms"><div class="d mono">2026.02</div><div class="node"></div><div class="t">너와 함께</div><div class="nt">JSP · Servlet · JDBC<br>세션 인증과 마이페이지 담당</div></div><div class="tl-item rv" data-track="kdc" style="transition-delay:180ms"><div class="d mono">2026.03</div><div class="node"></div><div class="t">PPAP</div><div class="nt">React · Express · MongoDB<br>JWT 인증과 회원 도메인 담당</div></div><div class="tl-item rv" data-track="kdc" style="transition-delay:240ms"><div class="d mono">2026.05</div><div class="node"></div><div class="t">3H Furniture</div><div class="nt">Spring Boot · Security · JPA<br>메인 페이지와 OAuth2 인증 담당</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:300ms"><div class="d mono">2026.06</div><div class="node"></div><div class="t">게이머 고립도 예측</div><div class="nt">회귀 모델 5종 비교<br>R² 0.801</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:360ms"><div class="d mono">2026.06</div><div class="node"></div><div class="t">artClassifier</div><div class="nt">전이학습 3종 비교 · MLflow<br>테스트 정확도 94.5%</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:420ms"><div class="d mono">2026.07</div><div class="node"></div><div class="t">Curatio</div><div class="nt">CLIP · ChromaDB · RAG<br>작품 벡터 42,500건 구축</div></div><div class="tl-item rv" data-track="ai" style="transition-delay:480ms"><div class="d mono">2026.07</div><div class="node"></div><div class="t">WorkFlow AI</div><div class="nt">React · Spring Boot · FastAPI<br>화면 9 · API 10 · ML 2종</div></div></div></div>
 </div></section>
 
 <section class="band" id="stack"><div class="wrap">
@@ -620,7 +625,7 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
 <section id="part-ai" style="--tone:var(--ai);--tint:var(--ai-soft)"><div class="wrap">
   <div class="part-head rv">
     <div class="part-label">PART 1</div>
-    <h2>AI 심화반</h2>
+    <h2>AI 기반 서비스 개발 심화 과정</h2>
     <p>ML · DL · LLM 개인 프로젝트 3건과, 이를 서비스 기능으로 구현한 팀 프로젝트 1건입니다.</p>
     <div class="per"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2026.06 ~ 2026.08 · 프로젝트 4건</div>
   </div>
@@ -677,7 +682,7 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
 <section id="part-kdc" style="--tone:var(--kdc);--tint:var(--kdc-soft)"><div class="wrap">
   <div class="part-head rv">
     <div class="part-label">PART 2</div>
-    <h2>K-Digital Convergence 기초반 (Java)</h2>
+    <h2>Java 기반 풀스택 웹 개발자 과정</h2>
     <p>팀 프로젝트 3건입니다. 서버 렌더링, 프론트/백엔드 분리, 프레임워크 기반 인증 순으로 구성이 바뀌었습니다.</p>
     <div class="per"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2025.12 ~ 2026.06 · 프로젝트 3건</div>
   </div>
@@ -720,6 +725,40 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
 </a></div>
 </div></section>
 
+<section id="part-web" style="--tone:var(--web);--tint:var(--web-soft)"><div class="wrap">
+  <div class="part-head rv">
+    <div class="part-label">PART 3</div>
+    <h2>웹 디자이너 과정</h2>
+    <p>개발을 배우기 전에 진행한 브랜드 웹사이트 리뉴얼 2건입니다. SWOT·페르소나로 문제를 정의하고 정보 구조(IA)를 다시 짠 뒤, HTML·CSS·jQuery로 퍼블리싱까지 혼자 마쳤습니다. 지금도 화면을 설계할 때 기준이 되는 작업입니다.</p>
+    <div class="per"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2025.06 ~ 2025.08 · 프로젝트 2건 · 전 과정 단독</div>
+  </div>
+  <div class="pcards">
+<a class="pcard rv" style="--tone:var(--web);--tint:var(--web-soft)" href="projects/hollys.html">
+  <div class="pc-thumb"><img src="assets/webdesign/hollys-main.jpg" alt="할리스커피 리뉴얼 화면" loading="lazy"></div>
+  <div class="pc-body">
+    <div class="proj-badges"><span class="badge tone">리뉴얼 02</span><span class="badge plain">개인</span></div>
+    <h3>할리스커피</h3>
+    <p class="pc-sub">브랜드 아이덴티티를 살려 정보 구조와 인터랙션을 전면 개편한 리뉴얼</p>
+    <div class="pc-role"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> 기획 · 디자인 · 퍼블리싱 전 과정</div>
+    <div class="pc-metrics"><div><b class="mono">3</b><span>제작 화면</span></div><div><b class="mono">SWOT</b><span>브랜드 분석</span></div><div><b class="mono">100%</b><span>단독 진행</span></div></div>
+    <div class="chips"><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">jQuery</span></div>
+    <div class="pc-more">자세히 보기 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+  </div>
+</a>
+<a class="pcard rv" style="--tone:var(--web);--tint:var(--web-soft)" href="projects/ohouse.html">
+  <div class="pc-thumb"><img src="assets/webdesign/ohouse-main.jpg" alt="오늘의집 리뉴얼 화면" loading="lazy"></div>
+  <div class="pc-body">
+    <div class="proj-badges"><span class="badge tone">리뉴얼 01</span><span class="badge plain">개인</span></div>
+    <h3>오늘의집</h3>
+    <p class="pc-sub">복잡한 정보 구조와 사용성 문제를 개선한 인테리어 플랫폼 UI/UX 리뉴얼</p>
+    <div class="pc-role"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> 기획 · 디자인 · 퍼블리싱 전 과정</div>
+    <div class="pc-metrics"><div><b class="mono">2</b><span>제작 화면</span></div><div><b class="mono">IA</b><span>재설계</span></div><div><b class="mono">100%</b><span>단독 진행</span></div></div>
+    <div class="chips"><span class="chip">Figma</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">jQuery</span></div>
+    <div class="pc-more">자세히 보기 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></div>
+  </div>
+</a></div>
+</div></section>
+
 <section class="band" id="trouble"><div class="wrap">
   <div class="sec-head rv"><div class="sec-tag">Problem Solving</div>
     <h2>문제 해결 사례</h2>
@@ -740,7 +779,7 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
     <a class="btn" href="https://github.com/soeun-yu" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg> github.com/soeun-yu</a>
     <a class="btn" href="#top"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 맨 위로</a>
   </div>
-  <div class="meta-note">K-Digital Convergence 기초반 · AI 심화반 · 프로젝트 7건</div>
+  <div class="meta-note">웹 디자이너 과정 · Java 기반 풀스택 웹 개발자 과정 · AI 기반 서비스 개발 심화 과정 · 프로젝트 9건</div>
 </div></footer>
 </main>
 <div class="lb" id="lb"><button class="x" aria-label="닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
