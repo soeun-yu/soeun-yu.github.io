@@ -1,0 +1,2185 @@
+{
+  "_comment": "현재 index.html / projects/*.html 에서 추출한 포트폴리오 원고. 화면 구조는 포함하지 않음.",
+  "site": {
+    "title": "유소은 · AI 서비스 풀스택 개발자 포트폴리오",
+    "description": "ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다",
+    "author": "유소은 · Portfolio"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "휴먼AI교육센터 · AI 기반 서비스 개발 심화 과정 (2026.06 ~ 2026.08) · Java 기반 풀스택 웹 개발자 과정 (2025.12 ~ 2026.06) · 웹 디자이너 과정 (2025.06 ~ 2025.08)",
+      "name": "유소은 Portfolio",
+      "role": "AI 서비스 풀스택 개발자",
+      "tagline": "ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다",
+      "summary3": [
+        "React · Spring Boot · FastAPI로 AI 웹 서비스를 개발했습니다.",
+        "팀 프로젝트 WorkFlow AI에서 대시보드를 맡아 화면 9개, REST API 10개, ML 모델 2종을 구현했습니다. ML 서버 호출이 실패할 때의 처리 방식도 모델별로 정했습니다.",
+        "ML · DL · LLM 개인 프로젝트 3건을 진행했습니다. 회화 사조 분류 모델의 테스트 정확도는 94.5%(5-fold 평균 84.8%)였고, 작품 벡터 42,500건으로 유사도 검색을 구성했습니다."
+      ],
+      "summary": "웹 디자이너 과정에서 웹사이트 리뉴얼 2건으로 UI/UX와 퍼블리싱을 익힌 뒤, Java 기반 풀스택 웹 개발자 과정에서 Java 웹 팀 프로젝트 3건(JSP → React+Express → Spring Boot)을, AI 기반 서비스 개발 심화 과정에서 ML·DL·LLM 개인 프로젝트 3건과 팀 프로젝트 1건을 진행했습니다.",
+      "mockCaption": "workflow-ai · /dashboard",
+      "floats": [
+        "담당 화면 9",
+        "ML 서빙 FastAPI",
+        "REST API 10"
+      ],
+      "cta": [
+        {
+          "label": "대표 프로젝트",
+          "url": "#part-ai"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/soeun-yu"
+        },
+        {
+          "label": "문제 해결 사례",
+          "url": "#trouble"
+        }
+      ]
+    },
+    "stats": [
+      {
+        "value": "9건",
+        "label": "진행한 프로젝트",
+        "sub": "팀 4 · 개인 5"
+      },
+      {
+        "value": "9화면",
+        "label": "WorkFlow AI 담당 화면",
+        "sub": "REST API 10개 · ML 모델 2종"
+      },
+      {
+        "value": "94.5%",
+        "label": "사조 분류 테스트 정확도",
+        "sub": "ResNet-50 · 테스트 200장"
+      },
+      {
+        "value": "42,500건",
+        "label": "작품 특징 벡터",
+        "sub": "CLIP 임베딩 · ChromaDB"
+      }
+    ],
+    "strengths": {
+      "tag": "Experience",
+      "title": "주로 맡은 역할",
+      "desc": "프로젝트를 진행하며 여러 번 맡았던 역할을 네 가지로 정리했습니다. 구체적인 구현 내용은 아래 프로젝트 상세 페이지에 있습니다.",
+      "items": [
+        {
+          "no": "01",
+          "title": "화면 · API · DB · ML 구현",
+          "desc": "WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 10개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.",
+          "proof": [
+            "화면 9",
+            "API 10",
+            "테이블 9",
+            "ML 모델 2"
+          ]
+        },
+        {
+          "no": "02",
+          "title": "학습한 모델을 API로 서빙",
+          "desc": "학습한 모델을 FastAPI로 서빙했습니다. 예측 이력 테이블, 호출 타임아웃, 장애 시 폴백 정책을 모델의 저장 방식에 따라 다르게 정해, ML 서버가 응답하지 않을 때도 대시보드 화면은 표시되도록 했습니다.",
+          "proof": [
+            "FastAPI 서빙",
+            "예측 이력 적재",
+            "실패 정책 분리",
+            "LangSmith 트레이싱"
+          ]
+        },
+        {
+          "no": "03",
+          "title": "원인을 확인한 뒤 수정",
+          "desc": "반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄였습니다. 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다. 모델 성능은 K-fold로 다시 검증해 테스트 정확도와 함께 기록했습니다.",
+          "proof": [
+            "N+1 제거",
+            "알고리즘 교체",
+            "K-fold 검증",
+            "Failure Case 분석"
+          ]
+        },
+        {
+          "no": "04",
+          "title": "팀 공통 구조와 문서 작업",
+          "desc": "6명이 같은 구조에서 작업할 수 있도록 프로젝트 계층 구조를 제안했고, 팀 표준으로 확정되었습니다. 착수보고서의 개발 수행 계획(역할 분담·일정·협업 방식)을 작성했습니다.",
+          "proof": [
+            "프로젝트 계층 구조",
+            "착수보고서 작성",
+            "PR 자동 점검",
+            "Jira · Slack 연동"
+          ]
+        }
+      ]
+    },
+    "journey": {
+      "tag": "Growth Path",
+      "title": "프로젝트 진행 순서",
+      "desc": "2025.06부터 2026.08까지 진행한 프로젝트 9건입니다. 웹 디자인에서 시작해 JSP, React + Express, Spring Boot, AI 서비스 순으로 사용 기술이 바뀌었습니다.",
+      "items": [
+        {
+          "track": "web",
+          "date": "2025.06",
+          "title": "오늘의집 리뉴얼",
+          "note": "SWOT · 페르소나 분석\n메인 · 커뮤니티 IA 재설계"
+        },
+        {
+          "track": "web",
+          "date": "2025.07",
+          "title": "할리스커피 리뉴얼",
+          "note": "브랜드 아이덴티티 개편\njQuery 동적 인터랙션"
+        },
+        {
+          "track": "kdc",
+          "date": "2026.02",
+          "title": "너와 함께",
+          "note": "JSP · Servlet · JDBC\n세션 인증과 마이페이지 담당"
+        },
+        {
+          "track": "kdc",
+          "date": "2026.03",
+          "title": "PPAP",
+          "note": "React · Express · MongoDB\nJWT 인증과 회원 도메인 담당"
+        },
+        {
+          "track": "kdc",
+          "date": "2026.05",
+          "title": "3H Furniture",
+          "note": "Spring Boot · Security · JPA\n메인 페이지와 OAuth2 인증 담당"
+        },
+        {
+          "track": "ai",
+          "date": "2026.06",
+          "title": "게이머 고립도 예측",
+          "note": "회귀 모델 5종 비교\nR² 0.801"
+        },
+        {
+          "track": "ai",
+          "date": "2026.06",
+          "title": "artClassifier",
+          "note": "전이학습 3종 비교 · MLflow\n테스트 정확도 94.5%"
+        },
+        {
+          "track": "ai",
+          "date": "2026.07",
+          "title": "Curatio",
+          "note": "CLIP · ChromaDB · RAG\n작품 벡터 42,500건 구축"
+        },
+        {
+          "track": "ai",
+          "date": "2026.07",
+          "title": "WorkFlow AI",
+          "note": "React · Spring Boot · FastAPI\n화면 9 · API 10 · ML 2종"
+        }
+      ]
+    },
+    "stack": {
+      "tag": "Tech Stack",
+      "title": "기술 스택",
+      "desc": "각 기술로 무엇을 만들었는지와, 어떤 프로젝트에서 썼는지를 함께 적었습니다.",
+      "categories": [
+        {
+          "name": "Frontend",
+          "items": [
+            {
+              "name": "React",
+              "use": "대시보드 9화면 · 매물 탐색 · 가구몰 메인",
+              "projects": "WorkFlow AI · PPAP · 3H"
+            },
+            {
+              "name": "TypeScript",
+              "use": "대시보드 응답 DTO 타입 정의",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "Vite",
+              "use": "프론트엔드 개발 서버 · 빌드",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "Tailwind CSS",
+              "use": "대시보드 카드·배지 반응형 레이아웃",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "MUI · Bootstrap",
+              "use": "매물 입력 폼 · 가구몰 화면 컴포넌트",
+              "projects": "PPAP · 3H"
+            },
+            {
+              "name": "Recharts",
+              "use": "진행률·업무량 차트",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "JSP · JSTL",
+              "use": "회원 인증 · 마이페이지 화면",
+              "projects": "너와 함께"
+            }
+          ]
+        },
+        {
+          "name": "Backend",
+          "items": [
+            {
+              "name": "Java",
+              "use": "대시보드 집계 로직 · 회원 도메인",
+              "projects": "WorkFlow AI · 3H"
+            },
+            {
+              "name": "Spring Boot",
+              "use": "대시보드 API 10개 · 상품 조회 API",
+              "projects": "WorkFlow AI · 3H"
+            },
+            {
+              "name": "Spring Security",
+              "use": "OAuth2 소셜 로그인 · 권한 분리",
+              "projects": "3H Furniture"
+            },
+            {
+              "name": "Spring Data JPA",
+              "use": "업무·마일스톤·회원 테이블 접근",
+              "projects": "3H · WorkFlow AI"
+            },
+            {
+              "name": "JWT",
+              "use": "토큰 인증 · 보호 라우트 검증",
+              "projects": "PPAP · WorkFlow AI"
+            },
+            {
+              "name": "Node.js · Express",
+              "use": "매물·회원·상담 예약 REST API",
+              "projects": "PPAP"
+            },
+            {
+              "name": "Servlet · JDBC",
+              "use": "세션 로그인 · DTO/DAO 계층",
+              "projects": "너와 함께"
+            }
+          ]
+        },
+        {
+          "name": "AI / ML",
+          "items": [
+            {
+              "name": "Python",
+              "use": "ML 모델 학습 · FastAPI 서빙",
+              "projects": "전 AI 프로젝트"
+            },
+            {
+              "name": "FastAPI",
+              "use": "지연 위험도·업무 편중 예측 서버",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "TensorFlow · Keras",
+              "use": "회화 사조 분류 모델 학습",
+              "projects": "artClassifier"
+            },
+            {
+              "name": "scikit-learn",
+              "use": "회귀 모델 비교 · MAD 이상치 탐지",
+              "projects": "ML 개인 · WorkFlow AI"
+            },
+            {
+              "name": "MLflow",
+              "use": "전이학습 8개 trial 기록·비교",
+              "projects": "artClassifier"
+            },
+            {
+              "name": "CLIP · ChromaDB",
+              "use": "작품 벡터 42,500건 유사도 검색",
+              "projects": "Curatio"
+            },
+            {
+              "name": "Ollama · Gemma",
+              "use": "RAG 근거 기반 도슨트 해설 생성",
+              "projects": "Curatio"
+            },
+            {
+              "name": "LangSmith",
+              "use": "업무 편중 계산 흐름 트레이싱",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "Streamlit",
+              "use": "사조 예측·작품 추천 프로토타입",
+              "projects": "artClassifier · Curatio"
+            }
+          ]
+        },
+        {
+          "name": "Database",
+          "items": [
+            {
+              "name": "PostgreSQL · Supabase",
+              "use": "업무·활동·ML 예측 이력 저장",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "Oracle DB",
+              "use": "상품·회원·게시판 테이블",
+              "projects": "3H(Cloud ADB) · 너와 함께"
+            },
+            {
+              "name": "MongoDB · Mongoose",
+              "use": "매물·이미지·상담 예약 스키마",
+              "projects": "PPAP"
+            },
+            {
+              "name": "pgvector",
+              "use": "문서 임베딩 저장 · 유사도 검색",
+              "projects": "WorkFlow AI"
+            }
+          ]
+        },
+        {
+          "name": "협업 · 품질",
+          "items": [
+            {
+              "name": "Git · GitHub",
+              "use": "feature 브랜치 전략 · PR 리뷰",
+              "projects": "전 프로젝트"
+            },
+            {
+              "name": "GitHub Actions",
+              "use": "PR 자동 점검 · 팀 알림",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "Vitest",
+              "use": "대시보드 훅·유틸 회귀 테스트",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "JUnit · MockMvc",
+              "use": "집계 API · 권한 검증 테스트",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "pytest",
+              "use": "ML 예측 로직 테스트",
+              "projects": "WorkFlow AI"
+            },
+            {
+              "name": "Jira · Discord · Slack",
+              "use": "이슈 추적 · PR 알림봇 연동",
+              "projects": "WorkFlow AI"
+            }
+          ]
+        }
+      ]
+    },
+    "parts": [
+      {
+        "id": "part-ai",
+        "label": "PART 1",
+        "title": "AI 기반 서비스 개발 심화 과정",
+        "desc": "ML · DL · LLM 개인 프로젝트 3건과, 이를 서비스 기능으로 구현한 팀 프로젝트 1건입니다.",
+        "period": "2026.06 ~ 2026.08 · 프로젝트 4건",
+        "cards": [
+          {
+            "href": "projects/workflow.html",
+            "thumb": "assets/workflow/dashboard-home.jpg",
+            "badges": [
+              "대표 프로젝트",
+              "팀"
+            ],
+            "title": "WorkFlow AI",
+            "sub": "팀 프로젝트의 회의·업무·기록·평가를 AI가 하나의 흐름으로 잇는 협업 플랫폼",
+            "role": "FS-3 대시보드 담당 — 화면 · API · DB · ML",
+            "metrics": [
+              {
+                "value": "9",
+                "label": "담당 화면"
+              },
+              {
+                "value": "10",
+                "label": "REST API"
+              },
+              {
+                "value": "2",
+                "label": "ML 모델"
+              }
+            ],
+            "tech": [
+              "React 19",
+              "TypeScript",
+              "Vite",
+              "Tailwind CSS 4",
+              "Recharts"
+            ]
+          },
+          {
+            "href": "projects/curatio.html",
+            "thumb": "assets/curatio/hero.jpg",
+            "badges": [
+              "개인",
+              "ML + DL + LLM"
+            ],
+            "title": "Curatio",
+            "sub": "회화 이미지를 벡터로 검색하고, LLM이 도슨트처럼 해설해 주는 미술 감상 서비스",
+            "role": "기획 · 데이터 구축 · 모델 · 앱 구현",
+            "metrics": [
+              {
+                "value": "42,500",
+                "label": "작품 특징 벡터"
+              },
+              {
+                "value": "6,299",
+                "label": "RAG 문서"
+              },
+              {
+                "value": "13",
+                "label": "미술 사조"
+              }
+            ],
+            "tech": [
+              "Python",
+              "CLIP ViT-B/32",
+              "ChromaDB",
+              "SentenceTransformer",
+              "Ollama · Gemma"
+            ]
+          },
+          {
+            "href": "projects/artclassifier.html",
+            "thumb": "assets/artclassifier/streamlit-predict.png",
+            "badges": [
+              "개인",
+              "DL"
+            ],
+            "title": "artClassifier",
+            "sub": "회화 이미지를 5개 미술 사조로 분류하는 딥러닝 모델",
+            "role": "데이터 분석 · 전처리 · 모델 학습 · 튜닝 · 프로토타입",
+            "metrics": [
+              {
+                "value": "94.5%",
+                "label": "테스트 정확도"
+              },
+              {
+                "value": "0.945",
+                "label": "weighted F1"
+              },
+              {
+                "value": "8",
+                "label": "MLflow 실험"
+              }
+            ],
+            "tech": [
+              "Python",
+              "TensorFlow · Keras",
+              "ResNet50",
+              "EfficientNetB0",
+              "MLflow"
+            ]
+          },
+          {
+            "href": "projects/gaming-ml.html",
+            "thumb": null,
+            "badges": [
+              "개인",
+              "ML"
+            ],
+            "title": "온라인 게이머 사회적 고립도 예측",
+            "sub": "게이머의 행동·수면·정서 데이터로 사회적 고립 수준을 예측하는 회귀 모델",
+            "role": "EDA · 전처리 · 모델 비교 · 평가",
+            "metrics": [
+              {
+                "value": "0.801",
+                "label": "R² (최고)"
+              },
+              {
+                "value": "0.961",
+                "label": "RMSE"
+              },
+              {
+                "value": "26",
+                "label": "입력 피처"
+              }
+            ],
+            "tech": [
+              "Python",
+              "pandas",
+              "scikit-learn",
+              "XGBoost",
+              "matplotlib"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "part-kdc",
+        "label": "PART 2",
+        "title": "Java 기반 풀스택 웹 개발자 과정",
+        "desc": "팀 프로젝트 3건입니다. 서버 렌더링, 프론트/백엔드 분리, 프레임워크 기반 인증 순으로 구성이 바뀌었습니다.",
+        "period": "2025.12 ~ 2026.06 · 프로젝트 3건",
+        "cards": [
+          {
+            "href": "projects/furniture.html",
+            "thumb": "assets/furniture/main.jpg",
+            "badges": [
+              "3차 · Final",
+              "팀"
+            ],
+            "title": "3H Furniture",
+            "sub": "Spring Boot + React 기반 가구 이커머스 반응형 웹",
+            "role": "메인 페이지 · 회원/인증 도메인 · 상품 검색",
+            "metrics": [
+              {
+                "value": "3",
+                "label": "소셜 로그인"
+              },
+              {
+                "value": "3",
+                "label": "복합 검색 조건"
+              },
+              {
+                "value": "6",
+                "label": "담당 화면"
+              }
+            ],
+            "tech": [
+              "Java",
+              "Spring Boot",
+              "Spring Security",
+              "Spring Data JPA",
+              "JWT"
+            ]
+          },
+          {
+            "href": "projects/ppap.html",
+            "thumb": "assets/ppap/login-design.png",
+            "badges": [
+              "2차 · Advanced",
+              "팀"
+            ],
+            "title": "PPAP",
+            "sub": "네이버 지도와 공공 실거래 데이터를 결합한 부동산 매물 탐색 플랫폼",
+            "role": "인증 · 회원 도메인",
+            "metrics": [
+              {
+                "value": "JWT",
+                "label": "인증 방식"
+              },
+              {
+                "value": "2",
+                "label": "회원 유형"
+              }
+            ],
+            "tech": [
+              "React",
+              "React Router",
+              "MUI",
+              "Naver Maps API",
+              "Chart.js"
+            ]
+          },
+          {
+            "href": "projects/nextto.html",
+            "thumb": "assets/nextto/login.jpg",
+            "badges": [
+              "1차",
+              "팀"
+            ],
+            "title": "너와 함께",
+            "sub": "반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)",
+            "role": "회원 인증 · 마이페이지 · 반려견 정보 관리",
+            "metrics": [
+              {
+                "value": "5",
+                "label": "담당 화면"
+              },
+              {
+                "value": "MVC",
+                "label": "아키텍처"
+              },
+              {
+                "value": "2",
+                "label": "계정 종류"
+              }
+            ],
+            "tech": [
+              "Java",
+              "JSP",
+              "Servlet",
+              "JDBC",
+              "Oracle DB"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "part-web",
+        "label": "PART 3",
+        "title": "웹 디자이너 과정",
+        "desc": "개발 과정을 수강하기 전에 진행한 브랜드 웹사이트 리뉴얼 2건입니다. SWOT·페르소나 분석으로 문제를 정리하고 정보 구조(IA)를 다시 구성한 뒤, HTML·CSS·jQuery로 퍼블리싱했습니다.",
+        "period": "2025.06 ~ 2025.08 · 개인 프로젝트 2건",
+        "cards": [
+          {
+            "href": "projects/hollys.html",
+            "thumb": "assets/webdesign/hollys-main.jpg",
+            "badges": [
+              "리뉴얼 02",
+              "개인"
+            ],
+            "title": "할리스커피",
+            "sub": "브랜드 아이덴티티를 반영해 정보 구조와 인터랙션을 개편한 리뉴얼",
+            "role": "기획 · 디자인 · 퍼블리싱",
+            "metrics": [
+              {
+                "value": "3",
+                "label": "제작 화면"
+              },
+              {
+                "value": "SWOT",
+                "label": "브랜드 분석"
+              },
+              {
+                "value": "약 3주",
+                "label": "작업 기간"
+              }
+            ],
+            "tech": [
+              "Photoshop",
+              "Illustrator",
+              "HTML5",
+              "CSS3",
+              "jQuery"
+            ]
+          },
+          {
+            "href": "projects/ohouse.html",
+            "thumb": "assets/webdesign/ohouse-main.jpg",
+            "badges": [
+              "리뉴얼 01",
+              "개인"
+            ],
+            "title": "오늘의집",
+            "sub": "복잡한 정보 구조와 사용성 문제를 개선한 인테리어 플랫폼 UI/UX 리뉴얼",
+            "role": "기획 · 디자인 · 퍼블리싱",
+            "metrics": [
+              {
+                "value": "2",
+                "label": "제작 화면"
+              },
+              {
+                "value": "IA",
+                "label": "재설계"
+              },
+              {
+                "value": "약 2주",
+                "label": "작업 기간"
+              }
+            ],
+            "tech": [
+              "Figma",
+              "Photoshop",
+              "Illustrator",
+              "HTML5",
+              "CSS3",
+              "jQuery"
+            ]
+          }
+        ]
+      }
+    ],
+    "problemSolving": {
+      "tag": "Problem Solving",
+      "title": "문제 해결 사례",
+      "desc": "WorkFlow AI 개발 중 확인한 문제와 처리 과정입니다. 문제 · 분석 · 행동 · 결과 순으로 정리했습니다.",
+      "cases": [
+        {
+          "project": "WorkFlow AI",
+          "title": "대시보드 요약 API의 N+1 조회",
+          "problem": "대시보드 요약 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어났습니다.",
+          "analysis": "화면에 필요한 값은 담당자 이름뿐이라 연관관계 매핑을 새로 추가할 필요는 없다고 보았습니다. 조회할 id를 먼저 모아 한 번에 가져오면 기존 도메인 구조를 바꾸지 않고 왕복 횟수만 줄일 수 있다고 판단했습니다.",
+          "action": "업무·활동·팀원에서 필요한 user id를 Set으로 모아 findAllById 한 번으로 조회하고, 같은 방식을 조회 메서드 5곳에 적용했습니다. 읽기 메서드에는 @Transactional(readOnly = true)를 붙였습니다.",
+          "result": "업무·활동 건수와 관계없이 사용자 조회가 1회로 고정됩니다.",
+          "tags": [
+            "N+1",
+            "JPA",
+            "성능"
+          ]
+        },
+        {
+          "project": "WorkFlow AI",
+          "title": "소규모 팀에서 Isolation Forest의 과부하 미탐지",
+          "problem": "업무 편중 이상치 탐지에서, 팀원이 5~9명일 때 과부하가 분명한 팀원을 이상치로 잡지 못하는 사례가 있었습니다.",
+          "analysis": "Isolation Forest는 표본이 적으면 트리 분할이 불안정해집니다. 팀 규모는 바꿀 수 없으므로 표본 수에 맞는 방식이 필요하다고 보고, 소표본에서 안정적인 MAD 기반 Modified Z-score를 검토했습니다(임계값 3.5는 Iglewicz & Hoaglin 권장치).",
+          "action": "팀원 수가 15명 미만이면 MAD 기반으로 전환하도록 분기했습니다. MAD가 0이면 표준편차로 대체하고, 표준편차도 0인 피처는 구분에 쓸 수 없어 판단에서 제외했습니다.",
+          "result": "팀원 5~9명 규모에서도 과부하 팀원이 이상치로 탐지됩니다.",
+          "tags": [
+            "이상치 탐지",
+            "통계",
+            "MAD"
+          ]
+        },
+        {
+          "project": "WorkFlow AI",
+          "title": "ML 서버 장애 시 모델별 처리 방식",
+          "problem": "ML 서버 두 대(지연 위험도·업무 편중)의 호출 실패를 같은 방식으로 처리하면, 한쪽은 화면 표시가 불필요하게 실패하고 다른 쪽은 잘못된 값을 보여주게 됩니다.",
+          "analysis": "두 모델은 저장 방식이 다릅니다. 지연 위험도는 ml_predictions에 이력이 남아 이전 값을 쓸 수 있고, 업무 편중은 호출 시점마다 계산하는 값이라 캐시가 없습니다. 그래서 실패 처리도 저장 방식에 맞춰 나누기로 했습니다.",
+          "action": "지연 위험도는 예외를 처리하고 마지막으로 저장된 예측을 응답하도록, 업무 편중은 503 WORKLOAD_SCORE_UNAVAILABLE을 반환하도록 나눴습니다. 연결 3초·읽기 30초 타임아웃도 설정했습니다.",
+          "result": "ML 서버가 응답하지 않아도 대시보드 화면은 표시되고, 값을 불러오지 못한 카드는 \"0명\" 대신 \"…명\"으로 표시됩니다.",
+          "tags": [
+            "장애 대응",
+            "API 설계",
+            "FastAPI"
+          ]
+        },
+        {
+          "project": "WorkFlow AI",
+          "title": "브라우저 타임존에 따른 날짜 표시 차이",
+          "problem": "완료일과 경과일이 사용자의 브라우저 타임존에 따라 하루씩 다르게 표시됐습니다.",
+          "analysis": "백엔드 JVM은 Asia/Seoul로 고정돼 있지만 LocalDateTime 문자열에는 오프셋이 없어, 브라우저가 로컬 타임존으로 해석한 것이 원인이었습니다. 응답 포맷을 바꾸면 다른 담당자의 API에도 영향이 있어 프론트엔드의 파싱 단계에서 보정하기로 했습니다.",
+          "action": "오프셋이 없는 문자열에 +09:00을 붙여 파싱하고, \"3일 이상 미업데이트\" 같은 임계값 판정용(경과 시간 기준)과 화면 라벨용(날짜 경계 기준)을 별도 함수로 나눴습니다.",
+          "result": "브라우저 타임존과 관계없이 모든 사용자에게 같은 날짜가 표시됩니다.",
+          "tags": [
+            "타임존",
+            "KST",
+            "날짜 처리"
+          ]
+        },
+        {
+          "project": "WorkFlow AI",
+          "title": "Spring Boot → FastAPI 호출 실패",
+          "problem": "Spring Boot에서 내부 ML 서버(FastAPI)로 보낸 요청이 응답을 받지 못하고 실패했습니다.",
+          "analysis": "JDK HttpClient가 plaintext(http://) 대상에도 기본적으로 HTTP/2(h2c) 업그레이드를 시도하는데, uvicorn이 이를 지원하지 않는 것이 원인이었습니다. 서버를 바꾸는 것보다 클라이언트에서 프로토콜을 지정하는 편이 영향 범위가 작다고 판단했습니다.",
+          "action": "HttpClient에 HTTP_1_1을 지정하고, 응답을 무한정 기다리지 않도록 연결 3초·읽기 30초 타임아웃을 설정했습니다.",
+          "result": "내부 ML 서버 호출이 정상적으로 응답을 받고, 장애 시 대기 시간은 최대 30초로 제한됩니다.",
+          "tags": [
+            "HTTP/2",
+            "타임아웃",
+            "서비스 연동"
+          ]
+        }
+      ]
+    },
+    "closing": {
+      "tag": "How I Work",
+      "title": "작업 방식",
+      "desc": "프로젝트를 진행하면서 반복해서 적용한 방식입니다.",
+      "items": [
+        {
+          "title": "원인 확인 후 수정",
+          "desc": "성능 문제는 쿼리 왕복 횟수로, 모델 문제는 지표별 수치로 원인을 먼저 확인한 뒤 코드를 수정했습니다."
+        },
+        {
+          "title": "실패 상황 처리",
+          "desc": "ML 서버 장애, 응답 지연, 화면 전환 중 도착한 이전 응답을 각각 다르게 처리했고, 실패했을 때 화면에 표시할 내용도 정했습니다."
+        },
+        {
+          "title": "결정 이유 기록",
+          "desc": "선택한 이유를 코드 주석과 개발 보고서에 기록해 팀에 공유했습니다. 같은 내용을 다시 조사하지 않기 위해서였습니다."
+        }
+      ]
+    },
+    "footer": {
+      "name": "유소은",
+      "sub": "AI 서비스 풀스택 개발자 · ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다",
+      "links": [
+        {
+          "label": "github.com/soeun-yu",
+          "url": "https://github.com/soeun-yu"
+        },
+        {
+          "label": "맨 위로",
+          "url": "#top"
+        }
+      ],
+      "note": "웹 디자이너 과정 · Java 기반 풀스택 웹 개발자 과정 · AI 기반 서비스 개발 심화 과정 · 프로젝트 9건"
+    }
+  },
+  "projects": {
+    "artclassifier": {
+      "pageTitle": "artClassifier — 유소은 포트폴리오",
+      "pageDescription": "회화 이미지를 5개 미술 사조로 분류하는 딥러닝 모델",
+      "part": "PART 1 · AI 기반 서비스 개발 심화 과정",
+      "badges": [
+        "개인",
+        "DL"
+      ],
+      "title": "artClassifier",
+      "sub": "회화 이미지를 5개 미술 사조로 분류하는 딥러닝 모델",
+      "period": "2026.06.25 ~ 07.03",
+      "team": "개인",
+      "role": "데이터 분석 · 전처리 · 모델 학습 · 튜닝 · 프로토타입",
+      "metrics": [
+        {
+          "value": "94.5%",
+          "label": "테스트 정확도"
+        },
+        {
+          "value": "0.945",
+          "label": "weighted F1"
+        },
+        {
+          "value": "8",
+          "label": "MLflow 실험"
+        },
+        {
+          "value": "84.8%",
+          "label": "5-fold 평균"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "데이터 구성",
+              "desc": "WikiArt 5개 사조 1,000장을 224×224 RGB로 정규화하고 train 800 / validation 200으로 8:2 분할. TensorFlow Dataset으로 shuffle · batch · prefetch 파이프라인 구성"
+            },
+            {
+              "title": "증강 기법 선정 기준",
+              "desc": "사조를 판단하는 단서(색감·질감·구도)를 훼손하지 않는 범위로 제한 — Flip, Rotation 0.06, Zoom 0.12, Translation 0.05, Contrast 0.12"
+            },
+            {
+              "title": "모델 3종 비교",
+              "desc": "Custom CNN(scratch) · EfficientNetB0 · ResNet50을 MLflow로 총 8개 trial 기록. validation loss 최소화와 accuracy 최대화를 동시에 기준으로 사용"
+            },
+            {
+              "title": "최종 모델 검증",
+              "desc": "ResNet-50 선정 후 테스트 200장 기준 Accuracy 0.9450 / weighted F1 0.9446. 5-fold 교차검증으로 일반화 성능(평균 0.8480)을 별도 확인"
+            },
+            {
+              "title": "Failure Case Analysis",
+              "desc": "Art Nouveau의 장식적 곡선이 Japanese Art·Western Medieval과 겹치고, Baroque의 어두운 톤이 Realism과 혼동되는 패턴을 확인. 클래스별 데이터 확충과 Grad-CAM 분석을 개선안으로 제시"
+            },
+            {
+              "title": "Streamlit 프로토타입",
+              "desc": "이미지를 업로드하면 예측 사조와 클래스별 확률 그래프를 보여주는 앱으로 배포"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "미술관 아카이브 분류, 작품 검색, 유사 작품 추천에 활용할 수 있는 모델입니다. 이후 Curatio에서 특징 추출기로 재사용했습니다."
+        },
+        {
+          "type": "charts",
+          "label": "수치",
+          "items": [
+            {
+              "title": "모델별 Validation Accuracy",
+              "type": "bars",
+              "rows": [
+                {
+                  "label": "Custom CNN (scratch)",
+                  "value": "61.0%",
+                  "pct": 61.0,
+                  "highlight": false
+                },
+                {
+                  "label": "EfficientNetB0 (전이학습)",
+                  "value": "83.5%",
+                  "pct": 83.5,
+                  "highlight": false
+                },
+                {
+                  "label": "ResNet50 (전이학습)",
+                  "value": "84.5%",
+                  "pct": 84.5,
+                  "highlight": true
+                }
+              ]
+            },
+            {
+              "title": "최종 ResNet-50 혼동행렬 (테스트 200장)",
+              "type": "matrix",
+              "columns": [
+                "Art Nouveau",
+                "Baroque",
+                "Japanese Art",
+                "Realism",
+                "W. Medieval"
+              ],
+              "rows": [
+                {
+                  "label": "Art Nouveau",
+                  "values": [
+                    35,
+                    1,
+                    2,
+                    1,
+                    1
+                  ]
+                },
+                {
+                  "label": "Baroque",
+                  "values": [
+                    0,
+                    37,
+                    0,
+                    1,
+                    2
+                  ]
+                },
+                {
+                  "label": "Japanese Art",
+                  "values": [
+                    0,
+                    0,
+                    39,
+                    0,
+                    1
+                  ]
+                },
+                {
+                  "label": "Realism",
+                  "values": [
+                    2,
+                    0,
+                    0,
+                    38,
+                    0
+                  ]
+                },
+                {
+                  "label": "W. Medieval",
+                  "values": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    40
+                  ]
+                }
+              ],
+              "note": "세로 = 실제 사조, 가로 = 예측 사조 · 대각선 189 / 전체 200건 정답 (94.5%)"
+            },
+            {
+              "title": "5-fold 교차검증 Accuracy",
+              "type": "bars",
+              "rows": [
+                {
+                  "label": "Fold 1",
+                  "value": "83.0%",
+                  "pct": 83.0,
+                  "highlight": false
+                },
+                {
+                  "label": "Fold 2",
+                  "value": "83.5%",
+                  "pct": 83.5,
+                  "highlight": false
+                },
+                {
+                  "label": "Fold 3",
+                  "value": "87.5%",
+                  "pct": 87.5,
+                  "highlight": true
+                },
+                {
+                  "label": "Fold 4",
+                  "value": "85.0%",
+                  "pct": 85.0,
+                  "highlight": false
+                },
+                {
+                  "label": "Fold 5",
+                  "value": "85.0%",
+                  "pct": 85.0,
+                  "highlight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "Python",
+            "TensorFlow · Keras",
+            "ResNet50",
+            "EfficientNetB0",
+            "MLflow",
+            "scikit-learn",
+            "Streamlit"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "구현 화면",
+          "items": [
+            {
+              "src": "../assets/artclassifier/streamlit-predict.png",
+              "caption": "Streamlit 예측 화면 — 사조별 확률 출력"
+            },
+            {
+              "src": "../assets/artclassifier/training-curves.png",
+              "caption": "모델별 Loss / Accuracy 학습 곡선"
+            },
+            {
+              "src": "../assets/artclassifier/dataset-samples.png",
+              "caption": "학습 데이터 샘플"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": "학습 곡선 · 학습 데이터",
+          "label": "학습 곡선",
+          "body": "MLflow로 기록한 8개 trial 중 3개의 epoch별 train / validation Loss · Accuracy 곡선입니다.",
+          "items": [
+            {
+              "name": "07_resnet_dense128_dropout03",
+              "desc": "ResNet50 · Dense 128 · Dropout 0.3. train과 validation 곡선이 비슷한 간격을 유지하며 함께 개선됨"
+            },
+            {
+              "name": "08_resnet_unfreeze20_dense256",
+              "desc": "ResNet50 · unfreeze 20 · Dense 256. 7 epoch 이후 train loss는 계속 줄지만 validation loss는 더 줄지 않음"
+            },
+            {
+              "name": "04_efficientnet_dense128",
+              "desc": "EfficientNetB0 · Dense 128. 5~6 epoch 이후 validation accuracy가 거의 오르지 않음"
+            }
+          ],
+          "note": "최종 모델은 validation loss 최소화와 accuracy 최대화를 함께 기준으로 삼아 ResNet50으로 선정했습니다."
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "학습 데이터",
+          "body": "WikiArt 5개 사조 이미지 1,000장을 224×224 RGB로 정규화하고 train 800 / validation 200으로 8:2 분할했습니다.",
+          "items": [
+            {
+              "name": "분류 대상 사조",
+              "desc": "Art Nouveau · Baroque · Japanese Art · Realism · Western Medieval"
+            },
+            {
+              "name": "입력 파이프라인",
+              "desc": "TensorFlow Dataset으로 shuffle · batch · prefetch 구성"
+            },
+            {
+              "name": "데이터 증강",
+              "desc": "Flip, Rotation 0.06, Zoom 0.12, Translation 0.05, Contrast 0.12. 사조를 판단하는 단서(색감 · 질감 · 구도)를 훼손하지 않는 범위로 제한"
+            }
+          ]
+        }
+      ]
+    },
+    "curatio": {
+      "pageTitle": "Curatio — 유소은 포트폴리오",
+      "pageDescription": "회화 이미지를 벡터로 검색하고, LLM이 도슨트처럼 해설해 주는 미술 감상 서비스",
+      "part": "PART 1 · AI 기반 서비스 개발 심화 과정",
+      "badges": [
+        "개인",
+        "ML + DL + LLM"
+      ],
+      "title": "Curatio",
+      "sub": "회화 이미지를 벡터로 검색하고, LLM이 도슨트처럼 해설해 주는 미술 감상 서비스",
+      "period": "2026.07.03 ~ 07.07 (5일)",
+      "team": "개인",
+      "role": "기획 · 데이터 구축 · 모델 · 앱 구현",
+      "metrics": [
+        {
+          "value": "42,500",
+          "label": "작품 특징 벡터"
+        },
+        {
+          "value": "6,299",
+          "label": "RAG 문서"
+        },
+        {
+          "value": "13",
+          "label": "미술 사조"
+        },
+        {
+          "value": "128",
+          "label": "벡터 차원"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "분위기 기반 추천 (ML)",
+              "desc": "감성 키워드를 미술 사조에 매핑하고, 사조별 벡터 centroid를 query로 코사인 유사도 Top-K 검색. 별도의 자연어 임베딩 학습 없이 추천 근거를 제시할 수 있음"
+            },
+            {
+              "title": "이미지 유사도 검색 (DL)",
+              "desc": "CLIP ViT-B/32로 업로드 이미지를 임베딩해 ChromaDB에서 시각적으로 가까운 작품을 조회. 기존 분류 모델을 '특징 추출기'로 재활용"
+            },
+            {
+              "title": "텍스트 RAG",
+              "desc": "국립현대미술관·서울시립미술관 소장품 메타데이터를 다국어 임베딩으로 인덱싱해 해설의 근거로 사용"
+            },
+            {
+              "title": "LLM 큐레이션",
+              "desc": "Ollama Gemma가 RAG 근거 + 이미지 후보 + 외부 검색을 종합해 한국어 해설 생성. \"근거가 부족하면 확인 불가라고 답하라\"는 프롬프트로 근거 없는 답변을 줄이도록 구성"
+            },
+            {
+              "title": "장애 대응 설계",
+              "desc": "인덱스 없으면 실행 안내 표시, LLM 실패 시 규칙 기반 fallback, 외부 검색은 API 실패 시 HTML 파싱으로 이중화"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "기존 분류 모델을 특징 추출기로 재활용하고, 검색 결과를 ML 추천과 LLM 해설에 연결했습니다. 한 사용자 흐름 안에서 ML·DL·LLM을 함께 사용합니다."
+        },
+        {
+          "type": "charts",
+          "label": "수치",
+          "items": [
+            {
+              "title": "ML + DL + LLM 통합 파이프라인",
+              "type": "pipeline",
+              "steps": [
+                {
+                  "label": "이미지 / 키워드",
+                  "sub": "사용자 입력"
+                },
+                {
+                  "label": "CLIP · centroid",
+                  "sub": "임베딩 · 대표 벡터"
+                },
+                {
+                  "label": "ChromaDB",
+                  "sub": "유사도 Top-K"
+                },
+                {
+                  "label": "텍스트 RAG",
+                  "sub": "소장품 근거 검색"
+                },
+                {
+                  "label": "Gemma",
+                  "sub": "한국어 도슨트 해설"
+                }
+              ]
+            },
+            {
+              "title": "구축한 벡터 인덱스",
+              "type": "bars",
+              "rows": [
+                {
+                  "label": "작품 특징 벡터 (WikiArt)",
+                  "value": "42,500건",
+                  "pct": 100.0,
+                  "highlight": false
+                },
+                {
+                  "label": "텍스트 RAG 문서 (MMCA·SeMA)",
+                  "value": "6,299건",
+                  "pct": 14.8,
+                  "highlight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "Python",
+            "CLIP ViT-B/32",
+            "ChromaDB",
+            "SentenceTransformer",
+            "Ollama · Gemma",
+            "RAG",
+            "Streamlit",
+            "DuckDuckGo API"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "구현 화면",
+          "items": [
+            {
+              "src": "../assets/curatio/hero.jpg",
+              "caption": "서비스 대표 이미지 — 요하네스 페르메이르, 회화의 기술 (1666)"
+            },
+            {
+              "src": "../assets/curatio/gallery.jpg",
+              "caption": "도슨트 해설 컨셉"
+            }
+          ]
+        }
+      ]
+    },
+    "furniture": {
+      "pageTitle": "3H Furniture — 유소은 포트폴리오",
+      "pageDescription": "Spring Boot + React 기반 가구 이커머스 반응형 웹",
+      "part": "PART 2 · Java 기반 풀스택 웹 개발자 과정",
+      "badges": [
+        "3차 · Final",
+        "팀"
+      ],
+      "title": "3H Furniture",
+      "sub": "Spring Boot + React 기반 가구 이커머스 반응형 웹",
+      "period": "2026.05 ~ 2026.06",
+      "team": "CMYK팀",
+      "role": "메인 페이지 · 회원/인증 도메인 · 상품 검색",
+      "metrics": [
+        {
+          "value": "3",
+          "label": "소셜 로그인"
+        },
+        {
+          "value": "3",
+          "label": "복합 검색 조건"
+        },
+        {
+          "value": "6",
+          "label": "담당 화면"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "메인 페이지",
+              "desc": "메인 배너, 카테고리 네비게이션, 베스트셀러·신상품 섹션, 상품 리스트를 컴포넌트로 분리해 구현. 헤더·푸터 공통 레이아웃과 MainController · MainService로 상품 조회 API를 함께 담당"
+            },
+            {
+              "title": "상품 검색 필터",
+              "desc": "카테고리 · 색상 · 가격대를 조합한 복합 조건 검색. 가격은 슬라이더로 최솟값/최댓값 범위를 지정. SearchContext로 헤더 검색창과 결과 화면의 조건을 공유"
+            },
+            {
+              "title": "OAuth2 소셜 로그인",
+              "desc": "구글 · 네이버 · 카카오 계정으로 가입. LoginSuccessHandler와 OAuth2DTO · SessionMember로 소셜 계정을 일반 회원과 동일한 권한 체계에 통합해, 구매·장바구니·북마크를 그대로 사용"
+            },
+            {
+              "title": "Spring Security 인증·인가",
+              "desc": "SecurityConfig · MemberSecurityService · LoginFailHandler를 구성하고 MemberRole enum으로 권한을 분리"
+            },
+            {
+              "title": "회원가입 · 계정 찾기",
+              "desc": "회원가입 · 아이디 찾기 · 비밀번호 재설정 화면과 각 결과 화면 구현"
+            },
+            {
+              "title": "북마크(찜)",
+              "desc": "BookmarksService · Repository · DTO로 관심 상품 저장/조회 기능 구현"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "메인 페이지, 회원 가입·로그인, 상품 검색 기능을 맡았습니다. 서비스에 처음 들어와 상품을 찾기까지 거치는 화면입니다."
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "Java",
+            "Spring Boot",
+            "Spring Security",
+            "Spring Data JPA",
+            "JWT",
+            "OAuth2",
+            "React",
+            "React Context",
+            "CSS3 · Bootstrap",
+            "Oracle Cloud ADB"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "구현 화면",
+          "items": [
+            {
+              "src": "../assets/furniture/main.jpg",
+              "caption": "메인 페이지"
+            },
+            {
+              "src": "../assets/furniture/search-filter.png",
+              "caption": "검색 필터 — 카테고리·색상·가격 슬라이더"
+            },
+            {
+              "src": "../assets/furniture/search-result.jpg",
+              "caption": "검색 결과"
+            },
+            {
+              "src": "../assets/furniture/login.jpg",
+              "caption": "로그인 — OAuth2 소셜 로그인"
+            },
+            {
+              "src": "../assets/furniture/signup.jpg",
+              "caption": "회원가입"
+            },
+            {
+              "src": "../assets/furniture/find-id.jpg",
+              "caption": "아이디 찾기"
+            }
+          ]
+        }
+      ]
+    },
+    "gaming-ml": {
+      "pageTitle": "온라인 게이머 사회적 고립도 예측 — 유소은 포트폴리오",
+      "pageDescription": "게이머의 행동·수면·정서 데이터로 사회적 고립 수준을 예측하는 회귀 모델",
+      "part": "PART 1 · AI 기반 서비스 개발 심화 과정",
+      "badges": [
+        "개인",
+        "ML"
+      ],
+      "title": "온라인 게이머 사회적 고립도 예측",
+      "sub": "게이머의 행동·수면·정서 데이터로 사회적 고립 수준을 예측하는 회귀 모델",
+      "period": "2026.06.22 ~ 06.25",
+      "team": "개인",
+      "role": "EDA · 전처리 · 모델 비교 · 평가",
+      "metrics": [
+        {
+          "value": "0.801",
+          "label": "R² (최고)"
+        },
+        {
+          "value": "0.961",
+          "label": "RMSE"
+        },
+        {
+          "value": "26",
+          "label": "입력 피처"
+        },
+        {
+          "value": "5",
+          "label": "비교 모델"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "피처 설계",
+              "desc": "일일 게임 시간, 수면 시간·질, 학업/업무 성과, 기분 변화, 금단 증상, 대면 사회활동 시간 등 26개 변수로 사회적 고립도(1~10)를 예측"
+            },
+            {
+              "title": "전처리",
+              "desc": "범주형(gender, headset_usage)과 연속형 변수를 분리해 인코딩·스케일링 경로를 다르게 구성"
+            },
+            {
+              "title": "5개 모델 비교",
+              "desc": "다중선형회귀 · Elastic Net · 결정트리 · 랜덤포레스트 · XGBoost를 동일 조건에서 학습하고 RMSE · MAE · R²로 비교"
+            },
+            {
+              "title": "지표별 최적 모델 비교",
+              "desc": "R² 기준으로는 다중선형회귀(0.8011), MAE 기준으로는 랜덤포레스트(0.7615)가 가장 높았습니다. 두 결과를 모두 기록하고 어떤 지표를 기준으로 선택했는지 명시했습니다"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "게임 이용 패턴 데이터로 사회적 고립 수준을 예측하는 회귀 모델입니다. 데이터 확인부터 모델 평가까지 개인 프로젝트로 진행했습니다."
+        },
+        {
+          "type": "charts",
+          "label": "수치",
+          "items": [
+            {
+              "title": "모델별 R² (높을수록 좋음)",
+              "type": "bars",
+              "rows": [
+                {
+                  "label": "다중선형회귀",
+                  "value": "0.801",
+                  "pct": 80.1,
+                  "highlight": true
+                },
+                {
+                  "label": "랜덤포레스트",
+                  "value": "0.794",
+                  "pct": 79.4,
+                  "highlight": false
+                },
+                {
+                  "label": "Elastic Net",
+                  "value": "0.790",
+                  "pct": 79.0,
+                  "highlight": false
+                },
+                {
+                  "label": "XGBoost",
+                  "value": "0.762",
+                  "pct": 76.2,
+                  "highlight": false
+                },
+                {
+                  "label": "결정트리",
+                  "value": "0.590",
+                  "pct": 59.0,
+                  "highlight": false
+                }
+              ]
+            },
+            {
+              "title": "모델별 RMSE (낮을수록 좋음)",
+              "type": "bars",
+              "rows": [
+                {
+                  "label": "다중선형회귀",
+                  "value": "0.961",
+                  "pct": 64.1,
+                  "highlight": true
+                },
+                {
+                  "label": "랜덤포레스트",
+                  "value": "0.979",
+                  "pct": 65.3,
+                  "highlight": false
+                },
+                {
+                  "label": "Elastic Net",
+                  "value": "0.986",
+                  "pct": 65.8,
+                  "highlight": false
+                },
+                {
+                  "label": "XGBoost",
+                  "value": "1.051",
+                  "pct": 70.1,
+                  "highlight": false
+                },
+                {
+                  "label": "결정트리",
+                  "value": "1.379",
+                  "pct": 92.0,
+                  "highlight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "Python",
+            "pandas",
+            "scikit-learn",
+            "XGBoost",
+            "matplotlib",
+            "Jupyter"
+          ]
+        }
+      ]
+    },
+    "hollys": {
+      "pageTitle": "할리스커피 — 유소은 포트폴리오",
+      "pageDescription": "브랜드 아이덴티티를 반영해 정보 구조와 인터랙션을 개편한 리뉴얼",
+      "part": "PART 3 · 웹 디자이너 과정",
+      "badges": [
+        "리뉴얼 02",
+        "개인"
+      ],
+      "title": "할리스커피",
+      "sub": "브랜드 아이덴티티를 반영해 정보 구조와 인터랙션을 개편한 리뉴얼",
+      "period": "2025.07.14 ~ 2025.08.04 (약 3주)",
+      "team": "개인 프로젝트",
+      "role": "기획 · 디자인 · 퍼블리싱",
+      "metrics": [
+        {
+          "value": "3",
+          "label": "제작 화면"
+        },
+        {
+          "value": "SWOT",
+          "label": "브랜드 분석"
+        },
+        {
+          "value": "약 3주",
+          "label": "작업 기간"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "note",
+          "heading": "프로젝트 개요",
+          "label": "배경",
+          "body": "커피 브랜드 ‘할리스’의 홈페이지를 SWOT·페르소나 기법으로 분석했습니다. 메뉴와 매장 정보가 브랜드 색 없이 나열되어 있다는 점을 주요 문제로 정리했고, 브랜드 색과 서체를 화면 전반에 적용하면서 정보 구조와 동적 요소를 함께 수정했습니다."
+        },
+        {
+          "type": "features",
+          "label": "개선 포인트",
+          "items": [
+            {
+              "title": "브랜드 아이덴티티 기반 UI/UX 개편",
+              "desc": "브랜드 레드와 딥브라운을 축으로 색·타이포·여백 규칙을 다시 정했습니다. 전용 서체(카페24 단정해, 에스코어드림)를 적용해 화면 전체의 인상을 통일했습니다."
+            },
+            {
+              "title": "정보 구조(IA) 재설계",
+              "desc": "메뉴·매장·브랜드로 흩어져 있던 항목을 사용자가 찾는 순서대로 다시 묶었습니다. 메뉴는 커피·음료·푸드·굿즈로 나누고, 매장은 지도와 목록을 한 화면에서 오갈 수 있게 했습니다."
+            },
+            {
+              "title": "동적 인터랙션 적용",
+              "desc": "메인 슬라이드, 메뉴 카테고리 탭, 매장찾기 지도 마커를 jQuery로 구현했습니다. 클릭 대상과 현재 상태가 항상 눈에 보이도록 활성 표시를 붙였습니다."
+            },
+            {
+              "title": "사용자 맞춤형 기능 추가",
+              "desc": "매장 상세 조건(드라이브스루·주차·24시간 등)으로 걸러 볼 수 있는 필터와, 관심 매장을 상단에 고정하는 흐름을 기획했습니다."
+            }
+          ]
+        },
+        {
+          "type": "tech",
+          "label": "작업 툴",
+          "items": [
+            "PowerPoint",
+            "Photoshop",
+            "Illustrator",
+            "HTML5",
+            "CSS3",
+            "jQuery"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "주요 비주얼",
+          "items": [
+            {
+              "src": "../assets/webdesign/hollys-main.jpg",
+              "caption": "메인 페이지 — 시즌 음료 슬라이드와 브랜드 약속·이벤트 섹션"
+            },
+            {
+              "src": "../assets/webdesign/hollys-menu.jpg",
+              "caption": "메뉴 · 커피 — 카테고리 탭으로 전환되는 음료 목록"
+            },
+            {
+              "src": "../assets/webdesign/hollys-store.jpg",
+              "caption": "매장찾기 — 지도 마커와 매장 목록을 한 화면에서 확인"
+            }
+          ]
+        },
+        {
+          "type": "links",
+          "label": "직접 확인하기",
+          "items": [
+            {
+              "label": "실제 사이트 보기",
+              "url": "https://plainaube.dothome.co.kr/hollys/index.html"
+            },
+            {
+              "label": "PDF 포트폴리오",
+              "url": "../assets/webdesign/HTML%20기반_할리스커피%20홈페이지%20리뉴얼.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "nextto": {
+      "pageTitle": "너와 함께 — 유소은 포트폴리오",
+      "pageDescription": "반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)",
+      "part": "PART 2 · Java 기반 풀스택 웹 개발자 과정",
+      "badges": [
+        "1차",
+        "팀"
+      ],
+      "title": "너와 함께",
+      "sub": "반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)",
+      "period": "2026.02 ~ 2026.03 (약 2주)",
+      "team": "무조건동의팀",
+      "role": "회원 인증 · 마이페이지 · 반려견 정보 관리",
+      "metrics": [
+        {
+          "value": "5",
+          "label": "담당 화면"
+        },
+        {
+          "value": "MVC",
+          "label": "아키텍처"
+        },
+        {
+          "value": "2",
+          "label": "계정 종류"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "로그인 · 회원가입",
+              "desc": "세션 기반 로그인과 입력값 검증을 포함한 가입 플로우. 일반 사용자 계정과 관리자 계정을 구분해 처리"
+            },
+            {
+              "title": "마이페이지",
+              "desc": "프로필 사진·닉네임·아이디를 묶은 사이드바와 연락처 영역, 등록한 반려견 정보 카드를 함께 배치. 홈 > 마이페이지 > 내 정보 관리 순의 브레드크럼으로 현재 위치를 표시"
+            },
+            {
+              "title": "내 정보 관리 · 수정",
+              "desc": "조회 화면과 수정 화면을 분리해 구현. 수정 화면에는 비밀번호 재확인 입력과 프로필 사진 교체(파일 업로드), 생년월일 선택기를 배치하고 계정 종류는 읽기 전용으로 고정"
+            },
+            {
+              "title": "반려견 정보 등록 · 수정",
+              "desc": "대표 반려견 1마리의 이름·견종·나이·몸무게·성별·중성화 여부·건강 상태·사진을 등록하고 수정. 마이페이지에서는 태그 형태로 요약 표시"
+            },
+            {
+              "title": "회원 탈퇴",
+              "desc": "수정 화면에서 탈퇴를 처리해 계정과 관련 정보를 정리"
+            },
+            {
+              "title": "DTO · DAO 패턴",
+              "desc": "Model 2(MVC) 구조에서 데이터 접근 계층을 분리하는 기본 패턴을 적용"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "법률·의학·뉴스·상식 게시판과 자유게시판은 로그인 후 사용합니다. 회원 인증과 개인·반려견 정보 관리 기능을 맡았습니다."
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "Java",
+            "JSP",
+            "Servlet",
+            "JDBC",
+            "Oracle DB",
+            "HTML · CSS · JavaScript"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "구현 화면",
+          "items": [
+            {
+              "src": "../assets/nextto/login.jpg",
+              "caption": "로그인"
+            },
+            {
+              "src": "../assets/nextto/register.jpg",
+              "caption": "회원가입"
+            },
+            {
+              "src": "../assets/nextto/mypage.jpg",
+              "caption": "마이페이지 — 프로필 사이드바와 반려견 정보 카드"
+            },
+            {
+              "src": "../assets/nextto/privacy.jpg",
+              "caption": "내 정보 관리 — 회원정보 조회"
+            },
+            {
+              "src": "../assets/nextto/privacy-edit.jpg",
+              "caption": "내 정보 수정 — 비밀번호 재확인 · 사진 교체 · 반려견 정보 수정"
+            }
+          ]
+        }
+      ]
+    },
+    "ohouse": {
+      "pageTitle": "오늘의집 — 유소은 포트폴리오",
+      "pageDescription": "복잡한 정보 구조와 사용성 문제를 개선한 인테리어 플랫폼 UI/UX 리뉴얼",
+      "part": "PART 3 · 웹 디자이너 과정",
+      "badges": [
+        "리뉴얼 01",
+        "개인"
+      ],
+      "title": "오늘의집",
+      "sub": "복잡한 정보 구조와 사용성 문제를 개선한 인테리어 플랫폼 UI/UX 리뉴얼",
+      "period": "2025.06.02 ~ 2025.06.16 (약 2주)",
+      "team": "개인 프로젝트",
+      "role": "기획 · 디자인 · 퍼블리싱",
+      "metrics": [
+        {
+          "value": "2",
+          "label": "제작 화면"
+        },
+        {
+          "value": "IA",
+          "label": "정보구조 재설계"
+        },
+        {
+          "value": "약 2주",
+          "label": "작업 기간"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "note",
+          "heading": "프로젝트 개요",
+          "label": "배경",
+          "body": "인테리어 플랫폼 ‘오늘의집’은 커뮤니티·쇼핑·전문가 서비스가 한 화면에 모여 있어, 처음 방문한 사용자가 무엇부터 봐야 할지 알기 어렵다고 보았습니다. SWOT으로 강점과 약점을 정리하고 페르소나의 사용 흐름을 따라가 본 뒤, 메인 화면의 정보 우선순위를 다시 정했습니다."
+        },
+        {
+          "type": "features",
+          "label": "개선 포인트",
+          "items": [
+            {
+              "title": "메인 레이아웃 최적화",
+              "desc": "첫 화면에서 무엇을 먼저 보여줄지 기준을 정하고 블록 순서를 재배치했습니다. 통합검색에는 실시간 검색어를 접었다 펼치는 인터랙션을 붙여, 평소에는 공간을 차지하지 않도록 했습니다."
+            },
+            {
+              "title": "커뮤니티(집들이) 게시판 개선",
+              "desc": "사진이 주인공인 게시판이라 카드 비율과 여백을 먼저 맞추고, 정렬·필터 조건을 상단에 모았습니다. 페이지 이동은 번호 · 이전/다음 · 직접 입력 세 가지를 함께 제공합니다."
+            },
+            {
+              "title": "브랜드관 상품 상세페이지 기획",
+              "desc": "단독 상품을 소개하는 상세 페이지의 구성을 새로 짰습니다. 상품 정보와 후기, 연관 상품이 이어지는 순서를 정하고 각 구간의 역할을 나눴습니다."
+            }
+          ]
+        },
+        {
+          "type": "tech",
+          "label": "작업 툴",
+          "items": [
+            "Figma",
+            "Photoshop",
+            "Illustrator",
+            "HTML5",
+            "CSS3",
+            "jQuery"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "주요 비주얼",
+          "items": [
+            {
+              "src": "../assets/webdesign/ohouse-main.jpg",
+              "caption": "메인 페이지 — 통합검색·실시간 검색어부터 커뮤니티·쇼핑 블록까지 전체 흐름"
+            },
+            {
+              "src": "../assets/webdesign/ohouse-housewarming.jpg",
+              "caption": "커뮤니티(집들이) 게시판 — 카드형 목록과 정렬·필터, 페이지 네비게이션"
+            }
+          ]
+        },
+        {
+          "type": "links",
+          "label": "직접 확인하기",
+          "items": [
+            {
+              "label": "실제 사이트 보기",
+              "url": "https://plainaube.dothome.co.kr/ohouse/index.html"
+            },
+            {
+              "label": "PDF 포트폴리오",
+              "url": "../assets/webdesign/HTML%20기반_오늘의집%20홈페이지%20리뉴얼.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    "ppap": {
+      "pageTitle": "PPAP — 유소은 포트폴리오",
+      "pageDescription": "네이버 지도와 공공 실거래 데이터를 결합한 부동산 매물 탐색 플랫폼",
+      "part": "PART 2 · Java 기반 풀스택 웹 개발자 과정",
+      "badges": [
+        "2차 · Advanced",
+        "팀"
+      ],
+      "title": "PPAP",
+      "sub": "네이버 지도와 공공 실거래 데이터를 결합한 부동산 매물 탐색 플랫폼",
+      "period": "2026.03 ~ 2026.04",
+      "team": "PPAP팀",
+      "role": "인증 · 회원 도메인",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/Polalise/Advanced_project"
+        }
+      ],
+      "metrics": [
+        {
+          "value": "JWT",
+          "label": "인증 방식"
+        },
+        {
+          "value": "2",
+          "label": "회원 유형"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "JWT 기반 로그인·인증",
+              "desc": "authMiddleware로 토큰을 검증하고 보호 라우트를 분리. AuthContext로 프론트 인증 상태를 관리"
+            },
+            {
+              "title": "회원 도메인",
+              "desc": "회원가입 · 정보 수정 · 탈퇴와 개별/전체 회원정보 조회 API 구현"
+            },
+            {
+              "title": "일반 / 사업자 회원 구분",
+              "desc": "회원 유형에 따라 매물 등록·상담 관리 권한이 나뉘도록 회원 구분 기준을 설계"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "일반 회원과 사업자 회원을 구분하는 인증 · 회원 구조를 맡았습니다. 매물 등록과 상담 관리 권한이 이 구분에 따라 나뉩니다."
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "React",
+            "React Router",
+            "MUI",
+            "Naver Maps API",
+            "Chart.js",
+            "Node.js",
+            "Express",
+            "MongoDB",
+            "JWT"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "구현 화면",
+          "items": [
+            {
+              "src": "../assets/ppap/login-design.png",
+              "caption": "로그인·회원가입 화면 설계"
+            },
+            {
+              "src": "../assets/ppap/detail.jpg",
+              "caption": "매물 상세 정보"
+            },
+            {
+              "src": "../assets/ppap/sitemap.png",
+              "caption": "페이지 구조도"
+            }
+          ]
+        }
+      ]
+    },
+    "workflow": {
+      "pageTitle": "WorkFlow AI — 유소은 포트폴리오",
+      "pageDescription": "팀 프로젝트의 회의·업무·기록·평가를 AI가 하나의 흐름으로 잇는 협업 플랫폼",
+      "part": "PART 1 · AI 기반 서비스 개발 심화 과정",
+      "badges": [
+        "대표 프로젝트",
+        "팀"
+      ],
+      "title": "WorkFlow AI",
+      "sub": "팀 프로젝트의 회의·업무·기록·평가를 AI가 하나의 흐름으로 잇는 협업 플랫폼",
+      "period": "2026.07.09 ~ 08.07 (4주)",
+      "team": "3팀 · 6인 기능 오너제",
+      "role": "FS-3 대시보드 담당 — 화면 · API · DB · ML",
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/rhantj/work-flow"
+        },
+        {
+          "label": "시연 영상",
+          "url": "https://youtu.be/D5jy2qbKh7g"
+        }
+      ],
+      "metrics": [
+        {
+          "value": "9",
+          "label": "담당 화면"
+        },
+        {
+          "value": "10",
+          "label": "REST API"
+        },
+        {
+          "value": "2",
+          "label": "ML 모델"
+        },
+        {
+          "value": "5",
+          "label": "데이터 훅"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "features",
+          "label": "담당 기능",
+          "items": [
+            {
+              "title": "대시보드 홈 + 상세 8화면",
+              "desc": "진행률 분석 · 블로커 관리 · 마감 임박 · 팀원별 업무량 · 최근 활동 · 전체 업무 관리를 역할(팀장/팀원)에 따라 다르게 노출"
+            },
+            {
+              "title": "Spring Boot 집계 API 10개",
+              "desc": "tasks · milestones · activities · ml_predictions 4개 테이블을 한 번에 집계. @PreAuthorize로 팀장 전용(마일스톤 CRUD)과 멤버 권한을 분리"
+            },
+            {
+              "title": "ML 지연 위험도 예측",
+              "desc": "업무별 피처 약 35개를 생성해 정상/주의/위험 3분류. 체크리스트 진행률과 경과 시간의 차이(imbalance index)로 경과 시간 대비 진행이 더딘 업무를 탐지"
+            },
+            {
+              "title": "ML 업무 편중 점수",
+              "desc": "팀 규모에 따라 MAD 기반 Modified Z-score와 Isolation Forest를 자동 전환. 0~100 점수와 함께 과부하 의심 / 배정량 불균형을 구분해 판정"
+            },
+            {
+              "title": "자동 갱신 처리",
+              "desc": "15초마다 시그니처만 비교해 실제 변경이 있을 때만 갱신하므로 스크롤·선택 상태가 유지됨. 요청 세대 번호로 프로젝트 전환 시 도착한 이전 응답(stale)을 폐기"
+            },
+            {
+              "title": "프로젝트 계층 구조 · 착수보고서",
+              "desc": "프로젝트 계층 구조 초안을 제안했고, Frontend(React) / Backend(Spring Boot) / AI Backend(FastAPI) 3계층 대분류가 팀 표준으로 확정됨. 착수보고서 「개발 수행 계획」 작성"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "서비스 내 위치",
+          "body": "회의록 AI가 만든 To-Do가 업무보드에 반영되면, 대시보드는 그 업무·활동 데이터로 지연 위험도와 업무 편중도를 계산해 보여줍니다. 다른 기능에서 쌓인 데이터를 조회·분석하는 부분입니다."
+        },
+        {
+          "type": "charts",
+          "label": "수치",
+          "items": [
+            {
+              "title": "대시보드 데이터 흐름",
+              "type": "pipeline",
+              "steps": [
+                {
+                  "label": "React 대시보드",
+                  "sub": "9개 화면 · 훅 5개"
+                },
+                {
+                  "label": "Spring Boot",
+                  "sub": "집계 · 권한 검증"
+                },
+                {
+                  "label": "PostgreSQL",
+                  "sub": "9개 테이블"
+                },
+                {
+                  "label": "FastAPI × 2",
+                  "sub": "지연 위험 · 업무 편중"
+                }
+              ]
+            },
+            {
+              "title": "담당 산출물",
+              "type": "bars",
+              "rows": [
+                {
+                  "label": "Spring REST API",
+                  "value": "10개",
+                  "pct": 100.0,
+                  "highlight": false
+                },
+                {
+                  "label": "React 화면",
+                  "value": "9개",
+                  "pct": 90.0,
+                  "highlight": false
+                },
+                {
+                  "label": "공통 팝업·차트",
+                  "value": "6개",
+                  "pct": 60.0,
+                  "highlight": false
+                },
+                {
+                  "label": "데이터 훅",
+                  "value": "5개",
+                  "pct": 50.0,
+                  "highlight": false
+                },
+                {
+                  "label": "FastAPI ML 모델",
+                  "value": "2개",
+                  "pct": 20.0,
+                  "highlight": false
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "tech",
+          "label": "사용 기술",
+          "items": [
+            "React 19",
+            "TypeScript",
+            "Vite",
+            "Tailwind CSS 4",
+            "Recharts",
+            "Spring Boot 3.5",
+            "Java 21",
+            "Spring Data JPA",
+            "FastAPI",
+            "scikit-learn",
+            "PostgreSQL · Supabase",
+            "LangSmith",
+            "GitHub Actions",
+            "Jira · Slack · Discord"
+          ]
+        },
+        {
+          "type": "shots",
+          "label": "구현 화면",
+          "items": [
+            {
+              "src": "../assets/workflow/dashboard-home.jpg",
+              "caption": "대시보드 홈 — 핵심 지표·진행률·마감 임박·최근 활동"
+            },
+            {
+              "src": "../assets/workflow/workload.png",
+              "caption": "팀원별 업무량 — ML 업무 편중 점수와 과부하 판정"
+            },
+            {
+              "src": "../assets/workflow/blockers.jpg",
+              "caption": "블로커 관리 — 심각도·지속시간·지연 위험 분석"
+            },
+            {
+              "src": "../assets/workflow/progress.png",
+              "caption": "전체 진행률 — 일정 대비 진행률과 마일스톤 관리"
+            },
+            {
+              "src": "../assets/workflow/all-tasks.jpg",
+              "caption": "전체 업무 관리 — 검색·필터·인라인 상태 변경"
+            },
+            {
+              "src": "../assets/workflow/architecture.png",
+              "caption": "전체 시스템 구성도"
+            },
+            {
+              "src": "../assets/workflow/folder-frontend.png",
+              "caption": "프로젝트 계층 구조 — Frontend (React)"
+            },
+            {
+              "src": "../assets/workflow/folder-spring.png",
+              "caption": "프로젝트 계층 구조 — Backend (Spring Boot)"
+            },
+            {
+              "src": "../assets/workflow/folder-fastapi.png",
+              "caption": "프로젝트 계층 구조 — AI Backend (FastAPI)"
+            }
+          ]
+        },
+        {
+          "type": "note",
+          "heading": "시스템 구성도 · 프로젝트 계층 구조",
+          "label": "시스템 구성도",
+          "body": "OCI Ubuntu 24.04 VM 한 대에서 컨테이너로 운영합니다.",
+          "items": [
+            {
+              "name": "Frontend",
+              "desc": "Nginx · React(TypeScript · Vite · Tailwind). /api/* 요청을 Backend로 리버스 프록시"
+            },
+            {
+              "name": "Backend API",
+              "desc": "Spring Boot 3.5 · Java 21, JWT · RBAC. 인증 · 업무보드 · 회의록 · 대시보드 API, FastAPI 호출"
+            },
+            {
+              "name": "AI/ML Backend",
+              "desc": "FastAPI · Python 3.12. 회의록 분석 · To-Do 후보 추출, RAG Assistant, 지연 위험도 분석"
+            },
+            {
+              "name": "데이터 · 큐",
+              "desc": "PostgreSQL + pgvector(업무 · 회의록 · RAG 벡터), Redis(회의록 분석 비동기 큐)"
+            },
+            {
+              "name": "외부 연동 · 배포",
+              "desc": "GitHub Actions(main push → OCI 배포), Let's Encrypt, Google OAuth, Supabase Storage, Hugging Face"
+            }
+          ],
+          "note": "담당 범위: 대시보드 API(Backend API), 지연 위험도 · 업무 편중 모델(AI/ML Backend)"
+        },
+        {
+          "type": "note",
+          "heading": null,
+          "label": "프로젝트 계층 구조",
+          "body": "6명이 같은 구조에서 작업할 수 있도록 초안을 제안했고, Frontend / Backend / AI Backend 3계층 대분류가 팀 표준으로 확정되었습니다.",
+          "items": [
+            {
+              "name": "Frontend (React)",
+              "desc": "기능 폴더(components · hooks · libs · screen)와 공통 global 폴더(api · store · styles 등)로 구분"
+            },
+            {
+              "name": "Backend (Spring Boot)",
+              "desc": "기능 폴더 안에 entity → repository → service → DTO → controller, 공통은 global(config · queue · client · error)"
+            },
+            {
+              "name": "AI Backend (FastAPI)",
+              "desc": "공통 설정 core(config · logging · exceptions · middleware · queue)와 모델별 폴더(routers · schema · services)"
+            }
+          ]
+        }
+      ],
+      "problemSolving": {
+        "title": "이 프로젝트에서 해결한 문제",
+        "desc": "개발 중 확인한 문제와 처리 과정입니다. 문제 · 분석 · 행동 · 결과 순으로 정리했습니다.",
+        "cases": [
+          {
+            "title": "대시보드 요약 API의 N+1 조회",
+            "problem": "대시보드 요약 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어났습니다.",
+            "analysis": "화면에 필요한 값은 담당자 이름뿐이라 연관관계 매핑을 새로 추가할 필요는 없다고 보았습니다. 조회할 id를 먼저 모아 한 번에 가져오면 기존 도메인 구조를 바꾸지 않고 왕복 횟수만 줄일 수 있다고 판단했습니다.",
+            "action": "업무·활동·팀원에서 필요한 user id를 Set으로 모아 findAllById 한 번으로 조회하고, 같은 방식을 조회 메서드 5곳에 적용했습니다. 읽기 메서드에는 @Transactional(readOnly = true)를 붙였습니다.",
+            "result": "업무·활동 건수와 관계없이 사용자 조회가 1회로 고정됩니다.",
+            "tags": [
+              "N+1",
+              "JPA",
+              "성능"
+            ]
+          },
+          {
+            "title": "소규모 팀에서 Isolation Forest의 과부하 미탐지",
+            "problem": "업무 편중 이상치 탐지에서, 팀원이 5~9명일 때 과부하가 분명한 팀원을 이상치로 잡지 못하는 사례가 있었습니다.",
+            "analysis": "Isolation Forest는 표본이 적으면 트리 분할이 불안정해집니다. 팀 규모는 바꿀 수 없으므로 표본 수에 맞는 방식이 필요하다고 보고, 소표본에서 안정적인 MAD 기반 Modified Z-score를 검토했습니다(임계값 3.5는 Iglewicz & Hoaglin 권장치).",
+            "action": "팀원 수가 15명 미만이면 MAD 기반으로 전환하도록 분기했습니다. MAD가 0이면 표준편차로 대체하고, 표준편차도 0인 피처는 구분에 쓸 수 없어 판단에서 제외했습니다.",
+            "result": "팀원 5~9명 규모에서도 과부하 팀원이 이상치로 탐지됩니다.",
+            "tags": [
+              "이상치 탐지",
+              "통계",
+              "MAD"
+            ]
+          },
+          {
+            "title": "ML 서버 장애 시 모델별 처리 방식",
+            "problem": "ML 서버 두 대(지연 위험도·업무 편중)의 호출 실패를 같은 방식으로 처리하면, 한쪽은 화면 표시가 불필요하게 실패하고 다른 쪽은 잘못된 값을 보여주게 됩니다.",
+            "analysis": "두 모델은 저장 방식이 다릅니다. 지연 위험도는 ml_predictions에 이력이 남아 이전 값을 쓸 수 있고, 업무 편중은 호출 시점마다 계산하는 값이라 캐시가 없습니다. 그래서 실패 처리도 저장 방식에 맞춰 나누기로 했습니다.",
+            "action": "지연 위험도는 예외를 처리하고 마지막으로 저장된 예측을 응답하도록, 업무 편중은 503 WORKLOAD_SCORE_UNAVAILABLE을 반환하도록 나눴습니다. 연결 3초·읽기 30초 타임아웃도 설정했습니다.",
+            "result": "ML 서버가 응답하지 않아도 대시보드 화면은 표시되고, 값을 불러오지 못한 카드는 \"0명\" 대신 \"…명\"으로 표시됩니다.",
+            "tags": [
+              "장애 대응",
+              "API 설계",
+              "FastAPI"
+            ]
+          },
+          {
+            "title": "브라우저 타임존에 따른 날짜 표시 차이",
+            "problem": "완료일과 경과일이 사용자의 브라우저 타임존에 따라 하루씩 다르게 표시됐습니다.",
+            "analysis": "백엔드 JVM은 Asia/Seoul로 고정돼 있지만 LocalDateTime 문자열에는 오프셋이 없어, 브라우저가 로컬 타임존으로 해석한 것이 원인이었습니다. 응답 포맷을 바꾸면 다른 담당자의 API에도 영향이 있어 프론트엔드의 파싱 단계에서 보정하기로 했습니다.",
+            "action": "오프셋이 없는 문자열에 +09:00을 붙여 파싱하고, \"3일 이상 미업데이트\" 같은 임계값 판정용(경과 시간 기준)과 화면 라벨용(날짜 경계 기준)을 별도 함수로 나눴습니다.",
+            "result": "브라우저 타임존과 관계없이 모든 사용자에게 같은 날짜가 표시됩니다.",
+            "tags": [
+              "타임존",
+              "KST",
+              "날짜 처리"
+            ]
+          },
+          {
+            "title": "Spring Boot → FastAPI 호출 실패",
+            "problem": "Spring Boot에서 내부 ML 서버(FastAPI)로 보낸 요청이 응답을 받지 못하고 실패했습니다.",
+            "analysis": "JDK HttpClient가 plaintext(http://) 대상에도 기본적으로 HTTP/2(h2c) 업그레이드를 시도하는데, uvicorn이 이를 지원하지 않는 것이 원인이었습니다. 서버를 바꾸는 것보다 클라이언트에서 프로토콜을 지정하는 편이 영향 범위가 작다고 판단했습니다.",
+            "action": "HttpClient에 HTTP_1_1을 지정하고, 응답을 무한정 기다리지 않도록 연결 3초·읽기 30초 타임아웃을 설정했습니다.",
+            "result": "내부 ML 서버 호출이 정상적으로 응답을 받고, 장애 시 대기 시간은 최대 30초로 제한됩니다.",
+            "tags": [
+              "HTTP/2",
+              "타임아웃",
+              "서비스 연동"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
