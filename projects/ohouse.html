@@ -14,7 +14,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="오늘의집 — 유소은 포트폴리오">
   <meta name="twitter:description" content="복잡한 정보 구조와 사용성 문제를 개선한 인테리어 플랫폼 UI/UX 리뉴얼">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#127912;</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'&gt;&lt;text%20y='.9em'%20font-size='90'&gt;%F0%9F%8E%A8&lt;/text&gt;&lt;/svg&gt;">
   <style>
 /* ===== 1. 디자인 토큰 =============================================== */
 :root{
@@ -55,7 +55,6 @@
     --shadow:0 16px 40px -24px rgba(20,26,60,.35);
   }
 }
-
 /* ===== 2. 기본 ====================================================== */
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:78px}
@@ -558,22 +557,16 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
     .bar-fill{width:var(--pct)!important}</style></noscript>
 </head>
 <body>
-<template id="ic-sun"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></template>
-<template id="ic-moon"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg></template>
+<template id="ic-sun"><svg width="17" height="17" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></template>
+<template id="ic-moon"><svg width="17" height="17" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg></template>
 
 <div class="progress" id="progress"></div>
+
 <nav class="nav" id="nav"><div class="nav-in">
-  <a class="nav-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 포트폴리오</a>
-  <div class="nav-cur">너와 함께</div>
-  <div class="nav-links">
-    <button class="icon-btn" id="theme" aria-label="테마 전환"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
-  </div>
-</div></nav>
-<nav class="nav" id="nav"><div class="nav-in">
-  <a class="nav-back" href="../index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 포트폴리오</a>
+  <a class="nav-back" href="../index.html"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg> 포트폴리오</a>
   <div class="nav-cur">오늘의집</div>
   <div class="nav-links">
-    <button class="icon-btn" id="theme" aria-label="테마 전환"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
+    <button class="icon-btn" id="theme" aria-label="테마 전환"><svg width="17" height="17" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg></button>
   </div>
 </div></nav>
 <main>
@@ -584,40 +577,40 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
   <h1 class="rv">오늘의집</h1>
   <p class="dhero-sub rv">복잡한 정보 구조와 사용성 문제를 개선한 인테리어 플랫폼 UI/UX 리뉴얼</p>
   <div class="meta rv">
-    <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 2025.06.02 ~ 2025.06.16 (약 2주)</div>
-    <div><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> 개인 프로젝트</div>
-    <div class="role-m"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> 기획 · 디자인 · 퍼블리싱 전 과정 단독</div>
+    <div><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 2025.06.02 ~ 2025.06.16 (약 2주)</div>
+    <div><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 개인 프로젝트</div>
+    <div class="role-m"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg> 기획 · 디자인 · 퍼블리싱</div>
   </div>
 </div></header>
 <section style="--tone:var(--web);--tint:var(--web-soft)" class="dbody"><div class="wrap">
 
 <article class="proj rv" style="--tone:var(--web);--tint:var(--web-soft)" id="proj-ohouse">
 
-  <div class="pmetrics"><div class="pmetric"><div class="v mono">2</div><div class="l">제작 화면</div></div><div class="pmetric"><div class="v mono">IA</div><div class="l">정보구조 재설계</div></div><div class="pmetric"><div class="v mono">100%</div><div class="l">단독 진행</div></div></div>
+  <div class="pmetrics"><div class="pmetric"><div class="v mono">2</div><div class="l">제작 화면</div></div><div class="pmetric"><div class="v mono">IA</div><div class="l">정보구조 재설계</div></div><div class="pmetric"><div class="v mono">약 2주</div><div class="l">작업 기간</div></div></div>
   <div class="proj-body">
-    <div class="block-t"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> 프로젝트 개요</div>
-    <div class="srole rv"><span class="k">배경</span><p>인테리어 플랫폼 &lsquo;오늘의집&rsquo;은 커뮤니티·쇼핑·전문가 서비스가 한 화면에 모여 있어, 처음 들어온 사용자가 무엇부터 봐야 할지 판단하기 어려웠습니다. SWOT으로 서비스의 강점과 약점을 정리하고 페르소나를 세워 실제 사용 흐름을 따라가 본 뒤, 메인 화면의 정보 우선순위부터 다시 세웠습니다.</p></div>
+    <div class="block-t"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> 프로젝트 개요</div>
+    <div class="srole rv"><span class="k">배경</span><p>인테리어 플랫폼 ‘오늘의집’은 커뮤니티·쇼핑·전문가 서비스가 한 화면에 모여 있어, 처음 방문한 사용자가 무엇부터 봐야 할지 알기 어렵다고 보았습니다. SWOT으로 강점과 약점을 정리하고 페르소나의 사용 흐름을 따라가 본 뒤, 메인 화면의 정보 우선순위를 다시 정했습니다.</p></div>
 
-    <div class="block-t"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/><path d="m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"/></svg> 개선 포인트</div>
-    <div class="feats"><div class="feat rv" style="transition-delay:0ms"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><rect width="4" height="7" x="7" y="10" rx="1"/><rect width="4" height="12" x="15" y="5" rx="1"/></svg></div><div><h4>메인 레이아웃 최적화</h4><p>첫 화면에서 무엇을 먼저 보여줄지 기준을 정하고 블록 순서를 재배치했습니다. 통합검색에는 실시간 검색어를 접었다 펼치는 인터랙션을 붙여, 평소에는 공간을 차지하지 않도록 했습니다.</p></div></div><div class="feat rv" style="transition-delay:70ms"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/></svg></div><div><h4>커뮤니티(집들이) 게시판 개선</h4><p>사진이 주인공인 게시판이라 카드 비율과 여백을 먼저 맞추고, 정렬·필터 조건을 상단에 모았습니다. 페이지 이동은 번호 · 이전/다음 · 직접 입력 세 가지를 함께 제공합니다.</p></div></div><div class="feat rv" style="transition-delay:140ms"><div class="ic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div><div><h4>브랜드관 상품 상세페이지 기획</h4><p>단독 상품을 소개하는 상세 페이지의 구성을 새로 짰습니다. 상품 정보와 후기, 연관 상품이 이어지는 순서를 정하고 각 구간의 역할을 나눴습니다.</p></div></div></div>
+    <div class="block-t"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"></path><path d="m6.08 9.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"></path><path d="m6.08 14.5-3.5 1.6a1 1 0 0 0 0 1.81l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9a1 1 0 0 0 0-1.83l-3.5-1.59"></path></svg> 개선 포인트</div>
+    <div class="feats"><div class="feat rv" style="transition-delay:0ms"><div class="ic"><svg width="19" height="19" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><rect width="4" height="7" x="7" y="10" rx="1"></rect><rect width="4" height="12" x="15" y="5" rx="1"></rect></svg></div><div><h4>메인 레이아웃 최적화</h4><p>첫 화면에서 무엇을 먼저 보여줄지 기준을 정하고 블록 순서를 재배치했습니다. 통합검색에는 실시간 검색어를 접었다 펼치는 인터랙션을 붙여, 평소에는 공간을 차지하지 않도록 했습니다.</p></div></div><div class="feat rv" style="transition-delay:70ms"><div class="ic"><svg width="19" height="19" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path></svg></div><div><h4>커뮤니티(집들이) 게시판 개선</h4><p>사진이 주인공인 게시판이라 카드 비율과 여백을 먼저 맞추고, 정렬·필터 조건을 상단에 모았습니다. 페이지 이동은 번호 · 이전/다음 · 직접 입력 세 가지를 함께 제공합니다.</p></div></div><div class="feat rv" style="transition-delay:140ms"><div class="ic"><svg width="19" height="19" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg></div><div><h4>브랜드관 상품 상세페이지 기획</h4><p>단독 상품을 소개하는 상세 페이지의 구성을 새로 짰습니다. 상품 정보와 후기, 연관 상품이 이어지는 순서를 정하고 각 구간의 역할을 나눴습니다.</p></div></div></div>
 
-    <div class="block-t"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/></svg> 작업 툴</div>
+    <div class="block-t"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="8" x="2" y="2" rx="2"></rect><rect width="20" height="8" x="2" y="14" rx="2"></rect></svg> 작업 툴</div>
     <div class="chips"><span class="chip">Figma</span><span class="chip">Photoshop</span><span class="chip">Illustrator</span><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">jQuery</span></div>
 
-    <div class="block-t"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg> 주요 비주얼</div>
+    <div class="block-t"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg> 주요 비주얼</div>
     <div class="shots"><figure class="shot rv" data-full="../assets/webdesign/ohouse-main.jpg" data-cap="메인 페이지 — 통합검색·실시간 검색어부터 커뮤니티·쇼핑 블록까지 전체 흐름" style="transition-delay:0ms"><div class="fr"><img src="../assets/webdesign/ohouse-main.jpg" alt="메인 페이지 — 통합검색·실시간 검색어부터 커뮤니티·쇼핑 블록까지 전체 흐름" loading="lazy"></div><figcaption class="cap">메인 페이지 — 통합검색·실시간 검색어부터 커뮤니티·쇼핑 블록까지 전체 흐름</figcaption></figure><figure class="shot rv" data-full="../assets/webdesign/ohouse-housewarming.jpg" data-cap="커뮤니티(집들이) 게시판 — 카드형 목록과 정렬·필터, 페이지 네비게이션" style="transition-delay:90ms"><div class="fr"><img src="../assets/webdesign/ohouse-housewarming.jpg" alt="커뮤니티(집들이) 게시판 — 카드형 목록과 정렬·필터, 페이지 네비게이션" loading="lazy"></div><figcaption class="cap">커뮤니티(집들이) 게시판 — 카드형 목록과 정렬·필터, 페이지 네비게이션</figcaption></figure></div>
 
-    <div class="block-t"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> 직접 확인하기</div>
-    <div class="hero-cta rv" style="margin-top:18px"><a class="btn primary" href="https://plainaube.dothome.co.kr/ohouse/index.html" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg> 실제 사이트 보기</a><a class="btn" href="../assets/webdesign/HTML%20기반_오늘의집%20홈페이지%20리뉴얼.pdf" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg> PDF 포트폴리오</a></div>
+    <div class="block-t"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> 직접 확인하기</div>
+    <div class="hero-cta rv" style="margin-top:18px"><a class="btn primary" href="https://plainaube.dothome.co.kr/ohouse/index.html" target="_blank" rel="noopener"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path></svg> 실제 사이트 보기</a><a class="btn" href="../assets/webdesign/HTML%20%EA%B8%B0%EB%B0%98_%EC%98%A4%EB%8A%98%EC%9D%98%EC%A7%91%20%ED%99%88%ED%8E%98%EC%9D%B4%EC%A7%80%20%EB%A6%AC%EB%89%B4%EC%96%BC.pdf" target="_blank" rel="noopener"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path></svg> PDF 포트폴리오</a></div>
   </div>
 </article>
 </div></section>
 
 <section class="pn-wrap"><div class="wrap">
   <div class="pn-row"><a class="pn prev" href="hollys.html"><span class="pn-k">이전 프로젝트</span><span class="pn-t">할리스커피</span></a><span class="pn-empty"></span></div>
-  <div class="pn-home"><a class="btn" href="../index.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg> 전체 프로젝트 보기</a></div>
+  <div class="pn-home"><a class="btn" href="../index.html"><svg width="16" height="16" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg> 전체 프로젝트 보기</a></div>
 </div></section>
-<div class="lb" id="lb"><button class="x" aria-label="닫기"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+<div class="lb" id="lb"><button class="x" aria-label="닫기"><svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
   <div><img alt=""><div class="cap"></div></div></div>
 <script>
 (function(){
@@ -678,5 +671,5 @@ footer .meta-note{margin-top:26px;font-size:11.5px;color:var(--muted)}
   addEventListener('keydown',function(e){ if(e.key==='Escape') closeLb(); });
 })();
 </script>
-</body>
+</main></body>
 </html>
