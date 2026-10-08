@@ -1,27 +1,27 @@
 {
   "_comment": "현재 index.html / projects/*.html 에서 추출한 포트폴리오 원고. 화면 구조는 포함하지 않음.",
   "site": {
-    "title": "유소은 · AI 서비스 풀스택 개발자 포트폴리오",
-    "description": "ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다",
+    "title": "유소은 · 웹 풀스택 개발자 포트폴리오",
+    "description": "React · Spring Boot로 서비스를 만들고, 필요한 기능에 ML 모델을 붙입니다",
     "author": "유소은 · Portfolio"
   },
   "home": {
     "hero": {
       "eyebrow": "휴먼AI교육센터 · AI 기반 서비스 개발 심화 과정 (2026.06 ~ 2026.08) · Java 기반 풀스택 웹 개발자 과정 (2025.12 ~ 2026.06) · 웹 디자이너 과정 (2025.06 ~ 2025.08)",
       "name": "유소은 Portfolio",
-      "role": "AI 서비스 풀스택 개발자",
-      "tagline": "ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다",
+      "role": "웹 풀스택 개발자 · AI 활용",
+      "tagline": "React · Spring Boot로 서비스를 만들고, 필요한 기능에 ML 모델을 붙입니다",
       "summary3": [
-        "React · Spring Boot · FastAPI로 AI 웹 서비스를 개발했습니다.",
-        "팀 프로젝트 WorkFlow AI에서 대시보드를 맡아 화면 9개, REST API 10개, ML 모델 2종을 구현했습니다. ML 서버 호출이 실패할 때의 처리 방식도 모델별로 정했습니다.",
-        "ML · DL · LLM 개인 프로젝트 3건을 진행했습니다. 회화 사조 분류 모델의 테스트 정확도는 94.5%(5-fold 평균 84.8%)였고, 작품 벡터 42,500건으로 유사도 검색을 구성했습니다."
+        "React · Spring Boot로 화면부터 API · DB까지 맡아 웹 서비스를 만들어 왔습니다.",
+        "3H Furniture에서 메인 페이지 · 회원/인증 · 상품 검색을, WorkFlow AI에서 대시보드 화면 9개와 REST API 10개를 담당했습니다. 두 프로젝트 모두 React 화면과 Spring Boot API를 함께 구현했습니다.",
+        "필요한 기능에는 ML 모델을 붙였습니다. WorkFlow AI의 예측 모델 2종을 FastAPI로 서빙하고, 호출이 실패할 때의 처리 방식도 모델별로 정했습니다."
       ],
-      "summary": "웹 디자이너 과정에서 웹사이트 리뉴얼 2건으로 UI/UX와 퍼블리싱을 익힌 뒤, Java 기반 풀스택 웹 개발자 과정에서 Java 웹 팀 프로젝트 3건(JSP → React+Express → Spring Boot)을, AI 기반 서비스 개발 심화 과정에서 ML·DL·LLM 개인 프로젝트 3건과 팀 프로젝트 1건을 진행했습니다.",
+      "summary": "웹 디자이너 과정에서 웹사이트 리뉴얼 2건으로 UI/UX와 퍼블리싱을 익힌 뒤, Java 기반 풀스택 웹 개발자 과정에서 팀 프로젝트 3건(JSP → React+Express → Spring Boot)으로 화면과 서버를 함께 담당했고, AI 기반 서비스 개발 심화 과정에서 ML·DL·LLM 개인 프로젝트 3건과 팀 프로젝트 1건을 진행했습니다.",
       "mockCaption": "workflow-ai · /dashboard",
       "floats": [
         "담당 화면 9",
-        "ML 서빙 FastAPI",
-        "REST API 10"
+        "REST API 10",
+        "Spring Boot · Java 21"
       ],
       "cta": [
         {
@@ -47,17 +47,17 @@
       {
         "value": "9화면",
         "label": "WorkFlow AI 담당 화면",
-        "sub": "REST API 10개 · ML 모델 2종"
+        "sub": "REST API 10개 · 테이블 9개"
+      },
+      {
+        "value": "6,948줄",
+        "label": "3H 담당 코드 (최종 기준)",
+        "sub": "React · CSS · Java 합계"
       },
       {
         "value": "94.5%",
         "label": "사조 분류 테스트 정확도",
         "sub": "ResNet-50 · 테스트 200장"
-      },
-      {
-        "value": "42,500건",
-        "label": "작품 특징 벡터",
-        "sub": "CLIP 임베딩 · ChromaDB"
       }
     ],
     "strengths": {
@@ -67,24 +67,24 @@
       "items": [
         {
           "no": "01",
-          "title": "화면 · API · DB · ML 구현",
-          "desc": "WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 10개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.",
+          "title": "화면 · API · DB 전 구간 구현",
+          "desc": "WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 10개, PostgreSQL 4개 테이블 집계를 구현했습니다. 3H Furniture에서는 메인 페이지와 회원/인증 도메인, 상품 검색을 React 화면부터 Spring Boot API · JPA까지 담당했습니다.",
           "proof": [
-            "화면 9",
-            "API 10",
-            "테이블 9",
-            "ML 모델 2"
+            "담당 화면 15",
+            "Spring Boot API 10",
+            "DB 설계 · 집계",
+            "팀 프로젝트 4건"
           ]
         },
         {
           "no": "02",
-          "title": "학습한 모델을 API로 서빙",
-          "desc": "학습한 모델을 FastAPI로 서빙했습니다. 예측 이력 테이블, 호출 타임아웃, 장애 시 폴백 정책을 모델의 저장 방식에 따라 다르게 정해, ML 서버가 응답하지 않을 때도 대시보드 화면은 표시되도록 했습니다.",
+          "title": "인증 · 권한 구현",
+          "desc": "3H Furniture에서 Spring Security 폼 로그인이 React의 JSON 요청을 읽지 못하는 문제를 로그인 성공·실패 핸들러의 JSON 응답으로 해결하고, 구글 · 네이버 · 카카오 소셜 로그인을 일반 회원과 같은 권한 체계에 통합했습니다. PPAP에서는 JWT 인증과 회원 도메인을, 너와 함께에서는 세션 로그인을 맡았습니다.",
           "proof": [
-            "FastAPI 서빙",
-            "예측 이력 적재",
-            "실패 정책 분리",
-            "LangSmith 트레이싱"
+            "Spring Security",
+            "OAuth2 3종",
+            "JWT",
+            "세션 인증"
           ]
         },
         {
@@ -101,12 +101,12 @@
         {
           "no": "04",
           "title": "팀 공통 구조와 문서 작업",
-          "desc": "6명이 같은 구조에서 작업할 수 있도록 프로젝트 계층 구조를 제안했고, 팀 표준으로 확정되었습니다. 착수보고서의 개발 수행 계획(역할 분담·일정·협업 방식)을 작성했습니다.",
+          "desc": "6명이 같은 구조에서 작업할 수 있도록 프로젝트 계층 구조를 제안해 팀 표준으로 확정했습니다. 착수보고서의 개발 수행 계획을 작성했고, 3H Furniture에서는 최종 발표를 맡았습니다.",
           "proof": [
             "프로젝트 계층 구조",
             "착수보고서 작성",
             "PR 자동 점검",
-            "Jira · Slack 연동"
+            "최종 발표 담당"
           ]
         }
       ]
@@ -182,8 +182,8 @@
           "items": [
             {
               "name": "React",
-              "use": "대시보드 9화면 · 매물 탐색 · 가구몰 메인",
-              "projects": "WorkFlow AI · PPAP · 3H"
+              "use": "대시보드 9화면 · 가구몰 메인·검색 · 매물 탐색",
+              "projects": "WorkFlow AI · 3H · PPAP"
             },
             {
               "name": "TypeScript",
@@ -232,12 +232,12 @@
             },
             {
               "name": "Spring Security",
-              "use": "OAuth2 소셜 로그인 · 권한 분리",
+              "use": "OAuth2 소셜 로그인 3종 · JSON 로그인 응답",
               "projects": "3H Furniture"
             },
             {
               "name": "Spring Data JPA",
-              "use": "업무·마일스톤·회원 테이블 접근",
+              "use": "업무·마일스톤·회원·상품 테이블 접근",
               "projects": "3H · WorkFlow AI"
             },
             {
@@ -317,7 +317,7 @@
             },
             {
               "name": "Oracle DB",
-              "use": "상품·회원·게시판 테이블",
+              "use": "회원·상품·주문·배송 17개 테이블",
               "projects": "3H(Cloud ADB) · 너와 함께"
             },
             {
@@ -511,7 +511,7 @@
         "id": "part-kdc",
         "label": "PART 2",
         "title": "Java 기반 풀스택 웹 개발자 과정",
-        "desc": "팀 프로젝트 3건입니다. 서버 렌더링, 프론트/백엔드 분리, 프레임워크 기반 인증 순으로 구성이 바뀌었습니다.",
+        "desc": "팀 프로젝트 3건입니다. 서버 렌더링(JSP) → 프론트/백엔드 분리(React + Express) → Spring Boot 순으로 구성이 바뀌었고, 세 프로젝트 모두 화면과 서버를 함께 담당했습니다.",
         "period": "2025.12 ~ 2026.06 · 프로젝트 3건",
         "cards": [
           {
@@ -802,7 +802,7 @@
     },
     "footer": {
       "name": "유소은",
-      "sub": "AI 서비스 풀스택 개발자 · ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다",
+      "sub": "웹 풀스택 개발자 · React · Spring Boot로 서비스를 만들고, 필요한 기능에 ML 모델을 붙입니다",
       "links": [
         {
           "label": "github.com/soeun-yu",

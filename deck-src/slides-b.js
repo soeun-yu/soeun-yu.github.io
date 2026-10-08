@@ -32,7 +32,7 @@ module.exports = async function partsB(pres, K, T) {
     await T.partDivider(pres.addSlide(), {
       n: 2, tone, footer: FOOT,
       title: 'Java 기반 풀스택 웹 개발자 과정',
-      desc: '팀 프로젝트 3건입니다. 서버 렌더링, 프론트/백엔드 분리, 프레임워크 기반 인증 순으로 구성이 바뀌었습니다.',
+      desc: '팀 프로젝트 3건입니다. 서버 렌더링(JSP) → 프론트/백엔드 분리(React + Express) → Spring Boot 순으로 구성이 바뀌었고, 세 프로젝트 모두 화면과 서버를 함께 담당했습니다.',
       period: '2025.12 ~ 2026.06 · 프로젝트 3건',
       cards: [
         { title: '3H Furniture', sub: 'Spring Boot + React 기반 가구 이커머스 반응형 웹', badges: ['3차 · Final', '팀'], file: asset('furniture/main.jpg') },
@@ -341,9 +341,9 @@ module.exports = async function partsB(pres, K, T) {
     const s = pres.addSlide();
     await T.background(s, 'cover');
     K.text(s, '감사합니다', { x: M, y: 1.7, w: W - M * 2, h: 1.0, fontSize: 48, bold: true, align: 'center', valign: 'middle' });
-    K.text(s, [{ text: '유소은', options: { color: C.text, bold: true } }, { text: '  ·  AI 서비스 풀스택 개발자', options: { color: C.mid, bold: true } }],
+    K.text(s, [{ text: '유소은', options: { color: C.text, bold: true } }, { text: '  ·  웹 풀스택 개발자 · AI 활용', options: { color: C.mid, bold: true } }],
       { x: M, y: 2.85, w: W - M * 2, h: 0.46, fontSize: 18, align: 'center', valign: 'middle' });
-    K.text(s, 'ML 모델 학습, API 서빙, 화면 구현을 한 프로젝트 안에서 함께 다뤄 왔습니다', { x: M, y: 3.45, w: W - M * 2, h: 0.5, fontSize: 18, color: C.accent2, align: 'center', valign: 'middle' });
+    K.text(s, 'React · Spring Boot로 서비스를 만들고, 필요한 기능에 ML 모델을 붙입니다', { x: M, y: 3.45, w: W - M * 2, h: 0.5, fontSize: 18, color: C.accent2, align: 'center', valign: 'middle' });
     const lk = 'github.com/soeun-yu', lw = textW(lk, 13) + 0.9, lx = (W - lw) / 2;
     K.rect(s, lx, 4.35, lw, 0.5, { fill: C.surf, line: C.border, r: 0.25 });
     s.addImage({ data: await icon('LuGithub', C.text), x: lx + 0.22, y: 4.48, w: 0.24, h: 0.24 });
