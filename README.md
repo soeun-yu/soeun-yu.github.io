@@ -48,6 +48,6 @@ python build/build_all.py --pptx   # 포트폴리오 PPT까지 함께 생성
 | `index.html` | 생성물 — 메인 페이지 |
 | `projects/*.html` | 생성물 — 프로젝트 상세 페이지 9개 |
 | `deck-src/` | 포트폴리오 PPT 생성 스크립트 |
-| `유소은_포트폴리오.pptx` | 발표용 PPT 46장 |
+| `유소은_포트폴리오.pptx` | 발표용 PPT 50장 |
 | `assets/` | 프로젝트 스크린샷 |
 | `.nojekyll` | GitHub Pages의 Jekyll 처리를 끄는 파일 (지우지 마세요) |
