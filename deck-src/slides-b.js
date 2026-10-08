@@ -7,11 +7,11 @@ const PDF_BASE = 'https://soeun-yu.github.io/assets/webdesign/';
 // 3H Furniture 문제 해결 사례
 const FURNITURE_CASES = [
   {
-    t: 'React ↔ Spring Security 로그인 요청 형식 불일치', icon: 'LuShieldCheck', tags: ['Spring Security', 'REST 연동', '협업'],
-    p: 'React가 로그인 정보를 JSON으로 보내자 Spring Security 폼 로그인이 값을 읽지 못해 로그인이 실패했습니다. 로그인 권한 정보가 필요한 장바구니 · 마이페이지 · 관리자 대시보드 · 관리자 상품관리 4개 기능의 개발이 함께 멈췄습니다.',
-    a: '폼 로그인 필터는 아이디·비밀번호를 요청 파라미터(x-www-form-urlencoded)에서 읽고, 성공·실패를 페이지 이동으로 응답합니다. 그래서 요청 형식과 응답 형식을 모두 React에 맞춰야 한다고 판단했습니다.',
-    c: 'React에서 URLSearchParams로 폼 형식 요청을 보내고 usernameParameter("id")로 필드명을 맞췄습니다. 로그인 성공·실패 핸들러가 status · message · role을 JSON으로 반환하게 하고, 미인증 요청에는 401 JSON을 응답하도록 설정했습니다.',
-    r: '2일 만에 해결해 멈췄던 4개 기능의 개발이 재개됐고, 응답의 role 값으로 관리자와 일반 회원 화면을 나눌 수 있게 됐습니다.',
+    t: 'React 로그인 요청과 Spring Security 폼 로그인의 형식 충돌', icon: 'LuShieldCheck', tags: ['Spring Security', 'React', '요청 형식'],
+    p: '로그인이 되지 않아, 로그인한 사용자의 권한 정보가 필요한 팀 기능 4개(장바구니, 마이페이지, 관리자 대시보드, 관리자 상품관리)의 개발이 멈췄습니다. 로그인을 시도하면 화면에는 415 Unsupported Media Type, 서버에는 HttpMediaTypeNotSupportedException이 남았습니다.',
+    a: '오류 메시지를 직접 해석한 뒤 로그인 화면(Login.js), 회원 코드, SecurityConfig를 대조했습니다. React는 입력값을 JSON으로 보내는데 Spring Security 폼 로그인은 폼 파라미터만 읽고, 파라미터 이름도 서버 설정과 같아야 한다는 것이 원인이었습니다.',
+    c: '문제 상황을 글로 정리해 팀 채팅방에 먼저 공유했습니다. 로그인 요청은 URLSearchParams로 폼 형식(x-www-form-urlencoded)으로 변환하고, 로그인 성공 · 실패 · 미인증 응답은 핸들러에서 JSON으로 돌려주도록 맞췄습니다.',
+    r: '2일 만에 로그인이 연동되어 멈춰 있던 팀 기능 4개의 개발이 재개됐습니다. 같은 구조 위에 관리자 로그인과 소셜 로그인 3종을 추가했습니다.',
   },
   {
     t: '병합 후 백엔드 서버 기동 실패', icon: 'LuGitMerge', tags: ['디버깅', 'Spring Data JPA', '병합'],
@@ -37,7 +37,7 @@ module.exports = async function partsB(pres, K, T) {
       cards: [
         { title: '3H Furniture', sub: 'Spring Boot + React 기반 가구 이커머스 반응형 웹', badges: ['3차 · Final', '팀'], file: asset('furniture/main.jpg') },
         { title: 'PPAP', sub: '네이버 지도와 공공 실거래 데이터를 결합한 부동산 매물 탐색 플랫폼', badges: ['2차 · Advanced', '팀'], file: asset('ppap/detail.jpg') },
-        { title: '너와 함께', sub: '반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)', badges: ['1차', '팀'], file: asset('nextto/login.jpg') },
+        { title: '너의 곁에', sub: '반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)', badges: ['1차', '팀'], file: asset('nextto/login.jpg') },
       ],
     });
 
@@ -45,27 +45,27 @@ module.exports = async function partsB(pres, K, T) {
     await T.projectCover(pres.addSlide(), {
       tone, footer: FOOT, part: PART, badges: ['3차 · Final', '팀'], title: '3H Furniture',
       sub: 'Spring Boot + React 기반 가구 이커머스 반응형 웹',
-      period: '2026.04.24 ~ 2026.06.15', team: 'CMYK팀 · 5명', role: '메인 페이지 · 회원/인증 도메인 · 상품 검색 · 최종 발표',
+      period: '2026.04.24 ~ 06.15', team: 'CMYK팀 · 5인', role: '회원/인증 도메인 · 상품 검색 · 메인 페이지 · 최종 발표',
       links: [
         { t: 'GitHub', icon: 'LuGithub', url: 'https://github.com/alphaengneering02-dev/3H_Furniture' },
         { t: '배포 사이트', icon: 'LuExternalLink', url: 'https://cheerful-gecko-a85d13.netlify.app' },
       ],
       chips: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'OAuth2', 'React', 'MUI', 'Oracle Cloud ADB'],
-      metrics: [{ v: '3', l: '소셜 로그인' }, { v: '3', l: '복합 검색 조건' }, { v: '6', l: '담당 화면' }],
-      position: '메인 페이지, 회원 가입·로그인, 상품 검색 기능을 맡았습니다. 서비스에 처음 들어와 상품을 찾기까지 거치는 화면입니다.',
+      metrics: [{ v: '3', l: '소셜 로그인' }, { v: '4', l: '개발 재개 기능' }, { v: '6', l: '담당 화면' }],
+      position: '회원 가입 · 로그인, 상품 검색, 메인 페이지를 API부터 화면까지 맡았습니다. 장바구니 · 마이페이지 · 관리자 기능이 모두 로그인한 사용자의 권한 정보를 사용합니다.',
       visual: (s, x, y, w, h) => K.browser(s, asset('furniture/main.jpg'), x, y, w, h, { url: 'cmyk-furniture · /' }),
     });
     {
       const s = pres.addSlide();
       await T.background(s, 'glow', tone);
-      const top = T.header(s, { tag: '3H Furniture · 담당 기능', title: '메인 · 회원/인증 · 상품 검색', tone });
+      const top = T.header(s, { tag: '3H Furniture · 담당 기능', title: '회원/인증 · 상품 검색 · 메인 페이지', tone });
       await T.featureGrid(s, [
-        { icon: 'LuHouse', t: '메인 페이지', d: '메인 배너, 카테고리 네비게이션, 베스트셀러·신상품 섹션, 상품 리스트를 컴포넌트로 분리해 구현. 헤더·푸터 공통 레이아웃과 MainController · MainService로 상품 조회 API를 함께 담당' },
-        { icon: 'LuListFilter', t: '상품 검색 필터', d: '카테고리 · 색상 · 가격대를 조합한 복합 조건 검색. 검색어는 상품명·카테고리·색상 중 하나만 맞아도 통과시키고, 조건은 모두 만족해야 통과(MainService). SearchContext로 헤더 검색창과 결과 화면의 조건을 URL 쿼리와 함께 공유' },
-        { icon: 'LuKeyRound', t: 'OAuth2 소셜 로그인', d: '구글 · 네이버 · 카카오 계정으로 가입. LoginSuccessHandler와 OAuth2DTO · SessionMember로 소셜 계정을 일반 회원과 동일한 권한 체계에 통합해, 구매·장바구니·북마크를 그대로 사용' },
-        { icon: 'LuShieldCheck', t: 'Spring Security 인증·인가', d: 'React와 연동되도록 로그인 성공·실패를 JSON으로 응답하는 핸들러와 미인증 401 응답을 구성. 관리자 → 일반 회원 순으로 조회해 한 로그인 화면에서 두 역할을 구분하고 MemberRole enum으로 권한을 분리' },
-        { icon: 'LuUserPlus', t: '회원가입 · 계정 찾기', d: '회원가입 · 아이디 찾기 · 비밀번호 재설정 화면과 각 결과 화면 구현' },
-        { icon: 'LuBookmark', t: '북마크(찜)', d: 'Bookmarks 엔티티 · Repository · Service · DTO를 처음 설계·구현하고, 메인 상품 카드에 북마크 버튼을 연결' },
+        { icon: 'LuShieldCheck', t: 'Spring Security 로그인 연동', d: '폼 로그인을 React와 연동. 로그인 성공 · 실패 · 미인증을 JSON으로 응답하는 핸들러를 구현하고, 관리자 테이블 → 일반 회원 테이블 순으로 조회해 하나의 로그인 화면에서 두 역할을 처리' },
+        { icon: 'LuKeyRound', t: 'OAuth2 소셜 로그인', d: '구글 · 네이버 · 카카오 계정으로 가입. 이메일 기준으로 신규 가입 또는 정보 갱신을 처리하고, 소셜 계정을 일반 회원과 동일한 권한 체계에 통합해 구매 · 장바구니 · 북마크를 그대로 사용' },
+        { icon: 'LuUserPlus', t: '회원 API · 계정 찾기', d: '회원가입(아이디 · 이메일 · 전화번호 중복 검사, BCrypt 암호화), 조회 · 수정 · 탈퇴, 아이디 찾기, 비밀번호 재설정. 검증 실패를 필드명과 메시지 JSON으로 반환해 화면의 해당 입력칸에 표시' },
+        { icon: 'LuListFilter', t: '상품 통합 검색', d: '검색어와 카테고리 · 색상 · 가격대 필터를 함께 적용하는 검색 API 구현. React Context로 검색 조건을 전역 관리하고 URL 쿼리스트링과 동기화' },
+        { icon: 'LuHouse', t: '메인 페이지', d: '헤더 · 푸터, 메인 배너 자동 슬라이드, 화면 폭에 따라 4 · 3 · 2개를 노출하는 상품 목록 무한 슬라이드, 카테고리 섹션 구현. MainController · MainService로 상품 조회 API를 함께 담당' },
+        { icon: 'LuBookmark', t: '북마크(찜)', d: '초기 엔티티 · Repository · Service · DTO를 작성해 관심 상품 저장/조회 기능의 바탕을 구현' },
       ], M, top, W - M * 2, H - 0.65 - top, { cols: 3, tone, pt: 11 });
       T.footer(s, FOOT);
     }
@@ -164,7 +164,7 @@ module.exports = async function partsB(pres, K, T) {
     await T.projectCover(pres.addSlide(), {
       tone, footer: FOOT, part: PART, badges: ['2차 · Advanced', '팀'], title: 'PPAP',
       sub: '네이버 지도와 공공 실거래 데이터를 결합한 부동산 매물 탐색 플랫폼',
-      period: '2026.03 ~ 2026.04', team: 'PPAP팀', role: '인증 · 회원 도메인',
+      period: '2026.03.16 ~ 04.03', team: 'PPAP팀 · 5인', role: '인증 · 회원 도메인',
       links: [{ t: 'GitHub', icon: 'LuGithub', url: 'https://github.com/Polalise/Advanced_project' }],
       metrics: [{ v: 'JWT', l: '인증 방식' }, { v: '2', l: '회원 유형' }],
       position: '일반 회원과 사업자 회원을 구분하는 인증 · 회원 구조를 맡았습니다. 매물 등록과 상담 관리 권한이 이 구분에 따라 나뉩니다.',
@@ -176,9 +176,9 @@ module.exports = async function partsB(pres, K, T) {
       const top = T.header(s, { tag: 'PPAP · 담당 기능', title: '인증 · 회원 도메인', tone });
       const bh = H - 0.65 - top, lw = 5.9;
       await T.featureGrid(s, [
-        { icon: 'LuKeyRound', t: 'JWT 기반 로그인·인증', d: 'authMiddleware로 토큰을 검증하고 보호 라우트를 분리. AuthContext로 프론트 인증 상태를 관리' },
+        { icon: 'LuKeyRound', t: 'JWT 기반 로그인·인증', d: 'authMiddleware가 토큰이 없으면 비로그인 상태로 통과시키고 유효하지 않은 토큰에만 401을 반환해, 로그인 필수 기능과 공개 기능이 같은 미들웨어를 사용. 토큰은 응답 헤더로 발급하고 React 전역 컨텍스트로 인증 상태를 관리' },
         { icon: 'LuUsers', t: '회원 도메인', d: '회원가입 · 정보 수정 · 탈퇴와 개별/전체 회원정보 조회 API 구현' },
-        { icon: 'LuBriefcaseBusiness', t: '일반 / 사업자 회원 구분', d: '회원 유형에 따라 매물 등록·상담 관리 권한이 나뉘도록 회원 구분 기준을 설계' },
+        { icon: 'LuBriefcaseBusiness', t: '일반 / 사업자 회원 구분', d: '회원 유형에 따라 매물 등록·상담 관리 권한이 나뉘도록 회원 구분 기준을 설계하고 유형 선택 · 회원가입 화면을 구현. CSS 모듈로 화면 간 스타일 충돌을 방지' },
       ], M, top, lw, bh, { cols: 1, tone, pt: 12, gap: 0.22 });
       const rx = M + lw + 0.3, rw = W - M - rx, gap = 0.24, iw = (rw - gap) / 2, ih = bh - 1.25;
       await K.fitImage(s, asset('ppap/login-design.png'), rx, top, iw, ih, { pad: 0.1 });
@@ -189,11 +189,11 @@ module.exports = async function partsB(pres, K, T) {
       T.footer(s, FOOT);
     }
 
-    // ── 너와 함께 ──
+    // ── 너의 곁에 ──
     await T.projectCover(pres.addSlide(), {
-      tone, footer: FOOT, part: PART, badges: ['1차', '팀'], title: '너와 함께',
+      tone, footer: FOOT, part: PART, badges: ['1차', '팀'], title: '너의 곁에',
       sub: '반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)',
-      period: '2026.02 ~ 2026.03 (약 2주)', team: '무조건동의팀', role: '회원 인증 · 마이페이지 · 반려견 정보 관리',
+      period: '2026.02.23 ~ 03.06 (약 2주)', team: '무조건동의팀 · 5인', role: '회원 인증 · 마이페이지 · 반려견 정보 관리',
       chips: ['Java', 'JSP', 'Servlet', 'JDBC', 'Oracle DB', 'HTML · CSS · JavaScript'],
       metrics: [{ v: '5', l: '담당 화면' }, { v: 'MVC', l: '아키텍처' }, { v: '2', l: '계정 종류' }],
       position: '법률·의학·뉴스·상식 게시판과 자유게시판은 로그인 후 사용합니다. 회원 인증과 개인·반려견 정보 관리 기능을 맡았습니다.',
@@ -202,19 +202,19 @@ module.exports = async function partsB(pres, K, T) {
     {
       const s = pres.addSlide();
       await T.background(s, 'glow', tone);
-      const top = T.header(s, { tag: '너와 함께 · 담당 기능', title: '회원 인증 · 마이페이지 · 반려견 정보', tone });
+      const top = T.header(s, { tag: '너의 곁에 · 담당 기능', title: '회원 인증 · 마이페이지 · 반려견 정보', tone });
       await T.featureGrid(s, [
-        { icon: 'LuLogIn', t: '로그인 · 회원가입', d: '세션 기반 로그인과 입력값 검증을 포함한 가입 플로우. 일반 사용자 계정과 관리자 계정을 구분해 처리' },
+        { icon: 'LuLogIn', t: '로그인 · 회원가입', d: 'HttpSession 기반 로그인과 입력값 검증, 아이디 중복 가입 방지를 포함한 가입 플로우. 회원정보와 반려견정보를 세션 객체로 전 페이지에서 공유하고, 일반 사용자 계정과 관리자 계정을 구분해 처리' },
         { icon: 'LuIdCard', t: '마이페이지', d: '프로필 사진·닉네임·아이디를 묶은 사이드바와 연락처 영역, 등록한 반려견 정보 카드를 함께 배치. 홈 > 마이페이지 > 내 정보 관리 순의 브레드크럼으로 현재 위치를 표시' },
-        { icon: 'LuUserPen', t: '내 정보 관리 · 수정', d: '조회 화면과 수정 화면을 분리해 구현. 수정 화면에는 비밀번호 재확인 입력과 프로필 사진 교체(파일 업로드), 생년월일 선택기를 배치하고 계정 종류는 읽기 전용으로 고정' },
+        { icon: 'LuUserPen', t: '내 정보 관리 · 수정', d: '조회 화면과 수정 화면을 분리해 구현. 프로필 사진은 MultipartRequest로 등록 · 교체하고, 새 사진을 올리지 않고 수정하면 기존 사진이 사라지던 오류를 수정' },
         { icon: 'LuDog', t: '반려견 정보 등록 · 수정', d: '대표 반려견 1마리의 이름·견종·나이·몸무게·성별·중성화 여부·건강 상태·사진을 등록하고 수정. 마이페이지에서는 태그 형태로 요약 표시' },
         { icon: 'LuUserX', t: '회원 탈퇴', d: '수정 화면에서 탈퇴를 처리해 계정과 관련 정보를 정리' },
-        { icon: 'LuLayers', t: 'DTO · DAO 패턴', d: 'Model 2(MVC) 구조에서 데이터 접근 계층을 분리하는 기본 패턴을 적용' },
+        { icon: 'LuLayers', t: 'DTO · DAO 패턴과 테이블 설계', d: 'Model 2(MVC) 구조에서 회원(MEMBER) · 반려견(PET) 테이블과 DTO · DAO · Servlet을 작성. 계정 종류 컬럼을 CHAR에서 VARCHAR로 바꿔 공백이 채워지던 문제를 해결' },
       ], M, top, W - M * 2, H - 0.65 - top, { cols: 3, tone, pt: 11 });
       T.footer(s, FOOT);
     }
     await T.gallery(pres.addSlide(), {
-      tone, footer: FOOT, tag: '너와 함께', title: '구현 화면',
+      tone, footer: FOOT, tag: '너의 곁에', title: '구현 화면',
       sub: '로그인부터 내 정보 수정까지, 조회 화면과 수정 화면을 나눠 구현했습니다.',
       cols: 2,
       shots: [
@@ -318,9 +318,9 @@ module.exports = async function partsB(pres, K, T) {
     await T.background(s, 'glow', C.accent);
     const top = T.header(s, { tag: 'How I Work', title: '작업 방식', sub: '프로젝트를 진행하면서 반복해서 적용한 방식입니다.' });
     const items = [
-      ['LuRuler', '원인 확인 후 수정', '성능 문제는 쿼리 왕복 횟수로, 모델 문제는 지표별 수치로 원인을 먼저 확인한 뒤 코드를 수정했습니다.'],
+      ['LuRuler', '원인 확인 후 수정', '오류 메시지와 코드를 화면과 서버 양쪽에서 대조해 원인을 먼저 특정한 뒤 수정했습니다. 로그인 형식 충돌과 N+1 조회 모두 이 순서로 해결했습니다.'],
       ['LuShieldHalf', '실패 상황 처리', 'ML 서버 장애, 응답 지연, 화면 전환 중 도착한 이전 응답을 각각 다르게 처리했고, 실패했을 때 화면에 표시할 내용도 정했습니다.'],
-      ['LuNotebookPen', '결정 이유 기록', '선택한 이유를 코드 주석과 개발 보고서에 기록해 팀에 공유했습니다. 같은 내용을 다시 조사하지 않기 위해서였습니다.'],
+      ['LuNotebookPen', '초안 공유와 기록', '완성본이 아닌 초안을 먼저 공유해 피드백을 받았습니다. 선택한 이유는 코드 주석과 설계 · 개발 · 트러블슈팅 문서에 남겨, 팀이 같은 내용을 다시 조사하지 않게 했습니다.'],
     ];
     const gap = 0.26, cw = (W - M * 2 - gap * 2) / 3, ch = 3.9, cy = top + (H - 0.65 - top - ch) / 2;
     for (let i = 0; i < 3; i++) {

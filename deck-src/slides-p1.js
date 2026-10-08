@@ -108,12 +108,12 @@ module.exports = async function part1(pres, K, T) {
     tone, footer: FOOT, part: 'PART 1 · AI 기반 서비스 개발 심화 과정',
     badges: ['대표 프로젝트', '팀'], title: 'WorkFlow AI',
     sub: '팀 프로젝트의 회의·업무·기록·평가를 AI가 하나의 흐름으로 잇는 협업 플랫폼',
-    period: '2026.07.09 ~ 08.07 (4주)', team: '3팀 · 6인 기능 오너제', role: 'FS-3 대시보드 담당 — 화면 · API · DB · ML',
+    period: '2026.07.06 ~ 08.05 (4주)', team: '3팀 · 6인 기능 오너제', role: 'FS-3 대시보드 담당 — 화면 · API · DB · ML',
     links: [
       { t: 'GitHub', icon: 'LuGithub', url: 'https://github.com/rhantj/work-flow' },
       { t: '시연 영상', icon: 'LuPlay', url: 'https://youtu.be/D5jy2qbKh7g' },
     ],
-    metrics: [{ v: '9', l: '담당 화면' }, { v: '10', l: 'REST API' }, { v: '2', l: 'ML 모델' }, { v: '5', l: '데이터 훅' }],
+    metrics: [{ v: '9', l: '담당 화면' }, { v: '13', l: 'REST API' }, { v: '2', l: 'ML 모델' }, { v: '5', l: '데이터 훅' }],
     position: '회의록 AI가 만든 To-Do가 업무보드에 반영되면, 대시보드는 그 업무·활동 데이터로 지연 위험도와 업무 편중도를 계산해 보여줍니다. 다른 기능에서 쌓인 데이터를 조회·분석하는 부분입니다.',
     visual: (s, x, y, w, h) => K.browser(s, asset('workflow/dashboard-home.jpg'), x, y, w, h, { url: 'workflow-ai · /dashboard', anchor: 'left' }),
   });
@@ -124,11 +124,11 @@ module.exports = async function part1(pres, K, T) {
     const top = T.header(s, { tag: 'WorkFlow AI · 담당 기능', title: '대시보드 담당 기능', tone });
     await T.featureGrid(s, [
       { icon: 'LuLayoutDashboard', t: '대시보드 홈 + 상세 8화면', d: '진행률 분석 · 블로커 관리 · 마감 임박 · 팀원별 업무량 · 최근 활동 · 전체 업무 관리를 역할(팀장/팀원)에 따라 다르게 노출' },
-      { icon: 'LuServer', t: 'Spring Boot 집계 API 10개', d: 'tasks · milestones · activities · ml_predictions 4개 테이블을 한 번에 집계. @PreAuthorize로 팀장 전용(마일스톤 CRUD)과 멤버 권한을 분리' },
+      { icon: 'LuServer', t: 'Spring Boot API 13개', d: '조회 6 · 마일스톤 3 · 재분석 작업 4. tasks · milestones · activities · ml_predictions 4개 테이블을 집계하고, @PreAuthorize로 팀장 전용(마일스톤 CRUD)과 멤버 권한을 분리' },
       { icon: 'LuTriangleAlert', t: 'ML 지연 위험도 예측', d: '업무별 피처 약 35개를 생성해 정상/주의/위험 3분류. 체크리스트 진행률과 경과 시간의 차이(imbalance index)로 경과 시간 대비 진행이 더딘 업무를 탐지' },
       { icon: 'LuScale', t: 'ML 업무 편중 점수', d: '팀 규모에 따라 MAD 기반 Modified Z-score와 Isolation Forest를 자동 전환. 0~100 점수와 함께 과부하 의심 / 배정량 불균형을 구분해 판정' },
       { icon: 'LuRefreshCw', t: '자동 갱신 처리', d: '15초마다 시그니처만 비교해 실제 변경이 있을 때만 갱신하므로 스크롤·선택 상태가 유지됨. 요청 세대 번호로 프로젝트 전환 시 도착한 이전 응답(stale)을 폐기' },
-      { icon: 'LuFolderTree', t: '프로젝트 계층 구조 · 착수보고서', d: '프로젝트 계층 구조 초안을 제안했고, Frontend(React) / Backend(Spring Boot) / AI Backend(FastAPI) 3계층 대분류가 팀 표준으로 확정됨. 착수보고서 「개발 수행 계획」 작성' },
+      { icon: 'LuFolderTree', t: '프로젝트 폴더 구조 · 문서화', d: '폴더 구조 설계를 자원해 Frontend(React) / Backend(Spring Boot) / AI Backend(FastAPI) 3계층 구조를 참고 자료와 함께 팀 채널에 공유했고, PL 검토 의견을 반영한 구조도를 다시 공유. 설계 · 개발 · 트러블슈팅 문서 14건과 착수보고서 「개발 수행 계획」 작성' },
     ], M, top, W - M * 2, H - 0.65 - top, { cols: 2, tone, pt: 11 });
     T.footer(s, FOOT);
   }
@@ -144,7 +144,7 @@ module.exports = async function part1(pres, K, T) {
       { icon: 'LuBrain', l: 'FastAPI × 2', s: '지연 위험 · 업무 편중' },
     ], M, top, W - M * 2, 1.55, tone);
     const y2 = top + 1.55 + 0.26, h2 = H - 0.65 - y2;
-    T.barChart(s, { title: '담당 산출물', labels: ['Spring REST API', 'React 화면', '공통 팝업·차트', '데이터 훅', 'FastAPI ML 모델'], values: [10, 9, 6, 5, 2], x: M, y: y2, w: 6.9, h: h2, tone, fmt: '0', unit: '개', max: 11.5 });
+    T.barChart(s, { title: '담당 산출물', labels: ['Spring REST API', 'React 화면', '공통 팝업·차트', '데이터 훅', 'FastAPI ML 모델'], values: [13, 9, 6, 5, 2], x: M, y: y2, w: 6.9, h: h2, tone, fmt: '0', unit: '개', max: 15 });
     const cx = M + 6.9 + 0.24, cw = W - M - cx;
     K.rect(s, cx, y2, cw, h2, { fill: C.surf, line: C.border, r: 0.14 });
     K.text(s, '사용 기술', { x: cx + 0.26, y: y2 + 0.2, w: cw - 0.52, h: 0.3, fontSize: 12.5, bold: true });
@@ -204,7 +204,7 @@ module.exports = async function part1(pres, K, T) {
     }
     await T.descPanel(s, px, top, panelW, bh, {
       icon: 'LuFolderTree', title: '프로젝트 계층 구조',
-      intro: '6명이 같은 구조에서 작업할 수 있도록 초안을 제안했고, Frontend / Backend / AI Backend 3계층 대분류가 팀 표준으로 확정되었습니다.',
+      intro: '프로젝트 초반(당시 팀원 7명)에 같은 구조에서 작업할 수 있도록 3계층 구조의 방향을 참고 자료와 함께 먼저 공유했습니다. PL의 검토 의견을 반영한 구조도를 같은 날 다시 공유했고, 팀장이 일부를 수정해 프로젝트에 반영했습니다.',
       rows: [
         { t: 'Frontend (React)', d: '기능 폴더(components · hooks · libs · screen)와 공통 global 폴더(api · store · styles 등)로 구분' },
         { t: 'Backend (Spring Boot)', d: '기능 폴더 안에 entity → repository → service → DTO → controller, 공통은 global(config · queue · client · error)' },

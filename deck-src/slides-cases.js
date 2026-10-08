@@ -4,11 +4,11 @@ const { W, H, M, MONO, C, tint, mix, textW, textH, icon } = L;
 
 const WORKFLOW_CASES = [
   {
-    t: '대시보드 요약 API의 N+1 조회', icon: 'LuTimer', tags: ['N+1', 'JPA', '성능'],
-    p: '대시보드 요약 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어났습니다.',
+    t: 'N+1 조회 개선으로 대시보드 로딩 2분 → 10초', icon: 'LuTimer', tags: ['N+1', 'JPA', '성능'],
+    p: '원격 DB에 연결하자 대시보드 9개 화면의 로딩에 2분이 걸렸습니다. 조회 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어난 것이 원인이었습니다.',
     a: '화면에 필요한 값은 담당자 이름뿐이라 연관관계 매핑을 새로 추가할 필요는 없다고 보았습니다. 조회할 id를 먼저 모아 한 번에 가져오면 기존 도메인 구조를 바꾸지 않고 왕복 횟수만 줄일 수 있다고 판단했습니다.',
     c: '업무·활동·팀원에서 필요한 user id를 Set으로 모아 findAllById 한 번으로 조회하고, 같은 방식을 조회 메서드 5곳에 적용했습니다. 읽기 메서드에는 @Transactional(readOnly = true)를 붙였습니다.',
-    r: '업무·활동 건수와 관계없이 사용자 조회가 1회로 고정됩니다.',
+    r: '대시보드 9개 화면의 로딩 시간이 2분에서 10초로 줄었습니다. 업무 140여 건 기준으로 업무 목록에서 약 140회 나가던 사용자 조회는 API당 1회로 고정됩니다.',
   },
   {
     t: '소규모 팀에서 Isolation Forest의 과부하 미탐지', icon: 'LuChartScatter', tags: ['이상치 탐지', '통계', 'MAD'],

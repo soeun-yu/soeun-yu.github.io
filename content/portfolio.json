@@ -12,15 +12,15 @@
       "role": "웹 풀스택 개발자 · AI 활용",
       "tagline": "React · Spring Boot로 서비스를 만들고, 필요한 기능에 ML 모델을 붙입니다",
       "summary3": [
-        "React · Spring Boot로 화면부터 API · DB까지 맡아 웹 서비스를 만들어 왔습니다.",
-        "3H Furniture에서 메인 페이지 · 회원/인증 · 상품 검색을, WorkFlow AI에서 대시보드 화면 9개와 REST API 10개를 담당했습니다. 두 프로젝트 모두 React 화면과 Spring Boot API를 함께 구현했습니다.",
-        "필요한 기능에는 ML 모델을 붙였습니다. WorkFlow AI의 예측 모델 2종을 FastAPI로 서빙하고, 호출이 실패할 때의 처리 방식도 모델별로 정했습니다."
+        "React 화면과 Spring Boot · Node.js · FastAPI 서버를 함께 다루는 풀스택 개발자입니다.",
+        "Java 풀스택 과정의 팀 프로젝트 3건에서 회원·인증 도메인의 화면과 서버를 맡았습니다. 3H Furniture에서는 로그인 요청 형식 충돌을 해결해, 멈춰 있던 팀 기능 4개의 개발을 2일 만에 재개시켰습니다.",
+        "WorkFlow AI에서 대시보드를 맡아 화면 9개, REST API 13개, ML 모델 2종을 구현했고, N+1 조회를 배치 조회로 바꿔 로딩 시간을 2분에서 10초로 줄였습니다."
       ],
       "summary": "웹 디자이너 과정에서 웹사이트 리뉴얼 2건으로 UI/UX와 퍼블리싱을 익힌 뒤, Java 기반 풀스택 웹 개발자 과정에서 팀 프로젝트 3건(JSP → React+Express → Spring Boot)으로 화면과 서버를 함께 담당했고, AI 기반 서비스 개발 심화 과정에서 ML·DL·LLM 개인 프로젝트 3건과 팀 프로젝트 1건을 진행했습니다.",
       "mockCaption": "workflow-ai · /dashboard",
       "floats": [
         "담당 화면 9",
-        "REST API 10",
+        "REST API 13",
         "Spring Boot · Java 21"
       ],
       "cta": [
@@ -47,17 +47,17 @@
       {
         "value": "9화면",
         "label": "WorkFlow AI 담당 화면",
-        "sub": "REST API 10개 · 테이블 9개"
+        "sub": "REST API 13개 · ML 모델 2종"
       },
       {
-        "value": "6,948줄",
-        "label": "3H 담당 코드 (최종 기준)",
-        "sub": "React · CSS · Java 합계"
+        "value": "2분→10초",
+        "label": "대시보드 로딩 시간",
+        "sub": "WorkFlow AI · N+1 조회 개선"
       },
       {
-        "value": "94.5%",
-        "label": "사조 분류 테스트 정확도",
-        "sub": "ResNet-50 · 테스트 200장"
+        "value": "4개",
+        "label": "멈췄던 팀 기능 개발 재개",
+        "sub": "3H Furniture · 2일 만에 로그인 연동"
       }
     ],
     "strengths": {
@@ -67,46 +67,46 @@
       "items": [
         {
           "no": "01",
-          "title": "화면 · API · DB 전 구간 구현",
-          "desc": "WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 10개, PostgreSQL 4개 테이블 집계를 구현했습니다. 3H Furniture에서는 메인 페이지와 회원/인증 도메인, 상품 검색을 React 화면부터 Spring Boot API · JPA까지 담당했습니다.",
+          "title": "화면 · API · DB · ML 구현",
+          "desc": "WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 13개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.",
           "proof": [
-            "담당 화면 15",
-            "Spring Boot API 10",
-            "DB 설계 · 집계",
-            "팀 프로젝트 4건"
+            "화면 9",
+            "API 13",
+            "테이블 9",
+            "ML 모델 2"
           ]
         },
         {
           "no": "02",
-          "title": "인증 · 권한 구현",
-          "desc": "3H Furniture에서 Spring Security 폼 로그인이 React의 JSON 요청을 읽지 못하는 문제를 로그인 성공·실패 핸들러의 JSON 응답으로 해결하고, 구글 · 네이버 · 카카오 소셜 로그인을 일반 회원과 같은 권한 체계에 통합했습니다. PPAP에서는 JWT 인증과 회원 도메인을, 너와 함께에서는 세션 로그인을 맡았습니다.",
+          "title": "인증을 세 가지 계층으로 구현",
+          "desc": "팀 프로젝트 3건에서 회원·인증 도메인을 연달아 맡았습니다. JSP·Servlet의 HttpSession 로그인, Node.js의 JWT 인증 미들웨어, Spring Security의 폼 로그인과 OAuth2 소셜 로그인 3종을 화면과 서버 양쪽에서 구현했습니다.",
           "proof": [
+            "HttpSession",
+            "JWT 미들웨어",
             "Spring Security",
-            "OAuth2 3종",
-            "JWT",
-            "세션 인증"
+            "OAuth2 3종"
           ]
         },
         {
           "no": "03",
           "title": "원인을 확인한 뒤 수정",
-          "desc": "반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄였습니다. 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다. 모델 성능은 K-fold로 다시 검증해 테스트 정확도와 함께 기록했습니다.",
+          "desc": "3H Furniture에서 화면과 서버의 오류 메시지를 대조해 로그인 요청 형식 충돌을 해결했습니다. WorkFlow AI에서는 반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄여 로딩 시간을 2분에서 10초로 단축했고, 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다.",
           "proof": [
+            "로딩 2분→10초",
+            "415 오류 해결",
             "N+1 제거",
-            "알고리즘 교체",
-            "K-fold 검증",
-            "Failure Case 분석"
+            "알고리즘 교체"
           ]
         },
         {
           "no": "04",
           "title": "팀 공통 구조와 문서 작업",
-          "desc": "6명이 같은 구조에서 작업할 수 있도록 프로젝트 계층 구조를 제안해 팀 표준으로 확정했습니다. 착수보고서의 개발 수행 계획을 작성했고, 3H Furniture에서는 최종 발표를 맡았습니다.",
+          "desc": "WorkFlow AI 초반에 프로젝트 폴더 구조 설계를 자원했습니다. React · Spring Boot · FastAPI 3계층 구조의 방향을 참고 자료와 함께 팀 채널에 먼저 공유하고, PL의 검토 의견을 반영한 구조도를 다시 공유했습니다. 이 구조는 팀장의 일부 수정을 거쳐 프로젝트에 반영되었습니다. 설계 · 개발 · 트러블슈팅 문서 14건과 착수보고서의 개발 수행 계획을 작성했습니다.",
           "proof": [
-            "프로젝트 계층 구조",
-            "착수보고서 작성",
-            "PR 자동 점검",
-            "최종 발표 담당"
+            "3계층 폴더 구조",
+            "초안 먼저 공유",
+            "문서 14건",
+            "착수보고서 작성"
           ]
         }
       ]
@@ -131,7 +131,7 @@
         {
           "track": "kdc",
           "date": "2026.02",
-          "title": "너와 함께",
+          "title": "너의 곁에",
           "note": "JSP · Servlet · JDBC\n세션 인증과 마이페이지 담당"
         },
         {
@@ -142,9 +142,9 @@
         },
         {
           "track": "kdc",
-          "date": "2026.05",
+          "date": "2026.04",
           "title": "3H Furniture",
-          "note": "Spring Boot · Security · JPA\n메인 · 상품 검색 · 인증 담당"
+          "note": "Spring Boot · Security · JPA\n회원·인증과 상품 검색 담당"
         },
         {
           "track": "ai",
@@ -168,7 +168,7 @@
           "track": "ai",
           "date": "2026.07",
           "title": "WorkFlow AI",
-          "note": "React · Spring Boot · FastAPI\n화면 9 · API 10 · ML 2종"
+          "note": "React · Spring Boot · FastAPI\n화면 9 · API 13 · ML 2종"
         }
       ]
     },
@@ -182,8 +182,8 @@
           "items": [
             {
               "name": "React",
-              "use": "대시보드 9화면 · 가구몰 메인·검색 · 매물 탐색",
-              "projects": "WorkFlow AI · 3H · PPAP"
+              "use": "대시보드 9화면 · 매물 탐색 · 가구몰 메인",
+              "projects": "WorkFlow AI · PPAP · 3H"
             },
             {
               "name": "TypeScript",
@@ -213,7 +213,7 @@
             {
               "name": "JSP · JSTL",
               "use": "회원 인증 · 마이페이지 화면",
-              "projects": "너와 함께"
+              "projects": "너의 곁에"
             }
           ]
         },
@@ -227,17 +227,17 @@
             },
             {
               "name": "Spring Boot",
-              "use": "대시보드 API 10개 · 상품 조회 API",
+              "use": "대시보드 API 13개 · 상품 조회 API",
               "projects": "WorkFlow AI · 3H"
             },
             {
               "name": "Spring Security",
-              "use": "OAuth2 소셜 로그인 3종 · JSON 로그인 응답",
+              "use": "폼 로그인 · OAuth2 소셜 로그인 · 권한 분리",
               "projects": "3H Furniture"
             },
             {
               "name": "Spring Data JPA",
-              "use": "업무·마일스톤·회원·상품 테이블 접근",
+              "use": "업무·마일스톤·회원 테이블 접근",
               "projects": "3H · WorkFlow AI"
             },
             {
@@ -253,7 +253,7 @@
             {
               "name": "Servlet · JDBC",
               "use": "세션 로그인 · DTO/DAO 계층",
-              "projects": "너와 함께"
+              "projects": "너의 곁에"
             }
           ]
         },
@@ -317,8 +317,8 @@
             },
             {
               "name": "Oracle DB",
-              "use": "회원·상품·주문·배송 17개 테이블",
-              "projects": "3H(Cloud ADB) · 너와 함께"
+              "use": "상품·회원·게시판 테이블",
+              "projects": "3H(Cloud ADB) · 너의 곁에"
             },
             {
               "name": "MongoDB · Mongoose",
@@ -393,7 +393,7 @@
                 "label": "담당 화면"
               },
               {
-                "value": "10",
+                "value": "13",
                 "label": "REST API"
               },
               {
@@ -523,15 +523,15 @@
             ],
             "title": "3H Furniture",
             "sub": "Spring Boot + React 기반 가구 이커머스 반응형 웹",
-            "role": "메인 페이지 · 회원/인증 · 상품 검색 · 북마크",
+            "role": "회원/인증 도메인 · 상품 검색 · 메인 페이지",
             "metrics": [
               {
                 "value": "3",
                 "label": "소셜 로그인"
               },
               {
-                "value": "3",
-                "label": "복합 검색 조건"
+                "value": "4",
+                "label": "개발 재개 기능"
               },
               {
                 "value": "6",
@@ -543,7 +543,7 @@
               "Spring Boot",
               "Spring Security",
               "Spring Data JPA",
-              "React"
+              "OAuth2"
             ]
           },
           {
@@ -581,7 +581,7 @@
               "1차",
               "팀"
             ],
-            "title": "너와 함께",
+            "title": "너의 곁에",
             "sub": "반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)",
             "role": "회원 인증 · 마이페이지 · 반려견 정보 관리",
             "metrics": [
@@ -689,12 +689,25 @@
       "desc": "프로젝트 개발 중 확인한 문제와 처리 과정입니다. 문제 · 분석 · 행동 · 결과 순으로 정리했습니다.",
       "cases": [
         {
+          "project": "3H Furniture",
+          "title": "React 로그인 요청과 Spring Security 폼 로그인의 형식 충돌",
+          "problem": "로그인이 되지 않아, 로그인한 사용자의 권한 정보가 필요한 팀 기능 4개(장바구니, 마이페이지, 관리자 대시보드, 관리자 상품관리)의 개발이 멈췄습니다. 로그인을 시도하면 화면에는 415 Unsupported Media Type, 서버에는 HttpMediaTypeNotSupportedException이 남았습니다.",
+          "analysis": "오류 메시지를 직접 해석한 뒤 로그인 화면(Login.js), 회원 코드, SecurityConfig를 대조했습니다. React는 입력값을 JSON으로 보내는데 Spring Security 폼 로그인은 폼 파라미터만 읽고, 파라미터 이름도 서버 설정과 같아야 한다는 것이 원인이었습니다.",
+          "action": "문제 상황을 글로 정리해 팀 채팅방에 먼저 공유했습니다. 로그인 요청은 URLSearchParams로 폼 형식(x-www-form-urlencoded)으로 변환하고, 로그인 성공 · 실패 · 미인증 응답은 핸들러에서 JSON으로 통일했습니다.",
+          "result": "2일 만에 로그인이 연동되어 멈춰 있던 팀 기능 4개의 개발이 재개됐습니다. 같은 구조 위에 관리자 로그인과 소셜 로그인 3종을 추가했습니다.",
+          "tags": [
+            "Spring Security",
+            "React",
+            "요청 형식"
+          ]
+        },
+        {
           "project": "WorkFlow AI",
-          "title": "대시보드 요약 API의 N+1 조회",
-          "problem": "대시보드 요약 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어났습니다.",
+          "title": "N+1 조회 개선으로 대시보드 로딩 2분 → 10초",
+          "problem": "원격 DB에 연결하자 대시보드 9개 화면의 로딩에 2분이 걸렸습니다. 조회 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어난 것이 원인이었습니다.",
           "analysis": "화면에 필요한 값은 담당자 이름뿐이라 연관관계 매핑을 새로 추가할 필요는 없다고 보았습니다. 조회할 id를 먼저 모아 한 번에 가져오면 기존 도메인 구조를 바꾸지 않고 왕복 횟수만 줄일 수 있다고 판단했습니다.",
           "action": "업무·활동·팀원에서 필요한 user id를 Set으로 모아 findAllById 한 번으로 조회하고, 같은 방식을 조회 메서드 5곳에 적용했습니다. 읽기 메서드에는 @Transactional(readOnly = true)를 붙였습니다.",
-          "result": "업무·활동 건수와 관계없이 사용자 조회가 1회로 고정됩니다.",
+          "result": "대시보드 9개 화면의 로딩 시간이 2분에서 10초로 줄었습니다. 업무 140여 건 기준으로 업무 목록에서 약 140회 나가던 사용자 조회는 API당 1회로 고정됩니다.",
           "tags": [
             "N+1",
             "JPA",
@@ -755,19 +768,6 @@
         },
         {
           "project": "3H Furniture",
-          "title": "React ↔ Spring Security 로그인 요청 형식 불일치",
-          "problem": "React가 로그인 정보를 JSON으로 보내자 Spring Security 폼 로그인이 값을 읽지 못해 로그인이 실패했습니다. 로그인 권한 정보가 필요한 장바구니 · 마이페이지 · 관리자 대시보드 · 관리자 상품관리 4개 기능의 개발이 함께 멈췄습니다.",
-          "analysis": "폼 로그인 필터는 아이디·비밀번호를 요청 파라미터(x-www-form-urlencoded)에서 읽고, 성공·실패를 페이지 이동으로 응답합니다. 그래서 요청 형식과 응답 형식을 모두 React에 맞춰야 한다고 판단했습니다.",
-          "action": "React에서 URLSearchParams로 폼 형식 요청을 보내고 usernameParameter(\"id\")로 필드명을 맞췄습니다. 로그인 성공·실패 핸들러가 status · message · role을 JSON으로 반환하게 하고, 미인증 요청에는 401 JSON을 응답하도록 설정했습니다.",
-          "result": "2일 만에 해결해 멈췄던 4개 기능의 개발이 재개됐고, 응답의 role 값으로 관리자와 일반 회원 화면을 나눌 수 있게 됐습니다.",
-          "tags": [
-            "Spring Security",
-            "REST 연동",
-            "협업"
-          ]
-        },
-        {
-          "project": "3H Furniture",
           "title": "병합 후 백엔드 서버 기동 실패",
           "problem": "팀원 코드를 병합한 뒤 백엔드 서버가 켜지지 않아, 팀 전체가 기능을 실행해 확인할 수 없었습니다.",
           "analysis": "ItemImgRepository에 파라미터 타입이 Long이 아닌 lombok.extern.java.Log로 잘못 지정된 조회 메서드가 있었고, 같은 역할의 메서드가 이미 따로 있는 중복 코드였습니다.",
@@ -788,15 +788,15 @@
       "items": [
         {
           "title": "원인 확인 후 수정",
-          "desc": "성능 문제는 쿼리 왕복 횟수로, 모델 문제는 지표별 수치로 원인을 먼저 확인한 뒤 코드를 수정했습니다."
+          "desc": "오류 메시지와 코드를 화면과 서버 양쪽에서 대조해 원인을 먼저 특정한 뒤 수정했습니다. 로그인 형식 충돌과 N+1 조회 모두 이 순서로 해결했습니다."
         },
         {
           "title": "실패 상황 처리",
           "desc": "ML 서버 장애, 응답 지연, 화면 전환 중 도착한 이전 응답을 각각 다르게 처리했고, 실패했을 때 화면에 표시할 내용도 정했습니다."
         },
         {
-          "title": "결정 이유 기록",
-          "desc": "선택한 이유를 코드 주석과 개발 보고서에 기록해 팀에 공유했습니다. 같은 내용을 다시 조사하지 않기 위해서였습니다."
+          "title": "초안 공유와 기록",
+          "desc": "완성본이 아닌 초안을 먼저 공유해 피드백을 받았습니다. 선택한 이유는 코드 주석과 설계 · 개발 · 트러블슈팅 문서에 남겨, 팀이 같은 내용을 다시 조사하지 않게 했습니다."
         }
       ]
     },
@@ -1243,17 +1243,17 @@
       ],
       "title": "3H Furniture",
       "sub": "Spring Boot + React 기반 가구 이커머스 반응형 웹",
-      "period": "2026.04.24 ~ 2026.06.15",
-      "team": "CMYK팀 · 5명",
-      "role": "메인 페이지 · 회원/인증 도메인 · 상품 검색 · 최종 발표",
+      "period": "2026.04.24 ~ 06.15",
+      "team": "CMYK팀 · 5인",
+      "role": "회원/인증 도메인 · 상품 검색 · 메인 페이지 · 최종 발표",
       "metrics": [
         {
           "value": "3",
           "label": "소셜 로그인"
         },
         {
-          "value": "3",
-          "label": "복합 검색 조건"
+          "value": "4",
+          "label": "개발 재개 기능"
         },
         {
           "value": "6",
@@ -1266,28 +1266,28 @@
           "label": "담당 기능",
           "items": [
             {
-              "title": "메인 페이지",
-              "desc": "메인 배너, 카테고리 네비게이션, 베스트셀러·신상품 섹션, 상품 리스트를 컴포넌트로 분리해 구현. 헤더·푸터 공통 레이아웃과 MainController · MainService로 상품 조회 API를 함께 담당"
-            },
-            {
-              "title": "상품 검색 필터",
-              "desc": "카테고리 · 색상 · 가격대를 조합한 복합 조건 검색. 검색어는 상품명·카테고리·색상 중 하나만 맞아도 통과시키고, 조건은 모두 만족해야 통과(MainService). SearchContext로 헤더 검색창과 결과 화면의 조건을 URL 쿼리와 함께 공유"
+              "title": "Spring Security 로그인 연동",
+              "desc": "폼 로그인을 React와 연동. 로그인 성공 · 실패 · 미인증을 JSON으로 응답하는 핸들러를 구현하고, 관리자 테이블 → 일반 회원 테이블 순으로 조회해 하나의 로그인 화면에서 두 역할을 처리"
             },
             {
               "title": "OAuth2 소셜 로그인",
-              "desc": "구글 · 네이버 · 카카오 계정으로 가입. LoginSuccessHandler와 OAuth2DTO · SessionMember로 소셜 계정을 일반 회원과 동일한 권한 체계에 통합해, 구매·장바구니·북마크를 그대로 사용"
+              "desc": "구글 · 네이버 · 카카오 계정으로 가입. 이메일 기준으로 신규 가입 또는 정보 갱신을 처리하고, 소셜 계정을 일반 회원과 동일한 권한 체계에 통합해 구매 · 장바구니 · 북마크를 그대로 사용"
             },
             {
-              "title": "Spring Security 인증·인가",
-              "desc": "React와 연동되도록 로그인 성공·실패를 JSON으로 응답하는 핸들러와 미인증 401 응답을 구성. 관리자 → 일반 회원 순으로 조회해 한 로그인 화면에서 두 역할을 구분하고 MemberRole enum으로 권한을 분리"
+              "title": "회원 API · 계정 찾기",
+              "desc": "회원가입(아이디 · 이메일 · 전화번호 중복 검사, BCrypt 암호화), 조회 · 수정 · 탈퇴, 아이디 찾기, 비밀번호 재설정. 검증 실패를 필드명과 메시지 JSON으로 반환해 화면의 해당 입력칸에 표시"
             },
             {
-              "title": "회원가입 · 계정 찾기",
-              "desc": "회원가입 · 아이디 찾기 · 비밀번호 재설정 화면과 각 결과 화면 구현"
+              "title": "상품 통합 검색",
+              "desc": "검색어와 카테고리 · 색상 · 가격대 필터를 함께 적용하는 검색 API 구현. React Context로 검색 조건을 전역 관리하고 URL 쿼리스트링과 동기화"
+            },
+            {
+              "title": "메인 페이지",
+              "desc": "헤더 · 푸터, 메인 배너 자동 슬라이드, 화면 폭에 따라 4 · 3 · 2개를 노출하는 상품 목록 무한 슬라이드, 카테고리 섹션 구현. MainController · MainService로 상품 조회 API를 함께 담당"
             },
             {
               "title": "북마크(찜)",
-              "desc": "Bookmarks 엔티티 · Repository · Service · DTO를 처음 설계·구현하고, 메인 상품 카드에 북마크 버튼을 연결"
+              "desc": "초기 엔티티 · Repository · Service · DTO를 작성해 관심 상품 저장/조회 기능의 바탕을 구현"
             }
           ]
         },
@@ -1295,7 +1295,7 @@
           "type": "note",
           "heading": null,
           "label": "서비스 내 위치",
-          "body": "메인 페이지, 회원 가입·로그인, 상품 검색 기능을 맡았습니다. 서비스에 처음 들어와 상품을 찾기까지 거치는 화면입니다."
+          "body": "회원 가입 · 로그인, 상품 검색, 메인 페이지를 API부터 화면까지 맡았습니다. 장바구니 · 마이페이지 · 관리자 기능이 모두 로그인한 사용자의 권한 정보를 사용합니다."
         },
         {
           "type": "charts",
@@ -1487,30 +1487,20 @@
           "note": "최종 발표 발표자를 맡았습니다."
         }
       ],
-      "links": [
-        {
-          "label": "GitHub",
-          "url": "https://github.com/alphaengneering02-dev/3H_Furniture"
-        },
-        {
-          "label": "배포 사이트",
-          "url": "https://cheerful-gecko-a85d13.netlify.app"
-        }
-      ],
       "problemSolving": {
         "title": "이 프로젝트에서 해결한 문제",
         "desc": "개발 중 확인한 문제와 처리 과정입니다. 문제 · 분석 · 행동 · 결과 순으로 정리했습니다.",
         "cases": [
           {
-            "title": "React ↔ Spring Security 로그인 요청 형식 불일치",
-            "problem": "React가 로그인 정보를 JSON으로 보내자 Spring Security 폼 로그인이 값을 읽지 못해 로그인이 실패했습니다. 로그인 권한 정보가 필요한 장바구니 · 마이페이지 · 관리자 대시보드 · 관리자 상품관리 4개 기능의 개발이 함께 멈췄습니다.",
-            "analysis": "폼 로그인 필터는 아이디·비밀번호를 요청 파라미터(x-www-form-urlencoded)에서 읽고, 성공·실패를 페이지 이동으로 응답합니다. 그래서 요청 형식과 응답 형식을 모두 React에 맞춰야 한다고 판단했습니다.",
-            "action": "React에서 URLSearchParams로 폼 형식 요청을 보내고 usernameParameter(\"id\")로 필드명을 맞췄습니다. 로그인 성공·실패 핸들러가 status · message · role을 JSON으로 반환하게 하고, 미인증 요청에는 401 JSON을 응답하도록 설정했습니다.",
-            "result": "2일 만에 해결해 멈췄던 4개 기능의 개발이 재개됐고, 응답의 role 값으로 관리자와 일반 회원 화면을 나눌 수 있게 됐습니다.",
+            "title": "React 로그인 요청과 Spring Security 폼 로그인의 형식 충돌",
+            "problem": "로그인이 되지 않아, 로그인한 사용자의 권한 정보가 필요한 팀 기능 4개(장바구니, 마이페이지, 관리자 대시보드, 관리자 상품관리)의 개발이 멈췄습니다. 로그인을 시도하면 화면에는 415 Unsupported Media Type, 서버에는 HttpMediaTypeNotSupportedException이 남았습니다.",
+            "analysis": "오류 메시지를 직접 해석한 뒤 로그인 화면(Login.js), 회원 코드, SecurityConfig를 대조했습니다. React는 입력값을 JSON으로 보내는데 Spring Security 폼 로그인은 폼 파라미터만 읽고, 파라미터 이름도 서버 설정과 같아야 한다는 것이 원인이었습니다.",
+            "action": "문제 상황을 글로 정리해 팀 채팅방에 먼저 공유했습니다. 로그인 요청은 URLSearchParams로 폼 형식(x-www-form-urlencoded)으로 변환하고, 로그인 성공 · 실패 · 미인증 응답은 핸들러에서 JSON으로 통일했습니다.",
+            "result": "2일 만에 로그인이 연동되어 멈춰 있던 팀 기능 4개의 개발이 재개됐습니다. 같은 구조 위에 관리자 로그인과 소셜 로그인 3종을 추가했습니다.",
             "tags": [
               "Spring Security",
-              "REST 연동",
-              "협업"
+              "React",
+              "요청 형식"
             ]
           },
           {
@@ -1526,7 +1516,17 @@
             ]
           }
         ]
-      }
+      },
+      "links": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/alphaengneering02-dev/3H_Furniture"
+        },
+        {
+          "label": "배포 사이트",
+          "url": "https://cheerful-gecko-a85d13.netlify.app"
+        }
+      ]
     },
     "gaming-ml": {
       "pageTitle": "온라인 게이머 사회적 고립도 예측 — 유소은 포트폴리오",
@@ -1783,17 +1783,17 @@
       ]
     },
     "nextto": {
-      "pageTitle": "너와 함께 — 유소은 포트폴리오",
+      "pageTitle": "너의 곁에 — 유소은 포트폴리오",
       "pageDescription": "반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)",
       "part": "PART 2 · Java 기반 풀스택 웹 개발자 과정",
       "badges": [
         "1차",
         "팀"
       ],
-      "title": "너와 함께",
+      "title": "너의 곁에",
       "sub": "반려견 보호자를 위한 정보 공유 커뮤니티 (JSP · Servlet MVC)",
-      "period": "2026.02 ~ 2026.03 (약 2주)",
-      "team": "무조건동의팀",
+      "period": "2026.02.23 ~ 03.06 (약 2주)",
+      "team": "무조건동의팀 · 5인",
       "role": "회원 인증 · 마이페이지 · 반려견 정보 관리",
       "metrics": [
         {
@@ -1816,7 +1816,7 @@
           "items": [
             {
               "title": "로그인 · 회원가입",
-              "desc": "세션 기반 로그인과 입력값 검증을 포함한 가입 플로우. 일반 사용자 계정과 관리자 계정을 구분해 처리"
+              "desc": "HttpSession 기반 로그인과 입력값 검증, 아이디 중복 가입 방지를 포함한 가입 플로우. 회원정보와 반려견정보를 세션 객체로 전 페이지에서 공유하고, 일반 사용자 계정과 관리자 계정을 구분해 처리"
             },
             {
               "title": "마이페이지",
@@ -1824,7 +1824,7 @@
             },
             {
               "title": "내 정보 관리 · 수정",
-              "desc": "조회 화면과 수정 화면을 분리해 구현. 수정 화면에는 비밀번호 재확인 입력과 프로필 사진 교체(파일 업로드), 생년월일 선택기를 배치하고 계정 종류는 읽기 전용으로 고정"
+              "desc": "조회 화면과 수정 화면을 분리해 구현. 프로필 사진은 MultipartRequest로 등록 · 교체하고, 새 사진을 올리지 않고 수정하면 기존 사진이 사라지던 오류를 수정"
             },
             {
               "title": "반려견 정보 등록 · 수정",
@@ -1835,8 +1835,8 @@
               "desc": "수정 화면에서 탈퇴를 처리해 계정과 관련 정보를 정리"
             },
             {
-              "title": "DTO · DAO 패턴",
-              "desc": "Model 2(MVC) 구조에서 데이터 접근 계층을 분리하는 기본 패턴을 적용"
+              "title": "DTO · DAO 패턴과 테이블 설계",
+              "desc": "Model 2(MVC) 구조에서 회원(MEMBER) · 반려견(PET) 테이블과 DTO · DAO · Servlet을 작성. 계정 종류 컬럼을 CHAR에서 VARCHAR로 바꿔 공백이 채워지던 문제를 해결"
             }
           ]
         },
@@ -1990,8 +1990,8 @@
       ],
       "title": "PPAP",
       "sub": "네이버 지도와 공공 실거래 데이터를 결합한 부동산 매물 탐색 플랫폼",
-      "period": "2026.03 ~ 2026.04",
-      "team": "PPAP팀",
+      "period": "2026.03.16 ~ 04.03",
+      "team": "PPAP팀 · 5인",
       "role": "인증 · 회원 도메인",
       "links": [
         {
@@ -2016,7 +2016,7 @@
           "items": [
             {
               "title": "JWT 기반 로그인·인증",
-              "desc": "authMiddleware로 토큰을 검증하고 보호 라우트를 분리. AuthContext로 프론트 인증 상태를 관리"
+              "desc": "authMiddleware가 토큰이 없으면 비로그인 상태로 통과시키고 유효하지 않은 토큰에만 401을 반환해, 로그인 필수 기능과 공개 기능이 같은 미들웨어를 사용. 토큰은 응답 헤더로 발급하고 React 전역 컨텍스트로 인증 상태를 관리"
             },
             {
               "title": "회원 도메인",
@@ -2024,7 +2024,7 @@
             },
             {
               "title": "일반 / 사업자 회원 구분",
-              "desc": "회원 유형에 따라 매물 등록·상담 관리 권한이 나뉘도록 회원 구분 기준을 설계"
+              "desc": "회원 유형에 따라 매물 등록·상담 관리 권한이 나뉘도록 회원 구분 기준을 설계하고 유형 선택 · 회원가입 화면을 구현. CSS 모듈로 화면 간 스타일 충돌을 방지"
             }
           ]
         },
@@ -2079,7 +2079,7 @@
       ],
       "title": "WorkFlow AI",
       "sub": "팀 프로젝트의 회의·업무·기록·평가를 AI가 하나의 흐름으로 잇는 협업 플랫폼",
-      "period": "2026.07.09 ~ 08.07 (4주)",
+      "period": "2026.07.06 ~ 08.05 (4주)",
       "team": "3팀 · 6인 기능 오너제",
       "role": "FS-3 대시보드 담당 — 화면 · API · DB · ML",
       "links": [
@@ -2098,7 +2098,7 @@
           "label": "담당 화면"
         },
         {
-          "value": "10",
+          "value": "13",
           "label": "REST API"
         },
         {
@@ -2120,8 +2120,8 @@
               "desc": "진행률 분석 · 블로커 관리 · 마감 임박 · 팀원별 업무량 · 최근 활동 · 전체 업무 관리를 역할(팀장/팀원)에 따라 다르게 노출"
             },
             {
-              "title": "Spring Boot 집계 API 10개",
-              "desc": "tasks · milestones · activities · ml_predictions 4개 테이블을 한 번에 집계. @PreAuthorize로 팀장 전용(마일스톤 CRUD)과 멤버 권한을 분리"
+              "title": "Spring Boot API 13개",
+              "desc": "조회 6 · 마일스톤 3 · 재분석 작업 4. tasks · milestones · activities · ml_predictions 4개 테이블을 집계하고, @PreAuthorize로 팀장 전용(마일스톤 CRUD)과 멤버 권한을 분리. ML 재분석은 Redis Stream 작업 큐로 비동기 처리"
             },
             {
               "title": "ML 지연 위험도 예측",
@@ -2136,8 +2136,8 @@
               "desc": "15초마다 시그니처만 비교해 실제 변경이 있을 때만 갱신하므로 스크롤·선택 상태가 유지됨. 요청 세대 번호로 프로젝트 전환 시 도착한 이전 응답(stale)을 폐기"
             },
             {
-              "title": "프로젝트 계층 구조 · 착수보고서",
-              "desc": "프로젝트 계층 구조 초안을 제안했고, Frontend(React) / Backend(Spring Boot) / AI Backend(FastAPI) 3계층 대분류가 팀 표준으로 확정됨. 착수보고서 「개발 수행 계획」 작성"
+              "title": "프로젝트 폴더 구조 · 문서화",
+              "desc": "폴더 구조 설계를 자원해 Frontend(React) / Backend(Spring Boot) / AI Backend(FastAPI) 3계층 구조의 방향을 참고 자료와 함께 팀 채널에 공유했고, PL의 검토 의견을 반영한 구조도가 팀장의 일부 수정을 거쳐 프로젝트에 반영됨. 설계 · 개발 · 트러블슈팅 문서 14건과 착수보고서 「개발 수행 계획」 작성"
             }
           ]
         },
@@ -2179,32 +2179,32 @@
               "rows": [
                 {
                   "label": "Spring REST API",
-                  "value": "10개",
+                  "value": "13개",
                   "pct": 100.0,
                   "highlight": false
                 },
                 {
                   "label": "React 화면",
                   "value": "9개",
-                  "pct": 90.0,
+                  "pct": 69.2,
                   "highlight": false
                 },
                 {
                   "label": "공통 팝업·차트",
                   "value": "6개",
-                  "pct": 60.0,
+                  "pct": 46.2,
                   "highlight": false
                 },
                 {
                   "label": "데이터 훅",
                   "value": "5개",
-                  "pct": 50.0,
+                  "pct": 38.5,
                   "highlight": false
                 },
                 {
                   "label": "FastAPI ML 모델",
                   "value": "2개",
-                  "pct": 20.0,
+                  "pct": 15.4,
                   "highlight": false
                 }
               ]
@@ -2306,7 +2306,7 @@
           "type": "note",
           "heading": null,
           "label": "프로젝트 계층 구조",
-          "body": "6명이 같은 구조에서 작업할 수 있도록 초안을 제안했고, Frontend / Backend / AI Backend 3계층 대분류가 팀 표준으로 확정되었습니다.",
+          "body": "프로젝트 초반(당시 팀원 7명)에 같은 구조에서 작업할 수 있도록 3계층 구조의 방향을 참고 자료와 함께 먼저 공유했습니다. PL의 검토 의견을 반영한 구조도를 같은 날 다시 공유했고, 팀장이 일부를 수정해 프로젝트에 반영했습니다.",
           "items": [
             {
               "name": "Frontend (React)",
@@ -2328,11 +2328,11 @@
         "desc": "개발 중 확인한 문제와 처리 과정입니다. 문제 · 분석 · 행동 · 결과 순으로 정리했습니다.",
         "cases": [
           {
-            "title": "대시보드 요약 API의 N+1 조회",
-            "problem": "대시보드 요약 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어났습니다.",
+            "title": "N+1 조회 개선으로 대시보드 로딩 2분 → 10초",
+            "problem": "원격 DB에 연결하자 대시보드 9개 화면의 로딩에 2분이 걸렸습니다. 조회 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어난 것이 원인이었습니다.",
             "analysis": "화면에 필요한 값은 담당자 이름뿐이라 연관관계 매핑을 새로 추가할 필요는 없다고 보았습니다. 조회할 id를 먼저 모아 한 번에 가져오면 기존 도메인 구조를 바꾸지 않고 왕복 횟수만 줄일 수 있다고 판단했습니다.",
             "action": "업무·활동·팀원에서 필요한 user id를 Set으로 모아 findAllById 한 번으로 조회하고, 같은 방식을 조회 메서드 5곳에 적용했습니다. 읽기 메서드에는 @Transactional(readOnly = true)를 붙였습니다.",
-            "result": "업무·활동 건수와 관계없이 사용자 조회가 1회로 고정됩니다.",
+            "result": "대시보드 9개 화면의 로딩 시간이 2분에서 10초로 줄었습니다. 업무 140여 건 기준으로 업무 목록에서 약 140회 나가던 사용자 조회는 API당 1회로 고정됩니다.",
             "tags": [
               "N+1",
               "JPA",

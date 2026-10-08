@@ -47,7 +47,7 @@ module.exports = async function frontSlides(pres, K, T) {
     };
     await float('LuMonitor', '담당 화면', '9', C.accent3, 10.95, 1.2);
     await float('LuServer', 'Spring Boot', 'Java 21', C.kdc, 6.85, 4.3);
-    await float('LuCode', 'REST API', '10', C.kdc, 10.75, 4.78);
+    await float('LuCode', 'REST API', '13', C.kdc, 10.75, 4.78);
   }
 
   // ───────────── 2. 목차 ─────────────
@@ -66,7 +66,7 @@ module.exports = async function frontSlides(pres, K, T) {
     });
     const parts = [
       ['05', 'PART 1', 'AI 기반 서비스 개발 심화 과정', C.ai, ['WorkFlow AI', 'Curatio', 'artClassifier', '게이머 고립도 예측']],
-      ['06', 'PART 2', 'Java 기반 풀스택 웹 개발자 과정', C.kdc, ['3H Furniture', 'PPAP', '너와 함께']],
+      ['06', 'PART 2', 'Java 기반 풀스택 웹 개발자 과정', C.kdc, ['3H Furniture', 'PPAP', '너의 곁에']],
       ['07', 'PART 3', '웹 디자이너 과정', C.web, ['할리스커피', '오늘의집']],
     ];
     let py = 1.75;
@@ -88,9 +88,9 @@ module.exports = async function frontSlides(pres, K, T) {
     await T.background(s, 'glow', C.accent);
     T.header(s, { tag: 'About', title: '한눈에 보기' });
     const sum3 = [
-      'React · Spring Boot로 화면부터 API · DB까지 맡아 웹 서비스를 만들어 왔습니다.',
-      '3H Furniture에서 메인 페이지 · 회원/인증 · 상품 검색을, WorkFlow AI에서 대시보드 화면 9개와 REST API 10개를 담당했습니다. 두 프로젝트 모두 React 화면과 Spring Boot API를 함께 구현했습니다.',
-      '필요한 기능에는 ML 모델을 붙였습니다. WorkFlow AI의 예측 모델 2종을 FastAPI로 서빙하고, 호출이 실패할 때의 처리 방식도 모델별로 정했습니다.',
+      'React 화면과 Spring Boot · Node.js · FastAPI 서버를 함께 다루는 풀스택 개발자입니다.',
+      'Java 풀스택 과정의 팀 프로젝트 3건에서 회원·인증 도메인의 화면과 서버를 맡았습니다. 3H Furniture에서는 로그인 요청 형식 충돌을 해결해, 멈춰 있던 팀 기능 4개의 개발을 2일 만에 재개시켰습니다.',
+      'WorkFlow AI에서 대시보드를 맡아 화면 9개, REST API 13개, ML 모델 2종을 구현했고, N+1 조회를 배치 조회로 바꿔 로딩 시간을 2분에서 10초로 줄였습니다.',
     ];
     let y = 1.75;
     const tw = 6.75;
@@ -113,9 +113,9 @@ module.exports = async function frontSlides(pres, K, T) {
 
     const stats = [
       ['LuFolderKanban', '9', '건', '진행한 프로젝트', '팀 4 · 개인 5'],
-      ['LuLayoutDashboard', '9', '화면', 'WorkFlow AI 담당 화면', 'REST API 10개 · 테이블 9개'],
-      ['LuCode', '6,948', '줄', '3H 담당 코드 (최종 기준)', 'React · CSS · Java 합계'],
-      ['LuTarget', '94.5', '%', '사조 분류 테스트 정확도', 'ResNet-50 · 테스트 200장'],
+      ['LuLayoutDashboard', '9', '화면', 'WorkFlow AI 담당 화면', 'REST API 13개 · ML 모델 2종'],
+      ['LuTimer', '2분→10', '초', '대시보드 로딩 시간', 'WorkFlow AI · N+1 조회 개선'],
+      ['LuPlugZap', '4', '개', '멈췄던 팀 기능 개발 재개', '3H Furniture · 2일 만에 로그인 연동'],
     ];
     const gap = 0.25, sw = (W - M * 2 - gap * 3) / 4, sy = 4.6, sh = 2.2;
     for (let i = 0; i < 4; i++) {
@@ -137,10 +137,10 @@ module.exports = async function frontSlides(pres, K, T) {
     await T.background(s, 'glow', C.accent);
     const top = T.header(s, { tag: 'Experience', title: '주로 맡은 역할', sub: '프로젝트를 진행하며 여러 번 맡았던 역할을 네 가지로 정리했습니다. 구체적인 구현 내용은 프로젝트별 슬라이드에 있습니다.' });
     const pillars = [
-      ['LuLayers', '화면 · API · DB 전 구간 구현', 'WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 10개, PostgreSQL 4개 테이블 집계를 구현했습니다. 3H Furniture에서는 메인 페이지와 회원/인증 도메인, 상품 검색을 React 화면부터 Spring Boot API · JPA까지 담당했습니다.', ['담당 화면 15', 'Spring Boot API 10', 'DB 설계 · 집계', '팀 프로젝트 4건']],
-      ['LuKeyRound', '인증 · 권한 구현', '3H Furniture에서 Spring Security 폼 로그인이 React의 JSON 요청을 읽지 못하는 문제를 로그인 성공·실패 핸들러의 JSON 응답으로 해결하고, 구글 · 네이버 · 카카오 소셜 로그인을 일반 회원과 같은 권한 체계에 통합했습니다. PPAP에서는 JWT 인증과 회원 도메인을, 너와 함께에서는 세션 로그인을 맡았습니다.', ['Spring Security', 'OAuth2 3종', 'JWT', '세션 인증']],
-      ['LuGauge', '원인을 확인한 뒤 수정', '반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄였습니다. 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다. 모델 성능은 K-fold로 다시 검증해 테스트 정확도와 함께 기록했습니다.', ['N+1 제거', '알고리즘 교체', 'K-fold 검증', 'Failure Case 분석']],
-      ['LuUsers', '팀 공통 구조와 문서 작업', '6명이 같은 구조에서 작업할 수 있도록 프로젝트 계층 구조를 제안해 팀 표준으로 확정했습니다. 착수보고서의 개발 수행 계획을 작성했고, 3H Furniture에서는 최종 발표를 맡았습니다.', ['프로젝트 계층 구조', '착수보고서 작성', 'PR 자동 점검', '최종 발표 담당']],
+      ['LuLayers', '화면 · API · DB · ML 구현', 'WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 13개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.', ['화면 9', 'API 13', '테이블 9', 'ML 모델 2']],
+      ['LuKeyRound', '인증을 세 가지 계층으로 구현', '팀 프로젝트 3건에서 회원·인증 도메인을 연달아 맡았습니다. JSP·Servlet의 HttpSession 로그인, Node.js의 JWT 인증 미들웨어, Spring Security의 폼 로그인과 OAuth2 소셜 로그인 3종을 화면과 서버 양쪽에서 구현했습니다.', ['HttpSession', 'JWT 미들웨어', 'Spring Security', 'OAuth2 3종']],
+      ['LuGauge', '원인을 확인한 뒤 수정', '3H Furniture에서 화면과 서버의 오류 메시지를 대조해 로그인 요청 형식 충돌을 해결했습니다. WorkFlow AI에서는 반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄여 로딩 시간을 2분에서 10초로 단축했고, 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다.', ['로딩 2분→10초', '415 오류 해결', 'N+1 제거', '알고리즘 교체']],
+      ['LuUsers', '팀 공통 구조와 문서 작업', 'WorkFlow AI 초반에 프로젝트 폴더 구조 설계를 자원했습니다. React · Spring Boot · FastAPI 3계층 구조의 방향을 참고 자료와 함께 팀 채널에 먼저 공유하고, PL의 검토 의견을 반영한 구조도를 다시 공유했습니다. 이 구조는 팀장의 일부 수정을 거쳐 프로젝트에 반영되었습니다. 설계 · 개발 · 트러블슈팅 문서 14건과 착수보고서의 개발 수행 계획을 작성했습니다.', ['3계층 폴더 구조', '초안 먼저 공유', '문서 14건', '착수보고서 작성']],
     ];
     const gap = 0.24, cw = (W - M * 2 - gap) / 2, ch = (H - 0.62 - top - gap) / 2;
     for (let i = 0; i < 4; i++) {
@@ -167,13 +167,13 @@ module.exports = async function frontSlides(pres, K, T) {
     const items = [
       ['web', '2025.06', '오늘의집 리뉴얼', 'SWOT · 페르소나 분석\n메인 · 커뮤니티 IA 재설계'],
       ['web', '2025.07', '할리스커피 리뉴얼', '브랜드 아이덴티티 개편\njQuery 동적 인터랙션'],
-      ['kdc', '2026.02', '너와 함께', 'JSP · Servlet · JDBC\n세션 인증과 마이페이지 담당'],
+      ['kdc', '2026.02', '너의 곁에', 'JSP · Servlet · JDBC\n세션 인증과 마이페이지 담당'],
       ['kdc', '2026.03', 'PPAP', 'React · Express · MongoDB\nJWT 인증과 회원 도메인 담당'],
-      ['kdc', '2026.05', '3H Furniture', 'Spring Boot · Security · JPA\n메인 · 상품 검색 · 인증 담당'],
+      ['kdc', '2026.04', '3H Furniture', 'Spring Boot · Security · JPA\n회원·인증과 상품 검색 담당'],
       ['ai', '2026.06', '게이머 고립도 예측', '회귀 모델 5종 비교\nR² 0.801'],
       ['ai', '2026.06', 'artClassifier', '전이학습 3종 비교 · MLflow\n테스트 정확도 94.5%'],
       ['ai', '2026.07', 'Curatio', 'CLIP · ChromaDB · RAG\n작품 벡터 42,500건 구축'],
-      ['ai', '2026.07', 'WorkFlow AI', 'React · Spring Boot · FastAPI\n화면 9 · API 10 · ML 2종'],
+      ['ai', '2026.07', 'WorkFlow AI', 'React · Spring Boot · FastAPI\n화면 9 · API 13 · ML 2종'],
     ];
     const tone = { web: C.web, kdc: C.kdc, ai: C.ai };
     const railY = 4.0, x0 = M + 1.25, x1 = W - M - 1.25, step = (x1 - x0) / 8;
@@ -216,22 +216,22 @@ module.exports = async function frontSlides(pres, K, T) {
   // ───────────── 6–7. 기술 스택 ─────────────
   const stack = {
     fe: ['Frontend', 'LuMonitor', C.accent3, [
-      ['React', '대시보드 9화면 · 가구몰 메인·검색 · 매물 탐색', 'WorkFlow AI · 3H · PPAP'],
+      ['React', '대시보드 9화면 · 매물 탐색 · 가구몰 메인', 'WorkFlow AI · PPAP · 3H'],
       ['TypeScript', '대시보드 응답 DTO 타입 정의', 'WorkFlow AI'],
       ['Vite', '프론트엔드 개발 서버 · 빌드', 'WorkFlow AI'],
       ['Tailwind CSS', '대시보드 카드·배지 반응형 레이아웃', 'WorkFlow AI'],
       ['MUI · Bootstrap', '매물 입력 폼 · 가구몰 화면 컴포넌트', 'PPAP · 3H'],
       ['Recharts', '진행률·업무량 차트', 'WorkFlow AI'],
-      ['JSP · JSTL', '회원 인증 · 마이페이지 화면', '너와 함께'],
+      ['JSP · JSTL', '회원 인증 · 마이페이지 화면', '너의 곁에'],
     ]],
     be: ['Backend', 'LuServer', C.kdc, [
       ['Java', '대시보드 집계 로직 · 회원 도메인', 'WorkFlow AI · 3H'],
-      ['Spring Boot', '대시보드 API 10개 · 상품 조회 API', 'WorkFlow AI · 3H'],
-      ['Spring Security', 'OAuth2 소셜 로그인 3종 · JSON 로그인 응답', '3H Furniture'],
-      ['Spring Data JPA', '업무·마일스톤·회원·상품 테이블 접근', '3H · WorkFlow AI'],
+      ['Spring Boot', '대시보드 API 13개 · 상품 조회 API', 'WorkFlow AI · 3H'],
+      ['Spring Security', '폼 로그인 · OAuth2 소셜 로그인 · 권한 분리', '3H Furniture'],
+      ['Spring Data JPA', '업무·마일스톤·회원 테이블 접근', '3H · WorkFlow AI'],
       ['JWT', '토큰 인증 · 보호 라우트 검증', 'PPAP · WorkFlow AI'],
       ['Node.js · Express', '매물·회원·상담 예약 REST API', 'PPAP'],
-      ['Servlet · JDBC', '세션 로그인 · DTO/DAO 계층', '너와 함께'],
+      ['Servlet · JDBC', '세션 로그인 · DTO/DAO 계층', '너의 곁에'],
     ]],
     ai: ['AI / ML', 'LuBrain', C.ai, [
       ['Python', 'ML 모델 학습 · FastAPI 서빙', '전 AI 프로젝트'],
@@ -246,7 +246,7 @@ module.exports = async function frontSlides(pres, K, T) {
     ]],
     db: ['Database', 'LuDatabase', C.web, [
       ['PostgreSQL · Supabase', '업무·활동·ML 예측 이력 저장', 'WorkFlow AI'],
-      ['Oracle DB', '회원·상품·주문·배송 17개 테이블', '3H(Cloud ADB) · 너와 함께'],
+      ['Oracle DB', '상품·회원·게시판 테이블', '3H(Cloud ADB) · 너의 곁에'],
       ['MongoDB · Mongoose', '매물·이미지·상담 예약 스키마', 'PPAP'],
       ['pgvector', '문서 임베딩 저장 · 유사도 검색', 'WorkFlow AI'],
     ]],
