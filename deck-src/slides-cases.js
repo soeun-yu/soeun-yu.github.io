@@ -1,8 +1,8 @@
-// 문제 해결 사례 — 해당 프로젝트 슬라이드 바로 뒤에 들어간다 (현재 사례는 모두 WorkFlow AI)
+// 문제 해결 사례 — 해당 프로젝트 슬라이드 바로 뒤에 들어간다 (사례 목록은 인자로 받는다)
 const L = require('./lib');
 const { W, H, M, MONO, C, tint, mix, textW, textH, icon } = L;
 
-const cases = [
+const WORKFLOW_CASES = [
   {
     t: '대시보드 요약 API의 N+1 조회', icon: 'LuTimer', tags: ['N+1', 'JPA', '성능'],
     p: '대시보드 요약 API가 업무·활동·팀원마다 UserRepository.findById를 반복 호출해, DB 왕복이 레코드 수만큼 늘어났습니다.',
@@ -40,13 +40,13 @@ const cases = [
   },
 ];
 
-module.exports = async function problemSlides(pres, K, T, { tone, footer, project = 'WorkFlow AI' }) {
-  // 사례 목록
-  {
+module.exports = async function problemSlides(pres, K, T, { tone, footer, project = 'WorkFlow AI', cases = WORKFLOW_CASES, list = true }) {
+  // 사례 목록 (사례가 많을 때만 한 장으로 먼저 보여준다)
+  if (list) {
     const s = pres.addSlide();
     await T.background(s, 'glow', tone);
     const top = T.header(s, { tag: `${project} · Problem Solving`, title: '문제 해결 사례', sub: `${project} 개발 중 확인한 문제와 처리 과정입니다. 문제 · 분석 · 행동 · 결과 순으로 정리했습니다.`, tone });
-    const gap = 0.14, rh = (H - 0.65 - top - gap * 4) / 5;
+    const n = cases.length, gap = 0.14, rh = (H - 0.65 - top - gap * (n - 1)) / n;
     for (let i = 0; i < cases.length; i++) {
       const c = cases[i], y = top + i * (rh + gap);
       K.rect(s, M, y, W - M * 2, rh, { fill: C.surf, line: C.border, r: 0.12 });

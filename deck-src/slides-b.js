@@ -4,6 +4,24 @@ const { W, H, M, F, MONO, C, asset, tint, mix, textW, textH, icon } = L;
 
 const PDF_BASE = 'https://soeun-yu.github.io/assets/webdesign/';
 
+// 3H Furniture 문제 해결 사례
+const FURNITURE_CASES = [
+  {
+    t: 'React ↔ Spring Security 로그인 요청 형식 불일치', icon: 'LuShieldCheck', tags: ['Spring Security', 'REST 연동', '협업'],
+    p: 'React가 로그인 정보를 JSON으로 보내자 Spring Security 폼 로그인이 값을 읽지 못해 로그인이 실패했습니다. 로그인 권한 정보가 필요한 장바구니 · 마이페이지 · 관리자 대시보드 · 관리자 상품관리 4개 기능의 개발이 함께 멈췄습니다.',
+    a: '폼 로그인 필터는 아이디·비밀번호를 요청 파라미터(x-www-form-urlencoded)에서 읽고, 성공·실패를 페이지 이동으로 응답합니다. 그래서 요청 형식과 응답 형식을 모두 React에 맞춰야 한다고 판단했습니다.',
+    c: 'React에서 URLSearchParams로 폼 형식 요청을 보내고 usernameParameter("id")로 필드명을 맞췄습니다. 로그인 성공·실패 핸들러가 status · message · role을 JSON으로 반환하게 하고, 미인증 요청에는 401 JSON을 응답하도록 설정했습니다.',
+    r: '2일 만에 해결해 멈췄던 4개 기능의 개발이 재개됐고, 응답의 role 값으로 관리자와 일반 회원 화면을 나눌 수 있게 됐습니다.',
+  },
+  {
+    t: '병합 후 백엔드 서버 기동 실패', icon: 'LuGitMerge', tags: ['디버깅', 'Spring Data JPA', '병합'],
+    p: '팀원 코드를 병합한 뒤 백엔드 서버가 켜지지 않아, 팀 전체가 기능을 실행해 확인할 수 없었습니다.',
+    a: 'ItemImgRepository에 파라미터 타입이 Long이 아닌 lombok.extern.java.Log로 잘못 지정된 조회 메서드가 있었고, 같은 역할의 메서드가 이미 따로 있는 중복 코드였습니다.',
+    c: '중복 메서드를 주석 처리하고 원인을 주석으로 남겼으며, 사용하지 않는 import를 정리했습니다.',
+    r: '백엔드 서버가 정상적으로 기동돼 팀원들이 다시 통합 테스트를 진행할 수 있었습니다.',
+  },
+];
+
 module.exports = async function partsB(pres, K, T) {
   const caption = (s, t, x, y, w, align = 'left', h = 0.26) =>
     K.text(s, t, { x, y, w, h, fontSize: 10, color: C.muted, align, valign: 'top', lineSpacingMultiple: 1.15 });
@@ -27,8 +45,12 @@ module.exports = async function partsB(pres, K, T) {
     await T.projectCover(pres.addSlide(), {
       tone, footer: FOOT, part: PART, badges: ['3차 · Final', '팀'], title: '3H Furniture',
       sub: 'Spring Boot + React 기반 가구 이커머스 반응형 웹',
-      period: '2026.05 ~ 2026.06', team: 'CMYK팀', role: '메인 페이지 · 회원/인증 도메인 · 상품 검색',
-      chips: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'JWT', 'OAuth2', 'React', 'React Context', 'CSS3 · Bootstrap', 'Oracle Cloud ADB'],
+      period: '2026.04.24 ~ 2026.06.15', team: 'CMYK팀 · 5명', role: '메인 페이지 · 회원/인증 도메인 · 상품 검색 · 최종 발표',
+      links: [
+        { t: 'GitHub', icon: 'LuGithub', url: 'https://github.com/alphaengneering02-dev/3H_Furniture' },
+        { t: '배포 사이트', icon: 'LuExternalLink', url: 'https://cheerful-gecko-a85d13.netlify.app' },
+      ],
+      chips: ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'OAuth2', 'React', 'MUI', 'Oracle Cloud ADB'],
       metrics: [{ v: '3', l: '소셜 로그인' }, { v: '3', l: '복합 검색 조건' }, { v: '6', l: '담당 화면' }],
       position: '메인 페이지, 회원 가입·로그인, 상품 검색 기능을 맡았습니다. 서비스에 처음 들어와 상품을 찾기까지 거치는 화면입니다.',
       visual: (s, x, y, w, h) => K.browser(s, asset('furniture/main.jpg'), x, y, w, h, { url: 'cmyk-furniture · /' }),
@@ -39,17 +61,74 @@ module.exports = async function partsB(pres, K, T) {
       const top = T.header(s, { tag: '3H Furniture · 담당 기능', title: '메인 · 회원/인증 · 상품 검색', tone });
       await T.featureGrid(s, [
         { icon: 'LuHouse', t: '메인 페이지', d: '메인 배너, 카테고리 네비게이션, 베스트셀러·신상품 섹션, 상품 리스트를 컴포넌트로 분리해 구현. 헤더·푸터 공통 레이아웃과 MainController · MainService로 상품 조회 API를 함께 담당' },
-        { icon: 'LuListFilter', t: '상품 검색 필터', d: '카테고리 · 색상 · 가격대를 조합한 복합 조건 검색. 가격은 슬라이더로 최솟값/최댓값 범위를 지정. SearchContext로 헤더 검색창과 결과 화면의 조건을 공유' },
+        { icon: 'LuListFilter', t: '상품 검색 필터', d: '카테고리 · 색상 · 가격대를 조합한 복합 조건 검색. 검색어는 상품명·카테고리·색상 중 하나만 맞아도 통과시키고, 조건은 모두 만족해야 통과(MainService). SearchContext로 헤더 검색창과 결과 화면의 조건을 URL 쿼리와 함께 공유' },
         { icon: 'LuKeyRound', t: 'OAuth2 소셜 로그인', d: '구글 · 네이버 · 카카오 계정으로 가입. LoginSuccessHandler와 OAuth2DTO · SessionMember로 소셜 계정을 일반 회원과 동일한 권한 체계에 통합해, 구매·장바구니·북마크를 그대로 사용' },
-        { icon: 'LuShieldCheck', t: 'Spring Security 인증·인가', d: 'SecurityConfig · MemberSecurityService · LoginFailHandler를 구성하고 MemberRole enum으로 권한을 분리' },
+        { icon: 'LuShieldCheck', t: 'Spring Security 인증·인가', d: 'React와 연동되도록 로그인 성공·실패를 JSON으로 응답하는 핸들러와 미인증 401 응답을 구성. 관리자 → 일반 회원 순으로 조회해 한 로그인 화면에서 두 역할을 구분하고 MemberRole enum으로 권한을 분리' },
         { icon: 'LuUserPlus', t: '회원가입 · 계정 찾기', d: '회원가입 · 아이디 찾기 · 비밀번호 재설정 화면과 각 결과 화면 구현' },
-        { icon: 'LuBookmark', t: '북마크(찜)', d: 'BookmarksService · Repository · DTO로 관심 상품 저장/조회 기능 구현' },
+        { icon: 'LuBookmark', t: '북마크(찜)', d: 'Bookmarks 엔티티 · Repository · Service · DTO를 처음 설계·구현하고, 메인 상품 카드에 북마크 버튼을 연결' },
       ], M, top, W - M * 2, H - 0.65 - top, { cols: 3, tone, pt: 11 });
+      T.footer(s, FOOT);
+    }
+
+    // 시스템 구성과 담당 코드
+    {
+      const s = pres.addSlide();
+      await T.background(s, 'glow', tone);
+      const top = T.header(s, { tag: '3H Furniture · 구조', title: '시스템 구성과 담당 코드', sub: '사용자 요청을 React 화면에서 받아 Spring Boot API가 처리하고, Oracle Cloud DB와 외부 서비스(OAuth2 · Toss)를 연동합니다.', tone });
+      await T.pipeline(s, [
+        { icon: 'LuMonitor', l: 'React', s: '화면 · 라우팅 · API 요청' },
+        { icon: 'LuServer', l: 'Spring Boot', s: 'JPA · Security · 세션' },
+        { icon: 'LuDatabase', l: 'Oracle Cloud DB', s: '17개 테이블 · 128개 컬럼' },
+        { icon: 'LuKeyRound', l: 'OAuth2 · Toss', s: '소셜 로그인 · 결제' },
+      ], M, top, W - M * 2, 1.55, tone);
+      const y2 = top + 1.55 + 0.26, h2 = H - 0.65 - y2, lw = 6.9;
+      T.barChart(s, { title: '담당 코드 — 최종 코드에 남은 줄 수', labels: ['React (JS)', 'CSS', 'Java', '테스트'], values: [2880, 2230, 1838, 222], x: M, y: y2, w: lw, h: h2, tone, fmt: '#,##0', unit: '줄', max: 3400 });
+      const cx = M + lw + 0.24, cw = W - M - cx;
+      K.rect(s, cx, y2, cw, h2, { fill: C.surf, line: C.border, r: 0.14 });
+      K.text(s, '사용 기술', { x: cx + 0.26, y: y2 + 0.2, w: cw - 0.52, h: 0.3, fontSize: 12.5, bold: true });
+      K.chips(s, ['Java', 'Spring Boot', 'Spring Security', 'Spring Data JPA', 'Spring Session JDBC', 'OAuth2', 'React', 'React Context', 'react-hook-form', 'MUI', 'CSS3 · Bootstrap', 'Oracle Cloud ADB'],
+        cx + 0.26, y2 + 0.66, cw - 0.52, { pt: 10.5, h: 0.32, gap: 0.1, r: 0.08, color: C.mid });
+      T.footer(s, FOOT);
+    }
+
+    // 서비스 흐름과 DB 구조
+    {
+      const s = pres.addSlide();
+      await T.background(s, 'glow', tone);
+      const top = T.header(s, { tag: '3H Furniture · 서비스 흐름', title: '서비스 흐름과 DB 구조', sub: '상품 탐색부터 후기 관리까지 이어지는 쇼핑몰 흐름입니다. 직접 배송·설치 기사를 배정하는 단계가 일반 쇼핑몰과 다른 점입니다.', tone });
+      const bh = H - 0.65 - top, lw = 6.95;
+      const steps = [
+        ['① 상품 탐색', '카테고리 · 통합 검색 · 필터', true],
+        ['② 구매 선택', '장바구니 · 바로 결제', false],
+        ['③ 결제 처리', 'Toss Payments 연동', false],
+        ['④ 배송 · 설치', '주문 배송 관리 · 설치 기사 배정', false],
+        ['⑤ 후기 관리', '리뷰 작성 · 수정 · 삭제', false],
+      ];
+      const sgap = 0.16, rh = (bh - sgap * (steps.length - 1)) / steps.length;
+      steps.forEach(([t, d, mine], i) => {
+        const y = top + i * (rh + sgap);
+        K.rect(s, M, y, lw, rh, { fill: mine ? tint(tone, 0.1, C.surf) : C.surf, line: mine ? tint(tone, 0.45, C.surf) : C.border, r: 0.14 });
+        K.text(s, t, { x: M + 0.32, y, w: 2.3, h: rh, fontSize: 15, bold: true, color: mine ? tone : C.text, valign: 'middle' });
+        K.text(s, d, { x: M + 2.7, y, w: lw - 3.75, h: rh, fontSize: 12, color: C.mid, valign: 'middle' });
+        if (mine) K.chip(s, '담당', M + lw - 0.95, y + (rh - 0.28) / 2, { fill: tint(tone, 0.2), line: tint(tone, 0.5), color: tone, bold: true, pt: 9.5, h: 0.28 });
+      });
+      const px = M + lw + 0.26;
+      await T.descPanel(s, px, top, W - M - px, bh, {
+        icon: 'LuDatabase', title: 'DB 구조 — 17개 테이블', tone,
+        intro: '네 개 도메인으로 나눴고, 회원/인증과 BOOKMARKS 테이블을 담당했습니다.',
+        rows: [
+          { t: '회원/인증 (담당)', d: 'MEMBER · MEMBER_ADDRESS · ADMINS · SPRING_SESSION' },
+          { t: '상품', d: 'ITEM · ITEM_IMG · BOOKMARKS(담당) · REVIEW · ARTICLE' },
+          { t: '구매', d: 'CART · CART_ITEM · ORDERS · ORDER_ITEM · PAYMENT' },
+          { t: '배송/설치', d: 'DELIVERY · 주문 배송상태 · 설치일/배송일' },
+        ],
+        note: 'Spring Session JDBC로 세션을 SPRING_SESSION 테이블에 저장했습니다.',
+      });
       T.footer(s, FOOT);
     }
     await T.gallery(pres.addSlide(), {
       tone, footer: FOOT, tag: '3H Furniture', title: '구현 화면',
-      sub: '담당한 검색 · 로그인 · 회원가입 · 아이디 찾기 화면입니다.',
+      sub: '담당한 검색 · 로그인 · 회원가입 · 아이디 찾기 화면입니다. 최종 발표에서는 중간 발표 피드백을 반영해 1:1 상담창과 관리자 대시보드를 추가했고, 발표를 맡았습니다.',
       cols: 3,
       shots: [
         { file: asset('furniture/search-filter.png'), cap: '검색 필터 — 카테고리·색상·가격 슬라이더' },
@@ -60,16 +139,26 @@ module.exports = async function partsB(pres, K, T) {
       ],
       extra: async (s, x, y, w, h) => {
         K.rect(s, x, y, w, h - 0.34, { fill: tint(tone, 0.08, C.surf2), line: tint(tone, 0.3, C.surf2), r: 0.12 });
-        s.addImage({ data: await icon('LuWorkflow', tone), x: x + 0.26, y: y + 0.26, w: 0.24, h: 0.24 });
-        K.text(s, '회원 플로우', { x: x + 0.6, y: y + 0.22, w: w - 0.8, h: 0.32, fontSize: 12, bold: true, color: tone, valign: 'middle' });
-        const steps = ['회원가입', '로그인 (일반 · 소셜 3종)', '아이디 찾기', '비밀번호 재설정'];
-        steps.forEach((t, i) => {
-          const sy = y + 0.72 + i * 0.44;
-          K.circle(s, x + 0.28, sy + 0.08, 0.16, tone);
-          K.text(s, t, { x: x + 0.56, y: sy, w: w - 0.8, h: 0.32, fontSize: 11, color: C.mid, valign: 'middle' });
+        s.addImage({ data: await icon('LuUsers', tone), x: x + 0.26, y: y + 0.26, w: 0.24, h: 0.24 });
+        K.text(s, '팀 구성 — 5명', { x: x + 0.6, y: y + 0.22, w: w - 0.8, h: 0.32, fontSize: 12, bold: true, color: tone, valign: 'middle' });
+        const members = [
+          ['유소은', '회원/인증 · 메인 · 검색 · 북마크', true],
+          ['오현옥', '상품 목록 · 리뷰', false],
+          ['김태양', '관리자 대시보드', false],
+          ['김인호', '마이페이지 · 장바구니', false],
+          ['김승우', '결제 시스템', false],
+        ];
+        members.forEach(([n, r, mine], i) => {
+          const sy = y + 0.62 + i * 0.37;
+          K.circle(s, x + 0.28, sy + 0.08, 0.13, mine ? tone : C.border);
+          K.text(s, n, { x: x + 0.52, y: sy, w: 0.85, h: 0.2, fontSize: 10, bold: true, color: mine ? tone : C.text, valign: 'middle' });
+          K.text(s, r, { x: x + 0.52, y: sy + 0.17, w: w - 0.76, h: 0.2, fontSize: 8.5, color: C.muted, valign: 'middle' });
         });
       },
     });
+
+    // 3H Furniture 문제 해결 사례는 프로젝트 슬라이드 바로 뒤에
+    await require('./slides-cases')(pres, K, T, { tone, footer: FOOT, project: '3H Furniture', cases: FURNITURE_CASES, list: false });
 
     // ── PPAP ──
     await T.projectCover(pres.addSlide(), {
