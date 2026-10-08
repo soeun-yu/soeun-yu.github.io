@@ -137,7 +137,7 @@ module.exports = async function frontSlides(pres, K, T) {
     await T.background(s, 'glow', C.accent);
     const top = T.header(s, { tag: 'Experience', title: '주로 맡은 역할', sub: '프로젝트를 진행하며 여러 번 맡았던 역할을 네 가지로 정리했습니다. 구체적인 구현 내용은 프로젝트별 슬라이드에 있습니다.' });
     const pillars = [
-      ['LuLayers', '화면 · API · DB · ML 구현', 'WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 13개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.', ['화면 9', 'API 13', '테이블 9', 'ML 모델 2']],
+      ['LuLayers', '화면 · API · DB 전 구간 구현', 'WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 13개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.', ['화면 9', 'API 13', '테이블 9', 'ML 모델 2']],
       ['LuKeyRound', '인증을 세 가지 계층으로 구현', '팀 프로젝트 3건에서 회원·인증 도메인을 연달아 맡았습니다. JSP·Servlet의 HttpSession 로그인, Node.js의 JWT 인증 미들웨어, Spring Security의 폼 로그인과 OAuth2 소셜 로그인 3종을 화면과 서버 양쪽에서 구현했습니다.', ['HttpSession', 'JWT 미들웨어', 'Spring Security', 'OAuth2 3종']],
       ['LuGauge', '원인을 확인한 뒤 수정', '3H Furniture에서 화면과 서버의 오류 메시지를 대조해 로그인 요청 형식 충돌을 해결했습니다. WorkFlow AI에서는 반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄여 로딩 시간을 2분에서 10초로 단축했고, 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다.', ['로딩 2분→10초', '415 오류 해결', 'N+1 제거', '알고리즘 교체']],
       ['LuUsers', '팀 공통 구조와 문서 작업', 'WorkFlow AI 초반에 프로젝트 폴더 구조 설계를 자원했습니다. React · Spring Boot · FastAPI 3계층 구조의 방향을 참고 자료와 함께 팀 채널에 먼저 공유하고, PL의 검토 의견을 반영한 구조도를 다시 공유했습니다. 이 구조는 팀장의 일부 수정을 거쳐 프로젝트에 반영되었습니다. 설계 · 개발 · 트러블슈팅 문서 14건과 착수보고서의 개발 수행 계획을 작성했습니다.', ['3계층 폴더 구조', '초안 먼저 공유', '문서 14건', '착수보고서 작성']],
