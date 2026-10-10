@@ -1,4 +1,4 @@
-// 앞부분: 표지 · 목차 · 한눈에 보기 · 주로 맡은 역할 · 진행 순서 · 기술 스택
+// 앞부분: 표지 · 목차 · 한눈에 보기 · 주로 맡은 역할 · 참여 프로젝트 목록 · 기술 스택
 const L = require('./lib');
 const { W, H, M, F, MONO, C, asset, tint, mix, textW, textH, icon } = L;
 
@@ -55,7 +55,7 @@ module.exports = async function frontSlides(pres, K, T) {
     const s = pres.addSlide();
     await T.background(s, 'glow', C.accent);
     T.header(s, { tag: 'Contents', title: '목차' });
-    const left = [['01', '한눈에 보기'], ['02', '주로 맡은 역할'], ['03', '프로젝트 진행 순서'], ['04', '기술 스택'], ['08', '작업 방식']];
+    const left = [['01', '한눈에 보기'], ['02', '주로 맡은 역할'], ['03', '참여 프로젝트 목록'], ['04', '기술 스택'], ['08', '작업 방식']];
     let y = 1.75;
     left.forEach(([n, t], i) => {
       if (i === 4) y += 0.2;
@@ -114,7 +114,7 @@ module.exports = async function frontSlides(pres, K, T) {
     const stats = [
       ['LuFolderKanban', '9', '건', '진행한 프로젝트', '팀 4 · 개인 5'],
       ['LuLayoutDashboard', '9', '화면', 'WorkFlow AI 담당 화면', 'REST API 13개 · ML 모델 2종'],
-      ['LuTimer', '2분→10', '초', '대시보드 로딩 시간', 'WorkFlow AI · N+1 조회 개선'],
+      ['LuTimer', '2분 → 10', '초', '대시보드 로딩 시간', 'WorkFlow AI · N+1 조회 개선'],
       ['LuPlugZap', '4', '개', '멈췄던 팀 기능 개발 재개', '3H Furniture · 2일 만에 로그인 연동'],
     ];
     const gap = 0.25, sw = (W - M * 2 - gap * 3) / 4, sy = 4.6, sh = 2.2;
@@ -139,7 +139,7 @@ module.exports = async function frontSlides(pres, K, T) {
     const pillars = [
       ['LuLayers', '화면 · API · DB 전 구간 구현', 'WorkFlow AI(6인 기능 오너제)에서 대시보드를 맡아 React 화면 9개, Spring Boot API 13개, PostgreSQL 4개 테이블 집계, FastAPI ML 서버 2개를 설계하고 연동했습니다.', ['화면 9', 'API 13', '테이블 9', 'ML 모델 2']],
       ['LuKeyRound', '인증을 세 가지 계층으로 구현', '팀 프로젝트 3건에서 회원·인증 도메인을 연달아 맡았습니다. JSP·Servlet의 HttpSession 로그인, Node.js의 JWT 인증 미들웨어, Spring Security의 폼 로그인과 OAuth2 소셜 로그인 3종을 화면과 서버 양쪽에서 구현했습니다.', ['HttpSession', 'JWT 미들웨어', 'Spring Security', 'OAuth2 3종']],
-      ['LuGauge', '원인을 확인한 뒤 수정', '3H Furniture에서 화면과 서버의 오류 메시지를 대조해 로그인 요청 형식 충돌을 해결했습니다. WorkFlow AI에서는 반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄여 로딩 시간을 2분에서 10초로 단축했고, 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다.', ['로딩 2분→10초', '415 오류 해결', 'N+1 제거', '알고리즘 교체']],
+      ['LuGauge', '원인을 확인한 뒤 수정', '3H Furniture에서 화면과 서버의 오류 메시지를 대조해 로그인 요청 형식 충돌을 해결했습니다. WorkFlow AI에서는 반복 조회로 늘어나던 DB 왕복을 한 번의 조회로 줄여 로딩 시간을 2분에서 10초로 단축했고, 소규모 팀에서 Isolation Forest가 과부하 팀원을 탐지하지 못하는 사례를 확인해 MAD 기반 방식으로 바꿨습니다.', ['로딩 2분 → 10초', '415 오류 해결', 'N+1 제거', '알고리즘 교체']],
       ['LuUsers', '팀 공통 구조와 문서 작업', 'WorkFlow AI 초반에 프로젝트 폴더 구조 설계를 자원했습니다. React · Spring Boot · FastAPI 3계층 구조의 방향을 참고 자료와 함께 팀 채널에 먼저 공유하고, PL의 검토 의견을 반영한 구조도를 다시 공유했습니다. 이 구조는 팀장의 일부 수정을 거쳐 프로젝트에 반영되었습니다. 설계 · 개발 · 트러블슈팅 문서 14건과 착수보고서의 개발 수행 계획을 작성했습니다.', ['3계층 폴더 구조', '초안 먼저 공유', '문서 14건', '착수보고서 작성']],
     ];
     const gap = 0.24, cw = (W - M * 2 - gap) / 2, ch = (H - 0.62 - top - gap) / 2;
@@ -159,11 +159,11 @@ module.exports = async function frontSlides(pres, K, T) {
     T.footer(s, 'Experience');
   }
 
-  // ───────────── 5. 프로젝트 진행 순서 ─────────────
+  // ───────────── 5. 참여 프로젝트 목록 ─────────────
   {
     const s = pres.addSlide();
     await T.background(s, 'glow', C.accent);
-    T.header(s, { tag: 'Growth Path', title: '프로젝트 진행 순서', sub: '2025.06부터 2026.08까지 진행한 프로젝트 9건입니다. 웹 디자인에서 시작해 JSP, React + Express, Spring Boot, AI 서비스 순으로 사용 기술이 바뀌었습니다.' });
+    T.header(s, { tag: 'Project List', title: '참여 프로젝트 목록', sub: '2025.06부터 2026.08까지 진행한 프로젝트 9건입니다. 웹 디자인에서 시작해 JSP, React + Express, Spring Boot, AI 서비스 순으로 사용 기술이 바뀌었습니다.' });
     const items = [
       ['web', '2025.06', '오늘의집 리뉴얼', 'SWOT · 페르소나 분석\n메인 · 커뮤니티 IA 재설계'],
       ['web', '2025.07', '할리스커피 리뉴얼', '브랜드 아이덴티티 개편\njQuery 동적 인터랙션'],
@@ -210,7 +210,7 @@ module.exports = async function frontSlides(pres, K, T) {
         { x: lx + 0.36, y: 6.3, w: lws[i] - 0.4, h: 0.36, fontSize: 10.5, valign: 'middle' });
       lx += lws[i] + 0.2;
     });
-    T.footer(s, 'Growth Path');
+    T.footer(s, 'Project List');
   }
 
   // ───────────── 6–7. 기술 스택 ─────────────
